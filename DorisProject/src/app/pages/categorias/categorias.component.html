@@ -1,0 +1,44 @@
+<h4>Categorias</h4>
+<hr>
+<form autocomplete="off" [formGroup]="forma" (ngSubmit)="guardar()">
+
+    <div>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Category</label>
+            <div class="col-8">
+
+                <input class="form-control" type="text" placeholder="Category" formControlName="category" [class.is-invalid]="categoryValid">
+                <small *ngIf="categoryValid" class="text-danger">insert category name</small>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">ID Category</label>
+            <div class="col-8">
+
+                <input class="form-control" type="text" placeholder="ID Category" formControlName="idcategory" [class.is-invalid]="IDcategoryValid">
+                <small *ngIf="IDcategoryValid" class="text-danger">insert ID category</small>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Products within the category</label>
+            <div class="col-8">
+
+                <input class="form-control" type="text" placeholder="-" formControlName="products">
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label">&nbsp;</label>
+        <div class="input-group col-md-8">
+            <button type="submit" class="btn btn-outline-primary btn-block">
+        Search
+      </button>
+        </div>
+    </div>
+
+</form>

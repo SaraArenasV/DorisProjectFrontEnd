@@ -1,8 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LoginComponent } from './pages/login/login.component';
+import { CategoriasComponent } from './pages/categorias/categorias.component';
+import { EliminarComponent } from './pages/eliminar/eliminar.component';
+import { StockComponent } from './pages/stock/stock.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+{path:'login', component:LoginComponent},
+{path:'categorias', component:CategoriasComponent},
+{path:'eliminar', component:EliminarComponent},
+{path:'stock', component:StockComponent},
+{path:'**', pathMatch:'full', redirectTo:'login'}
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
