@@ -1,8 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login.component';
-
-import { By } from '@angular/platform-browser';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('LoginComponent', () => {
@@ -41,7 +39,7 @@ describe('LoginComponent', () => {
       contrasena:'123456'
     });
     fixture.nativeElement.querySelector('button').click();
-    expect(component.login()).toBeTruthy;
+    expect(component.login).toBeTruthy;
   });
 
   it('should deny access with incorrect password',()=>{
