@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormsModule, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login.component';
+
+import { By } from '@angular/platform-browser';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -11,7 +14,7 @@ describe('LoginComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ LoginComponent ],
-      imports: [FormsModule, Validators, ReactiveFormsModule]
+      imports: [ReactiveFormsModule, HttpClientTestingModule]
     })
     .compileComponents();
   }));
@@ -38,17 +41,21 @@ describe('LoginComponent', () => {
       contrasena:'123456'
     });
     fixture.nativeElement.querySelector('button').click();
-    expect(component.login()).toEqual('login_valid');
+    expect(component.login()).toBeTruthy;
   });
 
   it('should deny access with incorrect password',()=>{
     component.loginForm=formBuilder.group({
       rut:'9999999-9',
-      contrasena:'123'
+      contrasena:'987654'
     });
     fixture.nativeElement.querySelector('button').click();
-    expect(component.login()).toEqual('login_invalid');
+    expect(component.login).toBeTruthy;
   });
 
+  it('should able to logon', () => {
+    component.login();
+    expect(component.login).toBeTruthy();
+  })
 
 });
