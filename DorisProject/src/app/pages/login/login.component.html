@@ -30,6 +30,7 @@
 
                                 <input class="form-control" type="text" placeholder="Enter password with at least 4 digits" name="contrasena" [ngModel]="usuario.contrasena" required minlength="4" [class.is-invalid]="contrasena.invalid && contrasena.touched" #contrasena="ngModel">
                                 <small *ngIf="rut.invalid && rut.touched" class="form-text text-danger"> You must enter a valid password. </small>
+
                             </div>
                         </div>
 
