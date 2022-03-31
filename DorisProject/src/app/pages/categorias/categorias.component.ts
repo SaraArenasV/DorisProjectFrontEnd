@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-categorias',
@@ -18,6 +18,11 @@ export class CategoriasComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+get category(){
+  return this.forma.get('categorias') as FormArray;
+}
+
   get categoryValid(){
     return this.forma.get('category').invalid&&this.forma.get('category').touched
   }
@@ -29,9 +34,16 @@ export class CategoriasComponent implements OnInit {
 crearFormulario(){
   this.forma=this.fb.group({
     category:['', Validators.required],
-    idcategory:['', [Validators.required, Validators.minLength(4)]]
+    idcategory:['', [Validators.required, Validators.minLength(4)]],
+    categorias: this.fb.array([
+      [],[],[],[],[]
+    ])
+
   })
+
 }
+
+
 
 cargarDataAlFormulario(){
   this.forma.setValue({

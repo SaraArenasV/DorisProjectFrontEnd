@@ -9,3 +9,59 @@
     border-width: 1px;
     border-style: solid;
 }
+
+.bordescategorias {
+    margin-right: 55px;
+    text-align: center;
+    border: 2px solid gray;
+    border-radius: 12px;
+    padding: 5px;
+}
+
+.bordesheader {
+    border: 2px solid gray;
+    border-radius: 12px;
+    padding: 5px;
+    margin-top: 55px;
+}
+
+.bordesbody {
+    border: 2px solid gray;
+    border-radius: 12px;
+    padding: 5px;
+    margin-top: 65px;
+}
+
+.logosize {
+    height: 80px;
+    width: 120px
+}
+
+.navcategorias {
+    margin-bottom: 55px;
+    margin-top: 15px;
+    background-color: white;
+    border: 2px solid gray;
+    border-radius: 12px;
+    padding: 5px;
+}
+
+.margenutilizado {
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+.categorysearch {
+    align-content: flex-start;
+}
+
+.bordesboctones {
+    text-align: center;
+    border: 2px solid gray;
+    border-radius: 12px;
+    padding: 5px;
+}
+
+.centrotexto {
+    text-align: center;
+}
