@@ -9,6 +9,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { EliminarComponent } from './pages/eliminar/eliminar.component';
 import { CategoriasComponent } from './pages/categorias/categorias.component';
 import { StockComponent } from './pages/stock/stock.component';
+import { HeaderComponent } from './pages/header/header.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { StockComponent } from './pages/stock/stock.component';
     LoginComponent,
     EliminarComponent,
     CategoriasComponent,
-    StockComponent
+    StockComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
