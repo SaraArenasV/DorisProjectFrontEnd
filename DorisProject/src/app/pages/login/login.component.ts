@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { ValidatingloginService } from "./../../validatinglogin.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,10 +10,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent {
   loginForm: FormGroup;
+  subscription: any;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, 
+              private  router:Router,
+              private ValidatingloginService:ValidatingloginService) {
+
     this.loginForm = this.formBuilder.group({
-      rut: ['', [Validators.required, Validators.minLength(9), Validators.maxLength(10)]],
+      rut: ['', [Validators.required, Validators.minLength(9)]],
       contrasena: ['', [Validators.required, Validators.minLength(4)]]
     });
   }
@@ -26,22 +31,34 @@ export class LoginComponent {
     return this.loginForm.get('contrasena').invalid&&this.loginForm.get('contrasena').touched
   }
 
-  login() {
-    let userLogged = 'invalid_form';
-    console.log('Valores del form --> ', this.loginForm.value);
-    if(this.loginForm.valid) {
-      if (this.loginForm.value.rut === '9999999-9' && this.loginForm.value.contrasena === '123456') {
-        userLogged = 'login_valid';
-      } else {
-        userLogged = 'login_invalid';
-      }
-      console.log('Respuesta del servicio de login --> ', userLogged);
+
+
+login(){
+  const user={rut:this.loginForm.get('rut').value,  password:this.loginForm.get('contrasena').value};
+  this.ValidatingloginService.login(user).subscribe(data=>{
+    console.log(data);
+    if (data) {
+      this.router.navigate(['categorias']);
+    } else{
+      this.router.navigate(['login']);
+      this.loginForm.markAllAsTouched
     }
-    if (this.loginForm.invalid) {
-      Object.values(this.loginForm.controls).forEach(control=>{
-        control.markAllAsTouched();
-      })
-    return userLogged;
-  }
-  }
+  })
 }
+
+/*   login() {
+    console.log('llegue hasta aquí')
+    console.log(this.loginForm.get('rut').value)
+    console.log(this.loginForm.get('contrasena').value)
+    let res = this.ValidatingloginService.login(this.loginForm.get('rut').value, this.loginForm.get('contrasena').value)
+    console.log('esta debiese ser la respuesta'+ res)
+    if (res) {
+      this.router.navigate(['categorias']);
+    } else{
+      this.router.navigate(['login']);
+      this.loginForm.markAllAsTouched
+    }
+      
+} */
+
+  }

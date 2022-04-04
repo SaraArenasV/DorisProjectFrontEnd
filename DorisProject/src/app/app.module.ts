@@ -10,6 +10,11 @@ import { LoginComponent } from './pages/login/login.component';
 import { EliminarComponent } from './pages/eliminar/eliminar.component';
 import { CategoriasComponent } from './pages/categorias/categorias.component';
 import { StockComponent } from './pages/stock/stock.component';
+import { HttpClientModule  } from "@angular/common/http";
+
+//servicios
+import { ValidatingloginService } from "./validatinglogin.service";
+
 
 @NgModule({
   declarations: [
@@ -23,9 +28,12 @@ import { StockComponent } from './pages/stock/stock.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    ValidatingloginService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
