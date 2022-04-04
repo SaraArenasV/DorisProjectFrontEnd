@@ -37,7 +37,7 @@ login(){
   const user={rut:this.loginForm.get('rut').value,  password:this.loginForm.get('contrasena').value};
   this.ValidatingloginService.login(user).subscribe(data=>{
     console.log(data);
-    if (data) {
+    if (data.valid==true) {
       this.router.navigate(['categorias']);
     } else{
       this.router.navigate(['login']);
