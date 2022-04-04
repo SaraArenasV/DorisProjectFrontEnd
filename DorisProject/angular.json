@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "DorisProject"
+    }
+  },
+  "defaultProject": "DorisProject",
+  "cli": {
+    "analytics": false
+  }
 }
