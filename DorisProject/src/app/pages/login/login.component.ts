@@ -41,24 +41,9 @@ login(){
       this.router.navigate(['categorias']);
     } else{
       this.router.navigate(['login']);
-      this.loginForm.markAllAsTouched
+      this.loginForm.reset();
+      this.loginForm.markAllAsTouched();
     }
   })
 }
-
-/*   login() {
-    console.log('llegue hasta aquí')
-    console.log(this.loginForm.get('rut').value)
-    console.log(this.loginForm.get('contrasena').value)
-    let res = this.ValidatingloginService.login(this.loginForm.get('rut').value, this.loginForm.get('contrasena').value)
-    console.log('esta debiese ser la respuesta'+ res)
-    if (res) {
-      this.router.navigate(['categorias']);
-    } else{
-      this.router.navigate(['login']);
-      this.loginForm.markAllAsTouched
-    }
-      
-} */
-
   }
