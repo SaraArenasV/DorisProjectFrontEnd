@@ -1,44 +1,80 @@
-<h4>Categorias</h4>
-<hr>
-<form autocomplete="off" [formGroup]="forma" (ngSubmit)="guardar()">
-
-    <div>
-
-        <div class="form-group row">
-            <label class="col-2 col-form-label">Category</label>
-            <div class="col-8">
-
-                <input class="form-control" type="text" placeholder="Category" formControlName="category" [class.is-invalid]="categoryValid">
-                <small *ngIf="categoryValid" class="text-danger">insert category name</small>
-            </div>
+<header class="bordesheader">
+    <div class="d-flex flex-row-reverse">
+        <div class="p-2">
+            <input type="text" class="bordescategorias" placeholder="Hi, User Admin">
+            <a class="tamañoletra" href="">
+                Log Out
+            </a>
         </div>
-
-        <div class="form-group row">
-            <label class="col-2 col-form-label">ID Category</label>
-            <div class="col-8">
-
-                <input class="form-control" type="text" placeholder="ID Category" formControlName="idcategory" [class.is-invalid]="IDcategoryValid">
-                <small *ngIf="IDcategoryValid" class="text-danger">insert ID category</small>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-2 col-form-label">Products within the category</label>
-            <div class="col-8">
-
-                <input class="form-control" type="text" placeholder="-" formControlName="products">
-            </div>
+    </div>
+    <div class="d-flex flex-row-reverse">
+        <div class="p-2">
+            <img src="/assets/img/logo.png" alt="logo empresa" class="logosize">
         </div>
     </div>
 
+</header>
 
 
-    <div class="form-group row">
-        <label class="col-2 col-form-label">&nbsp;</label>
-        <div class="input-group col-md-8">
-            <button type="submit" class="btn btn-outline-primary btn-block">
-        Search
-      </button>
+<body class="bordesbody">
+
+    <nav class="navbar navcategorias d-flex justify-content-center">
+        <form class="d-flex justify-content-center">
+            <button class="btn btn-outline-primary margenutilizado" type="button">Products</button>
+            <button class="btn btn-outline-primary margenutilizado" type="button">Categorys</button>
+        </form>
+    </nav>
+
+    <div class="container">
+
+        <div class="input-group mb-3">
+
+            <input type="text" class="form-control" placeholder="Search by name">
+            <span class="input-group-text" id="basic-addon2">
+                    <button type="submit"><img src="/assets/img/loupe.png" width="25px" height="25px" alt="x" /></button>
+                </span>
+            <button type="button" class="btn btn-outline-primary btn-block mx-5 bordesboctones"> Add Category</button>
+
         </div>
+
     </div>
 
-</form>
+    <form autocomplete="off" [formGroup]="forma" (ngSubmit)="guardar()">
+
+        <div class="row">
+            <div class="col">
+
+                <table class="table my-5 align-center">
+                    <thead class="table-primary">
+                        <tr>
+                            <th class="centrotexto"> N° </th>
+                            <th class="centrotexto"> ID </th>
+                            <th class="centrotexto"> Name </th>
+                            <th class="centrotexto">Edit</th>
+                            <th class="centrotexto">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody formArrayName="categorias">
+                        <tr *ngFor=" let control of category.controls, let i = index">
+                            <td class="centrotexto">{{i+1}}</td>
+                            <td class="centrotexto">id</td>
+                            <td class="centrotexto">
+                                <input class="form-control" type="text" [formArrayName]="i">
+                            </td>
+                            <td class="centrotexto">
+                                <button class="btn btn-success"> Edit </button>
+                            </td>
+                            <td class="centrotexto">
+                                <button class="btn btn-danger"> Delete </button>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+        </div>
+
+    </form>
+
+</body>
