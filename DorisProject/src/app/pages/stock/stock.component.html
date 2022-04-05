@@ -1,0 +1,64 @@
+<app-header></app-header>
+<table>
+    <tr>
+        <td><input type="text" placeholder="Search by Name, Sku, Category or ID" size="40"></td>
+        <td><input type="button" value="Search" style="width: 100px;"></td>
+        <td><input type="button" value="Add Product" style="width: 200px;"></td>
+    </tr>
+</table>
+<div class="row mt-2" style=" overflow-x: scroll;">
+    <div class="col" >
+        <table  datatable  
+           >
+            <thead>
+                <tr>
+                    <th width="20px" style="text-align: center;">
+                       ID
+                    </th><th width="100px;" style="text-align: center;">
+                        Sku
+                     </th>
+                     <th width="180px;" style="text-align: center;">
+                        Description
+                     </th>
+                     <th width="180px;" style="text-align: center;">
+                        Brand
+                     </th>
+                     <th width="150px;" style="text-align: center;">
+                        Category
+                     </th>
+                     <th width="100px;" style="text-align: center;" >
+                        Stock
+                     </th>
+                     <th width="100px;" style="text-align: center;">
+                        Update Date
+                     </th>
+                     <th width="280px;"  style="text-align: center;">
+                        Edit Product
+                     </th>
+                     <th width="280px;" style="text-align: center;">
+                        Delete Product
+                     </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products; let i = index" >
+                    <td>{{ product.ID }}</td>    
+                    <td>{{ product.Sku }}</td>    
+                    <td>{{ product.Description }}</td>    
+                    <td>{{ product.Brand }}</td>    
+                    <td>{{ product.Category }}</td>    
+                    <td>{{ product.Stock }}</td> 
+                    <td>{{ product.UpdateDate }}</td>    
+                    
+                    <td style="text-align: center;">
+                       <input type="button" value="Edit"  >
+                    </td>
+                    <td style="text-align: center;">
+                        <input type="button" value="Delete" style="text-align: center;">
+                     </td>
+                                
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
