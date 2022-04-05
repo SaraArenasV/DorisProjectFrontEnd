@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ValidatingloginService } from "./../../validatinglogin.service";
-import { Router } from '@angular/router';
+/* tslint:disable:no-shadowed-variable */
+import {Component} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {ValidatingloginService} from '../../validatinglogin.service';
 
 @Component({
   selector: 'app-login',
@@ -12,9 +13,9 @@ export class LoginComponent {
   loginForm: FormGroup;
   subscription: any;
 
-  constructor(private formBuilder: FormBuilder, 
-              private  router:Router,
-              private ValidatingloginService:ValidatingloginService) {
+  constructor(private formBuilder: FormBuilder,
+              private  router: Router,
+              private ValidatingloginService: ValidatingloginService) {
 
     this.loginForm = this.formBuilder.group({
       rut: ['', [Validators.required, Validators.minLength(9)]],
@@ -23,27 +24,27 @@ export class LoginComponent {
   }
 
 
-  get rutValid(){
-    return this.loginForm.get('rut').invalid&&this.loginForm.get('rut').touched
+  get rutValid() {
+    return this.loginForm.get('rut').invalid && this.loginForm.get('rut').touched;
   }
 
-  get passwordValid(){
-    return this.loginForm.get('contrasena').invalid&&this.loginForm.get('contrasena').touched
+  get passwordValid() {
+    return this.loginForm.get('contrasena').invalid && this.loginForm.get('contrasena').touched;
   }
 
 
-
-login(){
-  const user={rut:this.loginForm.get('rut').value,  password:this.loginForm.get('contrasena').value};
-  this.ValidatingloginService.login(user).subscribe(data=>{
-    console.log(data);
-    if (data.valid==true) {
-      this.router.navigate(['categorias']);
-    } else{
-      this.router.navigate(['login']);
-      this.loginForm.reset();
-      this.loginForm.markAllAsTouched();
-    }
-  })
+  login() {
+    const user = {rut: this.loginForm.get('rut').value, password: this.loginForm.get('contrasena').value};
+    this.ValidatingloginService.login(user).subscribe(data => {
+      console.log(data);
+      if (data.valid === true) {
+        this.router.navigate(['stock']);
+      } else {
+        this.router.navigate(['login']);
+        this.loginForm.reset();
+        this.loginForm.markAllAsTouched();
+      }
+    });
+  }
 }
-  }
+  
