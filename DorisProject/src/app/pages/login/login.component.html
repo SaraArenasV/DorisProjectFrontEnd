@@ -9,7 +9,7 @@
         <div class="col-md-6 offset-md-3">
             <div class="card my-5">
 
-                <form autocomplete="off" (ngSubmit)="entrar(forma)" #forma="ngForm" class="card-body p-lg-5 bordesolido">
+                <form autocomplete="off" [formGroup]="loginForm" id="loginForm" (ngSubmit)="login()" class="card-body p-lg-5 bordesolido">
 
                     <div class="col-auto p-5 text-center">
 
@@ -19,8 +19,8 @@
                             <label class="col col-form-label">Enter your RUT</label>
                             <div class="col-8">
 
-                                <input class="form-control" type="text" minlength="9" maxlength="10" placeholder="Example: 12345678-9" name="rut" [ngModel]="usuario.rut" required [class.is-invalid]="rut.invalid && rut.touched" #rut="ngModel">
-                                <small *ngIf="rut.invalid && rut.touched" class="form-text text-danger"> You must enter a valid rut. </small>
+                                <input class="form-control" type="text" placeholder="Example: 12345678-9" formControlName="rut" [class.is-invalid]="rutValid" id="rut">
+                                <small *ngIf="rutValid" class="text-danger">You must enter a valid rut.</small>
                             </div>
                         </div>
 
@@ -28,9 +28,8 @@
                             <label class="col col-form-label">Enter the password</label>
                             <div class="col-8">
 
-                                <input class="form-control" type="text" placeholder="Enter password with at least 4 digits" name="contrasena" [ngModel]="usuario.contrasena" required minlength="4" [class.is-invalid]="contrasena.invalid && contrasena.touched" #contrasena="ngModel">
-                                <small *ngIf="rut.invalid && rut.touched" class="form-text text-danger"> You must enter a valid password. </small>
-
+                                <input class="form-control" type="text" placeholder="Enter password with at least 4 digits" formControlName="contrasena" [class.is-invalid]="passwordValid" id="contrasena">
+                                <small *ngIf="passwordValid" class="text-danger">You must enter a valid password.</small>
                             </div>
                         </div>
 
@@ -39,7 +38,7 @@
                     <div class="d-flex flex-row-reverse">
                         <label class="col-2 col-form-label">&nbsp;</label>
                         <div class="p-2">
-                            <button [disabled]="contrasena.invalid" type="submit" class="btn btn-outline-primary btn-block">
+                            <button [disabled]="!loginForm.valid" type="submit" class="btn btn-outline-primary btn-block">
                                  Login
                             </button>
                         </div>

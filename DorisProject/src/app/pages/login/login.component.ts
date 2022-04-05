@@ -1,34 +1,49 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+/* tslint:disable:no-shadowed-variable */
+import {Component} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {ValidatingloginService} from '../../validatinglogin.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
+  loginForm: FormGroup;
+  subscription: any;
 
-usuario={
-  rut:'',
-  contrasena:''
-}
+  constructor(private formBuilder: FormBuilder,
+              private  router: Router,
+              private ValidatingloginService: ValidatingloginService) {
 
-  constructor() { }
-
-  ngOnInit(): void {
+    this.loginForm = this.formBuilder.group({
+      rut: ['', [Validators.required, Validators.minLength(9)]],
+      contrasena: ['', [Validators.required, Validators.minLength(4)]]
+    });
   }
 
 
-entrar( forma:NgForm){
+  get rutValid() {
+    return this.loginForm.get('rut').invalid && this.loginForm.get('rut').touched;
+  }
 
-if (forma.invalid) {
-  Object.values(forma.controls).forEach(control=>{
-    control.markAllAsTouched();
-  })
+  get passwordValid() {
+    return this.loginForm.get('contrasena').invalid && this.loginForm.get('contrasena').touched;
+  }
 
-}
 
-  
-}
-
+  login() {
+    const user = {rut: this.loginForm.get('rut').value, password: this.loginForm.get('contrasena').value};
+    this.ValidatingloginService.login(user).subscribe(data => {
+      console.log(data);
+      if (data.valid === true) {
+        this.router.navigate(['stock']);
+      } else {
+        this.router.navigate(['login']);
+        this.loginForm.reset();
+        this.loginForm.markAllAsTouched();
+      }
+    });
+  }
 }
