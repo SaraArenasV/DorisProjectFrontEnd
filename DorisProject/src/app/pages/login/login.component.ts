@@ -1,5 +1,5 @@
 /* tslint:disable:no-shadowed-variable */
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {ValidatingloginService} from '../../validatinglogin.service';
@@ -8,10 +8,12 @@ import {ValidatingloginService} from '../../validatinglogin.service';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
+
 })
 export class LoginComponent {
   loginForm: FormGroup;
   subscription: any;
+  name: [] ;
 //  isAuthenticate: boolean;
 
   constructor(private formBuilder: FormBuilder,
@@ -22,6 +24,7 @@ export class LoginComponent {
       rut: ['', [Validators.required, Validators.minLength(9)]],
       contrasena: ['', [Validators.required, Validators.minLength(4)]]
     });
+
   }
 
 
@@ -39,11 +42,15 @@ export class LoginComponent {
     this.ValidatingloginService.login(user).subscribe(data => {
       console.log(data);
       if (data.valid === true) {
+                
         this.ValidatingloginService.isAuthenticate=true;
-        console.log(this.ValidatingloginService.isAuthenticate)
         this.router.navigate(['stock']);
+        console.log(data.username);
+                this.name=data.username;
+                
+        console.log(this.name);
         return this.ValidatingloginService.isAuthenticate;
-
+        
       } else {
         this.ValidatingloginService.isAuthenticate = false;
         this.router.navigate(['login']);

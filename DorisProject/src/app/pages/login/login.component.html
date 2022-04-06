@@ -1,52 +1,58 @@
-<div class="d-flex flex-row-reverse">
-    <div class="p-2">
-        <img src="/assets/img/logo.jpg" alt="logo empresa" height="120px" width="120px">
-    </div>
-</div>
-
-<div class="container ">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <div class="card my-5">
-
-                <form autocomplete="off" [formGroup]="loginForm" id="loginForm" (ngSubmit)="login()" class="card-body p-lg-5 bordesolido">
-
-                    <div class="col-auto p-5 text-center">
-
-                        <h4>LOGIN</h4>
-                        <hr>
-                        <div class="form-group row">
-                            <label class="col col-form-label">Enter your RUT</label>
-                            <div class="col-8">
-
-                                <input class="form-control" type="text" placeholder="Example: 12345678-9" formControlName="rut" [class.is-invalid]="rutValid" id="rut">
-                                <small *ngIf="rutValid" class="text-danger">You must enter a valid rut.</small>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mt-3">
-                            <label class="col col-form-label">Enter the password</label>
-                            <div class="col-8">
-
-                                <input class="form-control" type="text" placeholder="Enter password with at least 4 digits" formControlName="contrasena" [class.is-invalid]="passwordValid" id="contrasena">
-                                <small *ngIf="passwordValid" class="text-danger">You must enter a valid password.</small>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="d-flex flex-row-reverse">
-                        <label class="col-2 col-form-label">&nbsp;</label>
-                        <div class="p-2">
-                            <button [disabled]="!loginForm.valid" type="submit" class="btn btn-outline-primary btn-block">
-                                 Login
-                            </button>
-                        </div>
-                    </div>
-
-                </form>
-            </div>
-
+<header>
+    <div class="d-flex flex-row-reverse">
+        <div class="p-2">
+            <img src="/assets/img/logo.jpg" alt="logo empresa" height="120px" width="120px">
         </div>
     </div>
-</div>
+</header>
+
+
+<body>
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card my-3">
+
+                    <form autocomplete="off" [formGroup]="loginForm" id="loginForm" (ngSubmit)="login()" class="card-body p-lg-3 bordesolido">
+                        <div class="text-center mt-1">
+                            <h4><b>LOGIN</b></h4>
+                            <hr>
+                        </div>
+                        <div class="col-auto p-3 text-left">
+
+                            <div class="form-group row">
+                                <label class="col col-form-label align-left">Enter your RUT</label>
+                                <div class="col-8">
+
+                                    <input class="form-control" type="text" placeholder="Example: 12.345.678-9" formControlName="rut" [class.is-invalid]="rutValid" id="rut">
+                                    <small *ngIf="rutValid" class="text-danger">You must enter a valid rut.</small>
+                                </div>
+                            </div>
+
+                            <div class="form-group row mt-3">
+                                <label class="col col-form-label">Enter the password</label>
+                                <div class="col-8">
+
+                                    <input class="form-control" type="text" placeholder="Enter your 4 digit password" formControlName="contrasena" [class.is-invalid]="passwordValid" id="contrasena">
+                                    <small *ngIf="passwordValid" class="text-danger">You must enter a valid password.</small>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row-reverse mt-3">
+
+                                <div>
+                                    <button class="mb-3" [disabled]="!loginForm.valid" type="submit" class="btn btn-outline-primary btn-block">
+                                         Login
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
