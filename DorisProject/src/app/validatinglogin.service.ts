@@ -6,7 +6,9 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class ValidatingloginService {
+  isAuthenticate: boolean;
   constructor(private http: HttpClient) {
+
   }
 
 
