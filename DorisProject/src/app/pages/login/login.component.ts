@@ -12,6 +12,7 @@ import {ValidatingloginService} from '../../validatinglogin.service';
 export class LoginComponent {
   loginForm: FormGroup;
   subscription: any;
+//  isAuthenticate: boolean;
 
   constructor(private formBuilder: FormBuilder,
               private  router: Router,
@@ -38,12 +39,19 @@ export class LoginComponent {
     this.ValidatingloginService.login(user).subscribe(data => {
       console.log(data);
       if (data.valid === true) {
+        this.ValidatingloginService.isAuthenticate=true;
+        console.log(this.ValidatingloginService.isAuthenticate)
         this.router.navigate(['stock']);
+        return this.ValidatingloginService.isAuthenticate;
+
       } else {
+        this.ValidatingloginService.isAuthenticate = false;
         this.router.navigate(['login']);
         this.loginForm.reset();
         this.loginForm.markAllAsTouched();
+        return this.ValidatingloginService.isAuthenticate;
       }
     });
   }
 }
+  
