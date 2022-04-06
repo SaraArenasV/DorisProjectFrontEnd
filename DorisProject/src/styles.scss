@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
+body {
+    min-height: 50vh;
+}
+
 .cardbody-color {
     background-color: #ebf2fa;
 }
@@ -64,4 +68,14 @@
 
 .tamañoletra {
     font-size: 25px;
+}
+
+.end {
+    margin-right: 10px;
+}
+
+.mydiv {
+    position: absolute;
+    top: 20%;
+    bottom: 20%
 }
