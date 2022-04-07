@@ -13,7 +13,8 @@ import {ValidatingloginService} from '../../validatinglogin.service';
 export class LoginComponent {
   loginForm: FormGroup;
   subscription: any;
-  name: [] ;
+  name: string ;
+  
 //  isAuthenticate: boolean;
 
   constructor(private formBuilder: FormBuilder,
@@ -46,10 +47,12 @@ export class LoginComponent {
         this.ValidatingloginService.isAuthenticate=true;
         this.router.navigate(['stock']);
         console.log(data.username);
-                this.name=data.username;
+              this.name=data.username;
+               window.localStorage.setItem("username", this.name);  
                 
+                                
         console.log(this.name);
-        return this.ValidatingloginService.isAuthenticate;
+        return this.ValidatingloginService.isAuthenticate, this.name;
         
       } else {
         this.ValidatingloginService.isAuthenticate = false;
