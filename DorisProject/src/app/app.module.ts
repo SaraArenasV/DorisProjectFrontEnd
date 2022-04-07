@@ -11,6 +11,7 @@ import { CategoriasComponent } from './pages/categorias/categorias.component';
 import { StockComponent } from './pages/stock/stock.component';
 import { HeaderComponent } from './pages/header/header.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { AddCategoryComponent } from './pages/add-category/add-category.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     EliminarComponent,
     CategoriasComponent,
     StockComponent,
-    HeaderComponent
+    HeaderComponent,
+    AddCategoryComponent
   ],
   imports: [
     BrowserModule,

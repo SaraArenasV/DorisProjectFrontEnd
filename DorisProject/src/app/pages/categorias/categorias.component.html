@@ -33,7 +33,7 @@
             <span class="input-group-text" id="basic-addon2">
                     <button type="submit"><img src="/assets/img/loupe.png" width="25px" height="25px" alt="x" /></button>
                 </span>
-            <button type="button" class="btn btn-outline-primary btn-block mx-5 bordesboctones"> Add Category</button>
+            <button type="button" class="btn btn-outline-primary btn-block mx-5 bordesboctones" (click)="addCategory()"> Add Category</button>
 
         </div>
 
@@ -46,21 +46,19 @@
 
                 <table class="table my-5 align-center">
                     <thead class="table-primary">
-                        <tr>
-                            <th class="centrotexto"> N° </th>
+                        <tr>                           
                             <th class="centrotexto"> ID </th>
                             <th class="centrotexto"> Name </th>
+                            <th class="centrotexto"> Description </th>
                             <th class="centrotexto">Edit</th>
                             <th class="centrotexto">Delete</th>
                         </tr>
                     </thead>
-                    <tbody formArrayName="categorias">
-                        <tr *ngFor=" let control of category.controls, let i = index">
-                            <td class="centrotexto">{{i+1}}</td>
-                            <td class="centrotexto">id</td>
-                            <td class="centrotexto">
-                                <input class="form-control" type="text" [formArrayName]="i">
-                            </td>
+                    <tbody >
+                        <tr *ngFor=" let category of categorias">
+                            <td class="centrotexto">{{category.id}}</td>
+                            <td class="centrotexto">{{category.name}}</td>
+                            <td class="centrotexto">{{category.description}}</td>
                             <td class="centrotexto">
                                 <button class="btn btn-success"> Edit </button>
                             </td>
