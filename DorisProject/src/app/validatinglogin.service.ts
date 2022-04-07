@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import { environment } from '../environments/environment';
 
@@ -7,7 +7,9 @@ import { environment } from '../environments/environment';
   providedIn: 'root'
 })
 export class ValidatingloginService {
+  isAuthenticate: boolean;
   constructor(private http: HttpClient) {
+
   }
 
 
@@ -15,6 +17,5 @@ export class ValidatingloginService {
     const url = `${environment.apiDoris}${environment.login}`;
     return this.http.post(url, user);
   }
-
 
 }
