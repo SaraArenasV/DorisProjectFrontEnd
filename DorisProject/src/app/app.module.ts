@@ -12,6 +12,7 @@ import { HeaderComponent } from './pages/header/header.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { AddCategoryComponent } from './pages/add-category/add-category.component';
 import { ValidatingloginService } from './validatinglogin.service';
+import {CategoriasService} from './service/categorias.service';
 
 
 @NgModule({

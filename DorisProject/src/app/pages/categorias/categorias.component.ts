@@ -27,7 +27,6 @@ export class CategoriasComponent implements OnInit {
 
   getCategorias() {
     this.categoryService.getCategory().subscribe((data) => {
-      console.log("en componente")
       this.categorias = data;
       console.log(this.categorias)
     }, err => { console.log("error ", err) }
