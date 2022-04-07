@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { ProductService } from 'src/app/service/product.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -11,7 +12,7 @@ export class StockComponent implements OnInit {
 
   products: any[] = [];
   productsMaster: any[] = [];
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService,   private  router: Router) { }
 
   ngOnInit(): void {
     this.productService.getSotck().subscribe(data =>{
@@ -59,8 +60,8 @@ export class StockComponent implements OnInit {
       
   }
 
-  searchQuery(columnValue, value): boolean {
-    return columnValue.toLowerCase().includes(value.toLowerCase());
+  addProduct() {
+    this.router.navigate(['add-stock']);
   }
 
 
