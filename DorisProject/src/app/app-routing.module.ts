@@ -16,8 +16,8 @@ const routes: Routes = [
   {path: 'eliminar', component: EliminarComponent, canActivate: [AuthGuard]},
   {path: 'stock', component: StockComponent, canActivate: [AuthGuard]},
   {path: 'add-stock', component: AddStockComponent, canActivate: [AuthGuard]},
-  {path: '**', pathMatch: 'full', redirectTo: 'login', canActivate: [AuthGuard]}
-
+  {path: '**', pathMatch: 'full', redirectTo: 'login', canActivate: [AuthGuard]},
+  { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];
 
 @NgModule({
