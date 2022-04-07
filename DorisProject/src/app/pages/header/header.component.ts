@@ -8,12 +8,14 @@ import { Component, OnInit } from '@angular/core';
 
 export class HeaderComponent implements OnInit {
 
-
+  name= window.localStorage.getItem("username");
   constructor( ) {
-
      }
 
   ngOnInit(): void {
+
+  console.log(window.localStorage.getItem("username"))
+
   }
 
   
