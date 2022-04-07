@@ -1,0 +1,77 @@
+<app-header></app-header>
+
+<div class="container">
+
+
+  <h3 mat-dialog-title>
+
+    <span>Add Stock</span>
+  </h3>
+  <form [formGroup]="formGroupProduct">
+
+    <p>
+      <mat-form-field appearance="standard">
+         description
+        <input matInput placeholder="description" id="description" formControlName="description" required
+               maxlength="50">
+        <mat-error *ngIf="formGroupProduct.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="standard">
+        brand
+        <input matInput placeholder="brand" id="brand" formControlName="brand" required>
+        <mat-error *ngIf="formGroupProduct.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="stock">
+        stock
+        <input matInput type="number" placeholder="stock" id="stock" formControlName="stock" required>
+        <mat-error *ngIf="formGroupProduct.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field>
+        active
+        <mat-select formControlName="active">
+          <mat-option >Y</mat-option>
+          <mat-option >N</mat-option>
+        </mat-select>
+        <mat-error *ngIf="formGroupProduct.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="sku">
+        sku
+        <input matInput placeholder="sku" id="sku" formControlName="sku" required>
+        <mat-error *ngIf="formGroupProduct.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field>
+        Category
+        <mat-select formControlName="idcategory">
+          <mat-option *ngFor="let category of category" [value]="category.id">
+            {{category.name}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="formGroupProduct.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+
+    </p>
+
+
+    <div mat-dialog-actions>
+      <button mat-button color="primary" type="submit" (click)="save()" [disabled]="formGroupProduct.invalid">
+
+        <span>Add Product</span>
+      </button>
+
+    </div>
+
+  </form>
+</div>
+
+

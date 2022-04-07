@@ -4,10 +4,12 @@
 
 export const environment = {
   production: false,
-  apiDoris:'https://dorisprojectbackend-dev.herokuapp.com',
-  getStock:'/api/getproductlist',
-  login:'/api/v1/userValidation'
-
+  apiDoris: 'https://dorisprojectbackend-dev.herokuapp.com',
+  getStock: '/api/getproductlist',
+  login: '/api/v1/userValidation',
+  saveProduct: '/api/saveProduct',
+  getProductSku: '/api/getProduct/',
+  getCategoryList: '/api/getCategoryList/',
 };
 
 /*

@@ -11,7 +11,10 @@ import { CategoriasComponent } from './pages/categorias/categorias.component';
 import { StockComponent } from './pages/stock/stock.component';
 import { HeaderComponent } from './pages/header/header.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {AddStockComponent, AddStockDialogComponent } from './pages/stock/add-stock/add-stock.component';
 
+import { MaterialModule } from './material-module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,14 +23,18 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     EliminarComponent,
     CategoriasComponent,
     StockComponent,
-    HeaderComponent
+    HeaderComponent,
+    AddStockComponent,
+    AddStockDialogComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MaterialModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

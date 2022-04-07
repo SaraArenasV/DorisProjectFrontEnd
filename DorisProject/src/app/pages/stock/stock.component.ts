@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -9,10 +10,14 @@ import {Component, OnInit} from '@angular/core';
 export class StockComponent implements OnInit {
 
   products: any[] = [];
-  constructor() { }
+  constructor( private  router: Router) { }
 
   ngOnInit(): void {
     this.products= [{ID:"1",Sku:"555555",Description:"Salt",Brand:"Mae",Category:"Home",Stock:"10",UpdateDate:"1/01/2022"}];
   }
 
+
+  add(){
+    this.router.navigate(['add-stock']);
+  }
 }
