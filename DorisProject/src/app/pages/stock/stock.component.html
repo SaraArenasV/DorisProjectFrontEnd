@@ -1,9 +1,9 @@
 <app-header></app-header>
 <table>
     <tr>
-        <td><input type="text" placeholder="Search by Name, Sku, Category or ID" size="40"></td>
-        <td><input type="button" value="Search" style="width: 100px;"></td>
-        <td><input type="button" value="Add Product" style="width: 200px;"></td>
+        <td><input type="text" placeholder="Search by Description, Sku, Category or ID" size="40" (keyup)="search($event)"></td>
+        <td><img src="../../../assets/img/search.png" style="width: 20px;height:20px"></td>
+        <td><input type="button" value="Add Product" style="width: 200px;background-color: rgb(2, 139, 255);color:aliceblue;"></td>
     </tr>
 </table>
 <div class="row mt-2" style=" overflow-x: scroll;">
@@ -42,19 +42,19 @@
             </thead>
             <tbody>
                 <tr *ngFor="let product of products; let i = index" >
-                    <td>{{ product.ID }}</td>    
-                    <td>{{ product.Sku }}</td>    
-                    <td>{{ product.Description }}</td>    
-                    <td>{{ product.Brand }}</td>    
-                    <td>{{ product.Category }}</td>    
-                    <td>{{ product.Stock }}</td> 
-                    <td>{{ product.UpdateDate }}</td>    
+                    <td style="text-align: center;">{{ product.ID }}</td>    
+                    <td style="text-align: center;">{{ product.Sku }}</td>    
+                    <td style="text-align: center;">{{ product.Description }}</td>    
+                    <td style="text-align: center;">{{ product.Brand }}</td>    
+                    <td style="text-align: center;">{{ product.Category }}</td>    
+                    <td style="text-align: center;">{{ product.Stock }}</td> 
+                    <td style="text-align: center;">{{ product.UpdateDate }}</td>    
                     
                     <td style="text-align: center;">
-                       <input type="button" value="Edit"  >
+                       <input type="button" value="Edit" style="background-color: rgb(2, 139, 255);color:aliceblue;" >
                     </td>
                     <td style="text-align: center;">
-                        <input type="button" value="Delete" style="text-align: center;">
+                        <input type="button" value="Delete" style="text-align: center;background-color: rgb(2, 139, 255);color:aliceblue;">
                      </td>
                                 
                 </tr>
