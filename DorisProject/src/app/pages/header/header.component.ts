@@ -5,11 +5,21 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
+
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  name= window.localStorage.getItem("username");
+  constructor( ) {
+     }
 
   ngOnInit(): void {
+
+  console.log(window.localStorage.getItem("username"))
+
   }
 
+  
+  
 }
+
+

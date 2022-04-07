@@ -11,6 +11,7 @@ export const environment = {
   getProductSku: '/api/getProduct/',
   getCategoryList: '/api/getCategoryList/',
   saveCategory: '/api/category'
+
 };
 
 /*

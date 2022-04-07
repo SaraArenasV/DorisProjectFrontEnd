@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +11,7 @@ import { StockComponent } from './pages/stock/stock.component';
 import { HeaderComponent } from './pages/header/header.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { AddCategoryComponent } from './pages/add-category/add-category.component';
+import { ValidatingloginService } from './validatinglogin.service';
 
 
 @NgModule({
@@ -31,7 +31,9 @@ import { AddCategoryComponent } from './pages/add-category/add-category.componen
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    ValidatingloginService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
