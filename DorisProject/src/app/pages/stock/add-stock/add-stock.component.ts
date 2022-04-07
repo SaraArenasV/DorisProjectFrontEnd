@@ -71,7 +71,7 @@ export class AddStockComponent implements OnInit {
     this.addstockservice.save(data).subscribe(response => {
         console.log('request al servicio save', data);
         if (data != null) {
-          this.router.navigate(['stock']);
+          // this.router.navigate(['stock']);
           this.openModal();
         }
         console.log('response ', response);
