@@ -1,5 +1,5 @@
 /* tslint:disable:no-shadowed-variable */
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {ValidatingloginService} from '../../validatinglogin.service';
@@ -8,10 +8,14 @@ import {ValidatingloginService} from '../../validatinglogin.service';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
+
 })
 export class LoginComponent {
   loginForm: FormGroup;
   subscription: any;
+  name: string ;
+  
+//  isAuthenticate: boolean;
 
   constructor(private formBuilder: FormBuilder,
               private  router: Router,
@@ -21,6 +25,7 @@ export class LoginComponent {
       rut: ['', [Validators.required, Validators.minLength(9)]],
       contrasena: ['', [Validators.required, Validators.minLength(4)]]
     });
+
   }
 
 
@@ -38,12 +43,25 @@ export class LoginComponent {
     this.ValidatingloginService.login(user).subscribe(data => {
       console.log(data);
       if (data.valid === true) {
+                
+        this.ValidatingloginService.isAuthenticate=true;
         this.router.navigate(['stock']);
+        console.log(data.username);
+              this.name=data.username;
+               window.localStorage.setItem("username", this.name);  
+                
+                                
+        console.log(this.name);
+        return this.ValidatingloginService.isAuthenticate, this.name;
+        
       } else {
+        this.ValidatingloginService.isAuthenticate = false;
         this.router.navigate(['login']);
         this.loginForm.reset();
         this.loginForm.markAllAsTouched();
+        return this.ValidatingloginService.isAuthenticate;
       }
     });
   }
 }
+  
