@@ -1,0 +1,51 @@
+nav {
+    background-color: #FFFFFF;
+    padding: 0.9em 3em;
+}
+
+.navbar-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    outline: none;
+    text-decoration: none;
+    text-align: right;
+}
+
+.navbar-account-info {
+    cursor: pointer;
+}
+
+.navbar-account-info span {
+    color: #333333;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    background-color: #0072CE;
+}
+
+.avatar-circle {
+    background-color: #FCEAD6;
+    border-radius: 50%;
+    flex-direction: column;
+    height: 38px;
+    text-align: center;
+    width: 38px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+}
+
+.initials {
+    color: #835A2C;
+    font-weight: bold;
+    position: relative;
+    top: 9px;
+}
+
+.bordesheader {
+    margin-right: 55px;
+    text-align: center;
+    border: 2px solid gray;
+    border-radius: 12px;
+    padding: 5px;
+}
