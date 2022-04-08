@@ -9,15 +9,14 @@ import {AuthGuard} from './service/auth.guard';
 
 
 const routes: Routes = [
-
-
   {path: '', component: LoginComponent},
   {path: 'categorias', component: CategoriasComponent, canActivate: [AuthGuard]},
   {path: 'eliminar', component: EliminarComponent, canActivate: [AuthGuard]},
   {path: 'stock', component: StockComponent, canActivate: [AuthGuard]},
-  {path: 'add-stock', component: AddStockComponent },
+  {path: 'add-stock', component: AddStockComponent, canActivate: [AuthGuard]},
   {path: '**', pathMatch: 'full', redirectTo: 'login', canActivate: [AuthGuard]},
-  { path: '**', redirectTo: '/', pathMatch: 'full' }
+  {path: '**', redirectTo: '/', pathMatch: 'full'}
+
 ];
 
 @NgModule({

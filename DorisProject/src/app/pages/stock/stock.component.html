@@ -42,19 +42,19 @@
             </thead>
             <tbody>
                 <tr *ngFor="let product of products; let i = index" >
-                    <td>{{ product.ID }}</td>
-                    <td>{{ product.Sku }}</td>
-                    <td>{{ product.Description }}</td>
-                    <td>{{ product.Brand }}</td>
-                    <td>{{ product.Category }}</td>
-                    <td>{{ product.Stock }}</td>
-                    <td>{{ product.UpdateDate }}</td>
+                    <td style="text-align: center;">{{ product.ID }}</td>
+                    <td style="text-align: center;">{{ product.Sku }}</td>
+                    <td style="text-align: center;">{{ product.Description }}</td>
+                    <td style="text-align: center;">{{ product.Brand }}</td>
+                    <td style="text-align: center;">{{ product.Category }}</td>
+                    <td style="text-align: center;">{{ product.Stock }}</td>
+                    <td style="text-align: center;">{{ product.UpdateDate }}</td>
 
                     <td style="text-align: center;">
-                       <input type="button" value="Edit"  >
+                       <input type="button" value="Edit" style="background-color: rgb(2, 139, 255);color:aliceblue;" >
                     </td>
                     <td style="text-align: center;">
-                        <input type="button" value="Delete" style="text-align: center;">
+                        <input type="button" value="Delete" style="text-align: center;background-color: rgb(2, 139, 255);color:aliceblue;">
                      </td>
 
                 </tr>
