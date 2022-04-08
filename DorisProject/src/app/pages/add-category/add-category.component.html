@@ -1,58 +1,62 @@
 <app-header></app-header>
+<div class="col-4 align-self-start">
+    <button type="button" class="btn btn-outline-primary btn-block mx-5 "
+        style="background-color: rgb(2, 139, 255);color:aliceblue;" (click)="backToList()">
+        Back to list
+    </button>
+</div>
 
 <body>
 
     <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 mt-5">
+           
+                    <form [formGroup]="addCategoryForm" (ngSubmit)="save()">
 
-        <div class="input-group mb-5">
-
-            <button type="button" class="btn btn-outline-primary btn-block mx-5 " (click)="backToList()">
-                Back to list</button>
-
-        </div>
-
-        <div>
-            <form [formGroup]="addCategoryForm" (ngSubmit)="save()">
-
-                <div class="row no-gutters">
-                    <div class="col-5 col-sm-2">
-                        Name:
-                    </div>
-                    <div class="col-1 col-sm-4">
-                        <input class="form-control" type="text" id="name" formControlName="name"
-                            [class.is-invalid]="nameRequerid" placeholder="Enter the name"
-                            (keypress)="onChange($event)">
-                        <small *ngIf="nameRequerid" class="text-danger">You must enter name.</small>
-                    </div>
-                </div>
-                <div class="row no-gutters mt-3">
-                    <div class="col-5 col-sm-2">
-                        Description:
-                    </div>
-                    <div class="col-6 col-sm-4">
-                        <input class="form-control" type="text" id="description"
-                            [class.is-invalid]="descriptionRequerid" formControlName="description"
-                            placeholder="Enter the description" (keypress)="onChange($event)">
-                        <small *ngIf="descriptionRequerid" class="text-danger">You must enter description.</small>
-                    </div>
-
-                    <div></div>
-
-                    <div class="col-6 justify-content-end d-flex mt-3">
-                        <div>
-                            <button class="mb-3" [disabled]="!addCategoryForm.valid" type="submit"
-                                class="btn btn-outline-primary btn-block">
-                                Add Category
-                            </button>
+                        <div class="row no-gutters">
+                            <div class="col-5 col-sm-2">
+                                Name:
+                            </div>
+                            <div class="col-1 col-sm-4">
+                                <input class="form-control" type="text" id="name" formControlName="name"
+                                    [class.is-invalid]="nameRequerid" placeholder="Enter the name"
+                                    (keyup)="onChange($event)">
+                                <small *ngIf="nameRequerid" class="text-danger">You must enter name.</small>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <small *ngIf="mostrarMensaje" class="text 25px">{{mensaje}}</small>
+                        <div class="row no-gutters mt-3">
+                            <div class="col-5 col-sm-2">
+                                Description:
+                            </div>
+                            <div class="col-6 col-sm-6">
+                                <textarea name="textarea" rows="6" cols="53" id="description"
+                                    [class.is-invalid]="descriptionRequerid" formControlName="description"
+                                    placeholder="Enter the description" (keyup)="onChange($event)"></textarea>
+                                <small *ngIf="descriptionRequerid" class="text-danger">You must enter
+                                    description.</small>
+                            </div>
 
-                <small *ngIf="mostrarMensajeError" class="text-danger">{{mensaje}}</small>
-            </form>
+                            <div></div>
+
+                            <div class="col-10 justify-content-end d-flex mt-5">
+                                <div>
+                                    <button class="mb-3" [disabled]="!addCategoryForm.valid"
+                                        style="width: 200px;background-color: rgb(2, 139, 255);color:aliceblue;"
+                                        type="submit" class="btn btn-outline-primary btn-block">
+                                        Add Category
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <small *ngIf="mostrarMensaje" style="font-size: 21px;">{{mensaje}}</small>
+
+                        <small *ngIf="mostrarMensajeError" class="text-danger"
+                            style="font-size: 21px;">{{mensaje}}</small>
+                    </form>
+              
+            </div>
         </div>
-
     </div>
 
 

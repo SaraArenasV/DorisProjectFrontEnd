@@ -12,7 +12,8 @@ import {Router} from '@angular/router';
 export class CategoriasComponent implements OnInit {
 
   forma: FormGroup;
-  categorias: string[];
+  categorias: any[]= [];
+  categoriasMaster : any []=[];
 
   constructor(private fb: FormBuilder, private categoryService: CategoriasService, private  router: Router) {
 
@@ -27,6 +28,7 @@ export class CategoriasComponent implements OnInit {
   getCategorias() {
     this.categoryService.getCategory().subscribe((data) => {
       this.categorias = data;
+      this.categoriasMaster=data;
     }, err => { console.log("error ", err) }
     );
   }
@@ -47,6 +49,31 @@ addCategory(){
 
   get IDcategoryValid() {
     return this.forma.get('idcategory').invalid && this.forma.get('idcategory').touched
+  }
+
+  search(event: any) {
+    const SearchList =[];
+    if (event.target.value == "")
+        this.categorias= this.categoriasMaster;
+      else
+      {
+          this.categoriasMaster.forEach(category =>{
+            console.log(category)
+          if(category.description.toLowerCase().includes(event.target.value.toLowerCase()) )
+            {
+              SearchList.push(category);
+              return;
+            }
+            if(category.name.toLowerCase().includes(event.target.value.toLowerCase()) )
+            {
+              SearchList.push(category);
+              return;
+            }
+          });
+          this.categorias=SearchList;
+      }
+     
+      
   }
 
 

@@ -1,37 +1,28 @@
 <app-header></app-header>
-
+<table  style="width: 100%;">
+    <tr >
+        <td style="width: 80%;text-align:right;"><input type="text" placeholder="Search by Name or Description" size="40" (keyup)="search($event)"></td>
+        <td style="width: 10px;text-align:right"><img src="../../../assets/img/search.png" style="width: 20px;height:20px"></td>
+        <td style="width: 10px;text-align:right"><input type="button" class="btn btn-outline-primary btn-block" value="Add Category" style="width: 200px;background-color: rgb(2, 139, 255);color:aliceblue;"  (click)="addCategory()"></td>
+    </tr>
+</table>
 
 <body class="bordesbody">
 
-
-
-    <div class="container">
-
-        <div class="input-group mb-3">
-
-            <input type="text" class="form-control" placeholder="Search by name">
-            <span class="input-group-text" id="basic-addon2">
-                    <button type="submit"><img src="/assets/img/loupe.png" width="25px" height="25px" alt="x" /></button>
-                </span>
-            <button type="button" class="btn btn-outline-primary btn-block" (click)="addCategory()"> Add Category</button>
-
-        </div>
-
-    </div>
 
     <form autocomplete="off" [formGroup]="forma">
 
         <div class="row">
             <div class="col">
 
-                <table class="table my-5 align-center">
+                <table class="table table-bordered my-5 align-center">
                     <thead >
                         <tr>                           
-                            <th class="centrotexto"> ID </th>
-                            <th class="centrotexto"> Name </th>
-                            <th class="centrotexto"> Description </th>
-                            <th class="centrotexto">Edit</th>
-                            <th class="centrotexto">Delete</th>
+                            <th  width="20px" > ID </th>
+                            <th width="130px;"> Name </th>
+                            <th  width="450px;" > Description </th>
+                            <th width="80px;" >Edit</th>
+                            <th width="80px;" >Delete</th>
                         </tr>
                     </thead>
                     <tbody >
@@ -40,10 +31,10 @@
                             <td class="centrotexto">{{category.name}}</td>
                             <td class="centrotexto">{{category.description}}</td>
                             <td class="centrotexto">
-                                <button class="btn btn-outline-primary btn-block"> Edit </button>
+                                <button class="btn btn-outline-primary btn-block" style="background-color: rgb(2, 139, 255);color:aliceblue;" > Edit </button>
                             </td>
                             <td class="centrotexto">
-                                <button class="btn btn-outline-primary btn-block"> Delete </button>
+                                <button class="btn btn-outline-primary btn-block" style="background-color: rgb(2, 139, 255);color:aliceblue;" > Delete </button>
                             </td>
                         </tr>
                     </tbody>
