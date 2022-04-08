@@ -2,11 +2,11 @@
 
 <div class="container">
   <h3 mat-dialog-title>
-    <span>Add Stock</span>
+    <span>Add Product</span>
   </h3>
   <form [formGroup]="formGroupProduct">
     <p>
-      description
+
       <mat-form-field appearance="standard">
        <mat-label>description</mat-label>
         <input matInput placeholder="description" id="description" formControlName="description" required
@@ -15,7 +15,7 @@
       </mat-form-field>
     </p>
     <p>
-      brand
+
       <mat-form-field appearance="standard">
         <mat-label>brand</mat-label>
         <input matInput placeholder="brand" id="brand" formControlName="brand" required>
@@ -23,15 +23,15 @@
       </mat-form-field>
     </p>
     <p>
-      stock
+
       <mat-form-field appearance="stock">
         <mat-label>stock</mat-label>
-        <input matInput type="number" placeholder="stock" id="stock" formControlName="stock" required>
+        <input matInput type="number"  min="1" step="1" placeholder="stock" id="stock" formControlName="stock" required>
         <mat-error *ngIf="formGroupProduct.invalid">{{getErrorMessage()}}</mat-error>
       </mat-form-field>
     </p>
     <p>
-      active
+
       <mat-form-field>
         <mat-label>active</mat-label>
         <mat-select formControlName="active">
@@ -42,7 +42,7 @@
       </mat-form-field>
     </p>
     <p>
-      sku
+
       <mat-form-field appearance="sku">
         <mat-label>sku</mat-label>
         <input matInput placeholder="sku" id="sku" formControlName="sku" required>
@@ -50,7 +50,7 @@
       </mat-form-field>
     </p>
     <p>
-      category
+
       <mat-form-field>
         <mat-label>category</mat-label>
         <mat-select formControlName="idcategory">

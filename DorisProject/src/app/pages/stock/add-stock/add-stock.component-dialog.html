@@ -1,7 +1,23 @@
-<div mat-dialog-content>
+<div *ngIf="data.textrequest=='succes'" mat-dialog-content>
   <p>product added successfully :D</p>
   <button mat-button color="primary" type="submit" (click)="exit()">
     <span>Accept</span>
   </button>
 </div>
 
+<div *ngIf="data.textrequest=='error sku'" mat-dialog-content>
+  <p>product added error sku exit :C</p>
+  <button mat-button color="primary" (click)="tryAgain()" type="submit" >
+    <span>try again</span>
+  </button>
+  <button (click)="exit()" mat-button color="primary" type="submit" >
+    <span>exit</span>
+  </button>
+</div>
+
+<div *ngIf="data.textrequest=='error'" mat-dialog-content>
+  <p>product added error  service down :C</p>
+  <button (click)="exit()" mat-button color="primary" type="submit" >
+    <span>Accept</span>
+  </button>
+</div>

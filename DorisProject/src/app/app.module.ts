@@ -15,6 +15,7 @@ import {AddStockComponent, AddStockDialogComponent } from './pages/stock/add-sto
 
 import { MaterialModule } from './material-module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NumberOnlyDirective } from './pages/directives/number-only.directive';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     AddStockComponent,
     AddStockDialogComponent,
+    NumberOnlyDirective,
   ],
   imports: [
     BrowserModule,

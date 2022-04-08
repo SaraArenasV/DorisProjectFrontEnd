@@ -34,19 +34,20 @@ export class AddStockComponent implements OnInit {
       idcategory: ['', Validators.required],
       brand: ['', Validators.required],
       description: ['', Validators.required],
-      stock: ['', Validators.required],
+      stock: ['', [Validators.min(1), Validators.required]],
       active: ['', Validators.required],
-      sku: ['', Validators.required]
+      sku: ['',  Validators.required]
     });
 
 
     this.addstockservice.getCagetorys().subscribe((response) => {
         console.log('request al servicio getCategoryList ');
+
         if (response != null) {
           console.log('getCategoryList Response: ', response);
           this.category = response;
-          console.log('categorySet : ', this.category);
         }
+
       }, err => {
         console.log('error: ', err);
       }
@@ -58,8 +59,8 @@ export class AddStockComponent implements OnInit {
     return this.formGroupProduct.hasError('required') ? 'Campo requerido' : '';
   }
 
-  openModal() {
-    const dialogRef = this.dialog.open(AddStockDialogComponent, {});
+  openModal(request: string) {
+    const dialogRef = this.dialog.open(AddStockDialogComponent, {data: {textrequest: request}});
     dialogRef.afterClosed().subscribe(result => {
     });
   }
@@ -72,11 +73,17 @@ export class AddStockComponent implements OnInit {
         console.log('request al servicio save', data);
         if (data != null) {
           // this.router.navigate(['stock']);
-          this.openModal();
+          this.openModal('succes');
         }
         console.log('response ', response);
       }, err => {
         console.log('error: ', err);
+
+        if (err.valueOf().error.text === 'El sku ya existe') {
+          this.openModal('error sku');
+        } else {
+          this.openModal('error');
+        }
       }
     );
   }
@@ -100,6 +107,10 @@ export class AddStockDialogComponent implements OnInit {
 
   exit() {
     this.router.navigate(['stock']);
+    this.dialogRef.close(1);
+  }
+
+  tryAgain() {
     this.dialogRef.close(1);
   }
 }
