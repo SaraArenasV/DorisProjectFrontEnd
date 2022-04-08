@@ -22,6 +22,7 @@ export class StockComponent implements OnInit {
         let dataproduct = {
           ID: product.id,
           Sku: product.sku,
+          Name: product.name,
           Description: product.description,
           Brand: product.brand,
           Category: product.categoryName,
