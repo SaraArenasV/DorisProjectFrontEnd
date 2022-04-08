@@ -38,8 +38,7 @@ export class AddCategoryComponent implements OnInit {
       this.mostrar = true;
       this.addCategoryForm.reset();           
     }, err => { 
-      console.log("error ", err.error) ;
-      this.mensaje = "Error";
+      this.mensaje = err.error.text;
       this.mostrarError = true;
     }
     );

@@ -16,8 +16,7 @@ export class CategoriasComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private categoryService: CategoriasService, private  router: Router) {
 
-    this.crearFormulario();
-
+ 
   }
 
   ngOnInit(): void {
@@ -28,7 +27,6 @@ export class CategoriasComponent implements OnInit {
   getCategorias() {
     this.categoryService.getCategory().subscribe((data) => {
       this.categorias = data;
-      console.log(this.categorias)
     }, err => { console.log("error ", err) }
     );
   }
@@ -51,41 +49,5 @@ addCategory(){
     return this.forma.get('idcategory').invalid && this.forma.get('idcategory').touched
   }
 
-  crearFormulario() {
-    this.forma = this.fb.group({
-      category: ['', Validators.required],
-      idcategory: ['', [Validators.required, Validators.minLength(4)]],
-      categorias: this.fb.array([
-        [], [], [], [], []
-      ])
-
-    })
-
-  }
-
-
-
-  cargarDataAlFormulario() {
-    this.forma.setValue({
-      category: '',
-      idcategory: ''
-
-    })
-  }
-
-  guardar() {
-
-    if (this.forma.invalid) {
-      Object.values(this.forma.controls).forEach(control => {
-        control.markAllAsTouched();
-      })
-
-    }
-
-    this.forma.reset({
-      category: 'Prueba',
-      idcategory: 'Prueba'
-    });
-  }
 
 }

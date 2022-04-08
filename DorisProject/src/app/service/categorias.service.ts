@@ -18,7 +18,6 @@ export class CategoriasService {
   }
 
   save(category: any)  : Observable <any>{
-    console.log(category)
     const url = `${environment.apiDoris}${environment.saveCategory}` ;
     return this.http.post(url, category);
   }
