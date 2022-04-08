@@ -12,7 +12,8 @@ const routes: Routes = [
 {path:'categorias', component:CategoriasComponent, canActivate:[AuthGuard]},
 {path:'eliminar', component:EliminarComponent, canActivate:[AuthGuard]},
 {path:'stock', component:StockComponent, canActivate:[AuthGuard]},
-{path:'**', pathMatch:'full', redirectTo:'login', canActivate:[AuthGuard]}
+{path:'**', pathMatch:'full', redirectTo:'login', canActivate:[AuthGuard]},
+{ path: '**', redirectTo: '/', pathMatch: 'full' }
 
 ];
 
