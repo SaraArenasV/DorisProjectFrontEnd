@@ -6,7 +6,7 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
 export class NumberOnlyDirective {
 
   // Only want positive integers
-  private regex: RegExp = new RegExp(/^[+]?([1-9][0-9]*(?:[\.][0-9]*)?|0*\.0*[1-9][0-9]*)(?:[eE][+-][0-9]+)?$/);
+  private regex: RegExp = new RegExp(/^([0-9]*[1-9][0-9]*(\.[0-9]+)?|[0]+\.[0-9]*[1-9][0-9]*)$/);
   // Allow key codes for special events Backspace, tab, end, home
   private specialKeys = ['Backspace', 'Tab', 'End', 'Home'];
 

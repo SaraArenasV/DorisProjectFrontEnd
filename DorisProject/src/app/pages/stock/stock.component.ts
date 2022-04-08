@@ -26,13 +26,12 @@ export class StockComponent implements OnInit {
           Brand: product.brand,
           Category: product.categoryName,
           Stock: product.stock,
-          UpdateDate: product.outgress
+          UpdateDate: product.ingressdate
         };
         this.productsMaster.push(dataproduct);
       });
       this.products = this.productsMaster;
     });
-    //this.products= [{ID:"1",Sku:"555555",Description:"Salt",Brand:"Mae",Category:"Home",Stock:"10",UpdateDate:"1/01/2022"}];
   }
 
   search(event: any) {

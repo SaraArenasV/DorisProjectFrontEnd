@@ -1,5 +1,5 @@
 import {Component, Inject, Input, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Product} from '../../../interfaces';
 import {AddStockService} from '../../../service/add-stock.service';
 import {Router} from '@angular/router';
@@ -22,6 +22,7 @@ export class AddStockComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+
     private  router: Router,
     private addstockservice: AddStockService,
     private dialog: MatDialog,
@@ -30,13 +31,13 @@ export class AddStockComponent implements OnInit {
 
   ngOnInit(): void {
     this.formGroupProduct = this.formBuilder.group({
-      id: [0],
-      idcategory: ['', Validators.required],
+      name: ['', Validators.required],
+      idCategory: ['', Validators.required],
       brand: ['', Validators.required],
       description: ['', Validators.required],
       stock: ['', [Validators.min(1), Validators.required]],
       active: ['', Validators.required],
-      sku: ['',  Validators.required]
+      sku: ['', Validators.required]
     });
 
 
@@ -59,11 +60,39 @@ export class AddStockComponent implements OnInit {
     return this.formGroupProduct.hasError('required') ? 'Campo requerido' : '';
   }
 
+  backToList() {
+    this.router.navigate(['stock']);
+  }
+
   openModal(request: string) {
     const dialogRef = this.dialog.open(AddStockDialogComponent, {data: {textrequest: request}});
     dialogRef.afterClosed().subscribe(result => {
     });
   }
+
+
+  get errorMesageDescription() {
+        return this.formGroupProduct.get('description').invalid && this.formGroupProduct.get('description').touched;
+  }
+  get errorMesageBrand() {
+        return this.formGroupProduct.get('brand').invalid && this.formGroupProduct.get('brand').touched;
+  }
+  get errorMesageStock() {
+        return this.formGroupProduct.get('stock').invalid && this.formGroupProduct.get('stock').touched;
+  }
+  get errorMesageIdCategory() {
+        return this.formGroupProduct.get('idCategory').invalid && this.formGroupProduct.get('idCategory').touched;
+  }
+  get errorMesageActive() {
+        return this.formGroupProduct.get('active').invalid && this.formGroupProduct.get('active').touched;
+  }
+  get errorMesageSku() {
+        return this.formGroupProduct.get('sku').invalid && this.formGroupProduct.get('sku').touched;
+  }
+  get errorMesageName() {
+        return this.formGroupProduct.get('name').invalid && this.formGroupProduct.get('name').touched;
+  }
+
 
   save() {
     const data: Product = this.formGroupProduct.getRawValue();
@@ -72,7 +101,7 @@ export class AddStockComponent implements OnInit {
     this.addstockservice.save(data).subscribe(response => {
         console.log('request al servicio save', data);
         if (data != null) {
-          // this.router.navigate(['stock']);
+
           this.openModal('succes');
         }
         console.log('response ', response);

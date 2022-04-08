@@ -44,11 +44,11 @@
                 <tr *ngFor="let product of products; let i = index" >
                     <td style="text-align: center;">{{ product.ID }}</td>
                     <td style="text-align: center;">{{ product.Sku }}</td>
-                    <td style="text-align: center;">{{ product.Description }}</td>
+                    <td style="text-align: center;"> <textarea>{{ product.Description }} </textarea> </td>
                     <td style="text-align: center;">{{ product.Brand }}</td>
                     <td style="text-align: center;">{{ product.Category }}</td>
                     <td style="text-align: center;">{{ product.Stock }}</td>
-                    <td style="text-align: center;">{{ product.UpdateDate }}</td>
+                    <td style="text-align: center;">{{ product.ingressdate }}</td>
 
                     <td style="text-align: center;">
                        <input type="button" value="Edit" style="background-color: rgb(2, 139, 255);color:aliceblue;" >
