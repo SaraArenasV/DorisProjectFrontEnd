@@ -13,7 +13,11 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { AddCategoryComponent } from './pages/add-category/add-category.component';
 import { ValidatingloginService } from './validatinglogin.service';
 import {CategoriasService} from './service/categorias.service';
+import {AddStockComponent, AddStockDialogComponent } from './pages/stock/add-stock/add-stock.component';
 
+import { MaterialModule } from './material-module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NumberOnlyDirective } from './pages/directives/number-only.directive';
 
 @NgModule({
   declarations: [
@@ -23,14 +27,19 @@ import {CategoriasService} from './service/categorias.service';
     CategoriasComponent,
     StockComponent,
     HeaderComponent,
-    AddCategoryComponent
+    AddCategoryComponent,
+    AddStockComponent,
+    AddStockDialogComponent,
+    NumberOnlyDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MaterialModule,
+    BrowserAnimationsModule
   ],
   providers: [
     ValidatingloginService
