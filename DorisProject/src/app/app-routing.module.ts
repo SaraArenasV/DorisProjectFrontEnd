@@ -4,8 +4,9 @@ import {LoginComponent} from './pages/login/login.component';
 import {CategoriasComponent} from './pages/categorias/categorias.component';
 import {EliminarComponent} from './pages/eliminar/eliminar.component';
 import {StockComponent} from './pages/stock/stock.component';
-import {AddStockComponent} from './pages/stock/add-stock/add-stock.component';
+import {AddCategoryComponent} from './pages/add-category/add-category.component';
 import {AuthGuard} from './service/auth.guard';
+import {AddStockComponent} from './pages/stock/add-stock/add-stock.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'eliminar', component: EliminarComponent, canActivate: [AuthGuard]},
   {path: 'stock', component: StockComponent, canActivate: [AuthGuard]},
   {path: 'add-stock', component: AddStockComponent, canActivate: [AuthGuard]},
+  {path: 'addcategory', component: AddCategoryComponent, canActivate: [AuthGuard]},
   {path: '**', pathMatch: 'full', redirectTo: 'login', canActivate: [AuthGuard]},
   {path: '**', redirectTo: '/', pathMatch: 'full'}
 
