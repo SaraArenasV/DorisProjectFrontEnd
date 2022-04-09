@@ -66,7 +66,11 @@ export class StockComponent implements OnInit {
   }
 
   addProduct() {
-    this.router.navigate(['add-stock']);
+    this.router.navigate(['add-stock'],{state: {data: null}});
+  }
+
+  edit(data: any) {
+    this.router.navigate(['add-stock'], {state: {data: data}});
   }
 
 

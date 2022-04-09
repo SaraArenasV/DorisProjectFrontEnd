@@ -4,5 +4,6 @@ export class Product {
   description: string;
   idCategory: number;
   sku: string;
+  name: string;
   stock: number;
 }
