@@ -33,16 +33,18 @@
                                 <label class="col-sm-6 col-form-label">Enter the password</label>
                                 <div class="col-sm-6">
 
-                                    <input class="form-control" type="text" placeholder="Enter your 4 digit password" formControlName="contrasena" [class.is-invalid]="passwordValid" id="contrasena">
+                                    <input class="form-control" type="password" placeholder="Enter your 4 digit password" formControlName="contrasena" [class.is-invalid]="passwordValid" id="contrasena">
                                     <small *ngIf="passwordValid" class="text-danger">You must enter a valid password.</small>
                                 </div>
                             </div>
                             <div class="d-flex flex-row-reverse mt-3">
 
                                 <div>
-                                    <button class="mb-3" [disabled]="!loginForm.valid" type="submit" class="btn btn-outline-primary btn-block">
-                                         Login
-                                    </button>
+
+                                    <button mat-flat-button color="primary" [disabled]="!loginForm.valid" type="submit">
+                                        Login
+                                   </button>
+
                                 </div>
                             </div>
                         </div>

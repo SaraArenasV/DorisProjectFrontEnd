@@ -18,6 +18,8 @@ import {AddStockComponent, AddStockDialogComponent } from './pages/stock/add-sto
 import { MaterialModule } from './material-module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NumberOnlyDirective } from './pages/directives/number-only.directive';
+import {MatIconModule} from '@angular/material/icon';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +32,7 @@ import { NumberOnlyDirective } from './pages/directives/number-only.directive';
     AddCategoryComponent,
     AddStockComponent,
     AddStockDialogComponent,
-    NumberOnlyDirective,
+    NumberOnlyDirective
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ import { NumberOnlyDirective } from './pages/directives/number-only.directive';
     ReactiveFormsModule,
     HttpClientModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatIconModule
   ],
   providers: [
     ValidatingloginService
