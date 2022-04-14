@@ -15,6 +15,7 @@ export class StockComponent implements OnInit {
   products: any[] = [];
   productsMaster: any[] = [];
   responseModal: any;
+
   constructor(private productService: ProductService, private  router: Router,
               private dialog: MatDialog) {
   }
@@ -74,19 +75,18 @@ export class StockComponent implements OnInit {
 
 
   openModal(request: string) {
-    const dialogRef = this.dialog.open(ModalComponent, {data: {textrequest: request, textresponse:this.responseModal}});
+    const dialogRef = this.dialog.open(ModalComponent, {data: {textrequest: request, textresponse: this.responseModal}});
     dialogRef.afterClosed().subscribe(result => {
       this.responseModal = result;
       switch (this.responseModal) {
         case 'delete':
-          console.log("eliminado")
+          console.log('eliminado');
           break;
 
       }
 
     });
   }
-
 
 
 }
