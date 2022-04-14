@@ -1,10 +1,9 @@
-import {Component, Inject, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Product} from '../../../interfaces';
 import {AddStockService} from '../../../service/add-stock.service';
 import {Router} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {ModalComponent} from '../../modal/modal.component';
 
 @Component({
