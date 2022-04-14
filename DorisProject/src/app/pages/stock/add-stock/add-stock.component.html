@@ -22,7 +22,7 @@
   </div>
 
   <div>
-    <form [formGroup]="formGroupProduct" (ngSubmit)="save()">
+    <form [formGroup]="formGroupProduct">
 
 
       <div class="row no-gutters mt-3">
@@ -118,7 +118,7 @@
           <div>
             <button style="background-color: rgb(2, 139, 255);color:aliceblue;" class="mb-3"
                     [disabled]="!formGroupProduct.valid" type="submit"
-                    class="btn btn-outline-primary btn-block">
+                    class="btn btn-outline-primary btn-block" (click)="openModal('AddProduct')">
               Add Product
             </button>
           </div>

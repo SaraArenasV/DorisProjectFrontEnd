@@ -1,10 +1,11 @@
 import {Component, Inject, Input, OnInit} from '@angular/core';
-import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Product} from '../../../interfaces';
 import {AddStockService} from '../../../service/add-stock.service';
 import {Router} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import {ModalComponent} from '../../modal/modal.component';
 
 @Component({
   selector: 'app-add-stock',
@@ -18,14 +19,13 @@ export class AddStockComponent implements OnInit {
   @Input() formGroupProduct: FormGroup;
   category: any;
   product: any;
-
+  responseModal: any;
 
   constructor(
     private formBuilder: FormBuilder,
-
     private  router: Router,
     private addstockservice: AddStockService,
-    private dialog: MatDialog,
+    private dialog: MatDialog
   ) {
   }
 
@@ -65,32 +65,45 @@ export class AddStockComponent implements OnInit {
   }
 
   openModal(request: string) {
-    const dialogRef = this.dialog.open(AddStockDialogComponent, {data: {textrequest: request}});
+    const dialogRef = this.dialog.open(ModalComponent, {data: {textrequest: request, textresponse: this.responseModal}});
     dialogRef.afterClosed().subscribe(result => {
+      this.responseModal = result;
+      switch (this.responseModal) {
+        case 'save':
+          this.save();
+          break;
+
+      }
     });
   }
 
 
   get errorMesageDescription() {
-        return this.formGroupProduct.get('description').invalid && this.formGroupProduct.get('description').touched;
+    return this.formGroupProduct.get('description').invalid && this.formGroupProduct.get('description').touched;
   }
+
   get errorMesageBrand() {
-        return this.formGroupProduct.get('brand').invalid && this.formGroupProduct.get('brand').touched;
+    return this.formGroupProduct.get('brand').invalid && this.formGroupProduct.get('brand').touched;
   }
+
   get errorMesageStock() {
-        return this.formGroupProduct.get('stock').invalid && this.formGroupProduct.get('stock').touched;
+    return this.formGroupProduct.get('stock').invalid && this.formGroupProduct.get('stock').touched;
   }
+
   get errorMesageIdCategory() {
-        return this.formGroupProduct.get('idCategory').invalid && this.formGroupProduct.get('idCategory').touched;
+    return this.formGroupProduct.get('idCategory').invalid && this.formGroupProduct.get('idCategory').touched;
   }
+
   get errorMesageActive() {
-        return this.formGroupProduct.get('active').invalid && this.formGroupProduct.get('active').touched;
+    return this.formGroupProduct.get('active').invalid && this.formGroupProduct.get('active').touched;
   }
+
   get errorMesageSku() {
-        return this.formGroupProduct.get('sku').invalid && this.formGroupProduct.get('sku').touched;
+    return this.formGroupProduct.get('sku').invalid && this.formGroupProduct.get('sku').touched;
   }
+
   get errorMesageName() {
-        return this.formGroupProduct.get('name').invalid && this.formGroupProduct.get('name').touched;
+    return this.formGroupProduct.get('name').invalid && this.formGroupProduct.get('name').touched;
   }
 
 
@@ -102,7 +115,7 @@ export class AddStockComponent implements OnInit {
         console.log('request al servicio save', data);
         if (data != null) {
 
-          this.openModal('succes');
+          this.openModal('succesProduct');
         }
         console.log('response ', response);
       }, err => {
@@ -120,26 +133,3 @@ export class AddStockComponent implements OnInit {
 
 }
 
-@Component({
-  selector: 'app-add-stock-dialog',
-  templateUrl: 'add-stock.component-dialog.html',
-})
-
-export class AddStockDialogComponent implements OnInit {
-  constructor(public dialogRef: MatDialogRef<AddStockDialogComponent>,
-              private  router: Router,
-              @Inject(MAT_DIALOG_DATA) public data: any) {
-  }
-
-  ngOnInit() {
-  }
-
-  exit() {
-    this.router.navigate(['stock']);
-    this.dialogRef.close(1);
-  }
-
-  tryAgain() {
-    this.dialogRef.close(1);
-  }
-}

@@ -1,0 +1,42 @@
+<div *ngIf="data.textrequest=='succesProduct'" mat-dialog-content>
+  <p>Product has been successfully created</p>
+  <button mat-button color="primary" type="submit" (click)="exit()">
+    <span>Accept</span>
+  </button>
+</div>
+
+<div *ngIf="data.textrequest=='error sku'" mat-dialog-content>
+  <p>product added error sku exit :C</p>
+  <button mat-button color="primary" (click)="tryAgain()" type="submit">
+    <span>try again</span>
+  </button>
+  <button (click)="exit()" mat-button color="primary" type="submit">
+    <span>exit</span>
+  </button>
+</div>
+
+<div *ngIf="data.textrequest=='error'" mat-dialog-content>
+  <p>product added error service down :C</p>
+  <button (click)="exit()" mat-button color="primary" type="submit">
+    <span>Accept</span>
+  </button>
+</div>
+
+<div *ngIf="data.textrequest=='deletetProduct'" mat-dialog-content>
+  <p>Delete Product Lucky, are you sure?</p>
+  <button (click)="delete()" mat-button color="primary" type="submit">
+    Accept
+  </button>
+
+  <button mat-button color="primary" (click)="exit() "> Cancel</button>
+</div>
+
+<div *ngIf="data.textrequest=='AddProduct'" mat-dialog-content>
+  <p>Add Product, are you sure?</p>
+  <button (click)="save()" mat-button color="primary" type="submit">
+    Accept
+  </button>
+
+  <button mat-button color="primary" (click)="exit() "> Cancel</button>
+</div>
+

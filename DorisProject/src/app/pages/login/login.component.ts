@@ -14,7 +14,7 @@ export class LoginComponent {
   loginForm: FormGroup;
   subscription: any;
   name: string ;
-  
+
 //  isAuthenticate: boolean;
 
   constructor(private formBuilder: FormBuilder,
@@ -22,8 +22,8 @@ export class LoginComponent {
               private ValidatingloginService: ValidatingloginService) {
 
     this.loginForm = this.formBuilder.group({
-      rut: ['', [Validators.required, Validators.minLength(9)]],
-      contrasena: ['', [Validators.required, Validators.minLength(4)]]
+      rut: ['11.111.111-1', [Validators.required, Validators.minLength(9)]],
+      contrasena: ['1234', [Validators.required, Validators.minLength(4)]]
     });
 
   }
@@ -43,17 +43,17 @@ export class LoginComponent {
     this.ValidatingloginService.login(user).subscribe(data => {
       console.log(data);
       if (data.valid === true) {
-                
+
         this.ValidatingloginService.isAuthenticate=true;
         this.router.navigate(['stock']);
         console.log(data.username);
               this.name=data.username;
-               window.localStorage.setItem("username", this.name);  
-                
-                                
+               window.localStorage.setItem("username", this.name);
+
+
         console.log(this.name);
         return this.ValidatingloginService.isAuthenticate, this.name;
-        
+
       } else {
         this.ValidatingloginService.isAuthenticate = false;
         this.router.navigate(['login']);
@@ -64,4 +64,4 @@ export class LoginComponent {
     });
   }
 }
-  
+
