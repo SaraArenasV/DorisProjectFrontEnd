@@ -22,13 +22,26 @@
   </button>
 </div>
 
+<div>
+  <h3 mat-dialog-title>Delete Product Lucky</h3>
+
+    <mat-divider></mat-divider>
+    <p></p>
+
 <div *ngIf="data.textrequest=='deletetProduct'" mat-dialog-content>
   <p>Delete Product Lucky, are you sure?</p>
-  <button (click)="delete()" mat-button color="primary" type="submit">
-    Accept
+  <p></p>
+  <mat-divider class="down-divider"></mat-divider>
+  <div class="button-margin">
+   <button mat-raised-button class="button-delete-close"  (click)="exit() "> close</button>
+  <button (click)="delete()"  mat-button class="button-delete" type="submit">
+    Yes
   </button>
+  </div>
+</div>
 
-  <button mat-button color="primary" (click)="exit() "> Cancel</button>
+
+
 </div>
 
 <div *ngIf="data.textrequest=='AddProduct'" mat-dialog-content>

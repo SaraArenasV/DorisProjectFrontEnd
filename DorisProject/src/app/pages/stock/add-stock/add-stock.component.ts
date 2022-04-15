@@ -64,7 +64,10 @@ export class AddStockComponent implements OnInit {
   }
 
   openModal(request: string) {
-    const dialogRef = this.dialog.open(ModalComponent, {data: {textrequest: request, textresponse: this.responseModal}});
+    const dialogRef = this.dialog.open(ModalComponent, {
+      height: '400px',
+      width: '60%',
+      data: {textrequest: request, textresponse: this.responseModal}});
     dialogRef.afterClosed().subscribe(result => {
       this.responseModal = result;
       switch (this.responseModal) {
