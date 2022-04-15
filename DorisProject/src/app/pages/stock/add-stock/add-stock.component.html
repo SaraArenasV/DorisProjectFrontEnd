@@ -114,19 +114,35 @@
 
         <div></div>
 
+<!--        <div class="col-6 justify-content-end d-flex mt-3">-->
+<!--          <div>-->
+<!--            <button style="background-color: rgb(2, 139, 255);color:aliceblue;" class="mb-3"-->
+<!--                    [disabled]="!formGroupProduct.valid" type="submit"-->
+<!--                    class="btn btn-outline-primary btn-block" (click)="openModal('add')">-->
+<!--              Add Product-->
+<!--            </button>-->
+<!--          </div>-->
+<!--        </div>-->
+
+
         <div class="col-6 justify-content-end d-flex mt-3">
           <div>
-            <button style="background-color: rgb(2, 139, 255);color:aliceblue;" class="mb-3"
-                    [disabled]="!formGroupProduct.valid" type="submit"
-                    class="btn btn-outline-primary btn-block" (click)="openModal('add')">
+
+            <button  mat-raised-button *ngIf="isUpdate==false" class="button-add-stock mb-3 btn btn-outline-primary btn-block"
+                     [disabled]="!formGroupProduct.valid" type="submit"
+                     (click)="openModal('add')">
               Add Product
+            </button>
+            <button *ngIf="isUpdate==true"  style="background-color: rgb(2, 139, 255);color:aliceblue;" class="mb-3"
+                    [disabled]="!formGroupProduct.valid" type="submit"
+                    class="btn btn-outline-primary btn-block"    (click)="update()">
+              Update
             </button>
           </div>
         </div>
-      </div>
-      <!--      <small *ngIf="mostrarMensaje" class="text 25px">{{mensaje}}</small>-->
 
-      <!--      <small *ngIf="mostrarMensajeError" class="text-danger">{{mensaje}}</small>-->
+      </div>
+
     </form>
   </div>
 

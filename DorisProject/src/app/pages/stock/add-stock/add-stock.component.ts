@@ -14,11 +14,12 @@ import {ModalComponent} from '../../modal/modal.component';
 })
 export class AddStockComponent implements OnInit {
 
-  state: String = 'NEW';
+
   @Input() formGroupProduct: FormGroup;
   category: any;
   product: any;
   responseModal: any;
+  isUpdate: boolean;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -26,10 +27,18 @@ export class AddStockComponent implements OnInit {
     private addstockservice: AddStockService,
     private dialog: MatDialog
   ) {
+    if (this.router.getCurrentNavigation().extras.state.data != null) {
+      this.product = this.router.getCurrentNavigation().extras.state.data;
+      console.log("edit: ",this.product)
+      this.isUpdate = true;
+    } else {
+      this.isUpdate = false;
+    }
   }
 
   ngOnInit(): void {
     this.formGroupProduct = this.formBuilder.group({
+      id:0,
       name: ['', Validators.required],
       idCategory: ['', Validators.required],
       brand: ['', Validators.required],
@@ -38,6 +47,9 @@ export class AddStockComponent implements OnInit {
       active: ['', Validators.required],
       sku: ['', Validators.required]
     });
+    if (this.isUpdate == true) {
+      this.loadUpdate();
+    }
 
 
     this.addstockservice.getCagetorys().subscribe((response) => {
@@ -107,7 +119,61 @@ export class AddStockComponent implements OnInit {
   }
 
 
-  save() {
+  loadUpdate() {
+    this.addstockservice.getProductBysku(this.product.Sku).subscribe((response) => {
+        console.log('request al servicio getProductSku ');
+
+        if (response != null) {
+          console.log('getProductSku Response: ', response);
+          this.product = response;
+          this.formGroupProduct.setValue({
+            id: this.product.id,
+            name: this.product.name,
+            idCategory: this.product.idcategory,
+            brand: this.product.brand,
+            description: this.product.description,
+            stock: this.product.stock,
+            active: this.product.active,
+            sku: this.product.sku,
+
+          });
+        }
+
+      }, err => {
+        console.log('error: ', err);
+      }
+    );
+  }
+
+  update() {
+    const data: Product = this.formGroupProduct.getRawValue();
+
+    console.log(data);
+    this.addstockservice.update(data).subscribe(res => {
+        console.log('request al servicio save', data);
+        if (data != null) {
+
+          this.openModal('succes');
+        }
+        console.log('response ', res);
+      }, err => {
+        console.log('error: ', err);
+
+        if (err.valueOf().error.text === 'El sku ya existe') {
+          this.openModal('error sku');
+        } else {
+          this.openModal('error');
+        }
+      }
+    );
+  }
+
+
+
+
+
+
+    save() {
     const data: Product = this.formGroupProduct.getRawValue();
 
     console.log(data);
