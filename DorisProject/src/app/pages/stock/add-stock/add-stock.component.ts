@@ -4,7 +4,7 @@ import {Product} from '../../../interfaces';
 import {AddStockService} from '../../../service/add-stock.service';
 import {Router} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
-/*eslint node/no-missing-import: "error" */
+
 import {ModalComponent} from '../../modal/modal.component';
 
 @Component({
@@ -14,7 +14,6 @@ import {ModalComponent} from '../../modal/modal.component';
 })
 export class AddStockComponent implements OnInit {
 
-  // tslint:disable-next-line:ban-types
   state: String = 'NEW';
   @Input() formGroupProduct: FormGroup;
   category: any;

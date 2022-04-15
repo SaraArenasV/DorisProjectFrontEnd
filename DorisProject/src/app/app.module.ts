@@ -13,12 +13,12 @@ import { HttpClientModule} from '@angular/common/http';
 import { AddCategoryComponent } from './pages/add-category/add-category.component';
 import { ValidatingloginService } from './validatinglogin.service';
 import {AddStockComponent } from './pages/stock/add-stock/add-stock.component';
+import { ModalComponent } from './pages/modal/modal.component';
 
 import { MaterialModule } from './material-module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NumberOnlyDirective } from './pages/directives/number-only.directive';
-/*eslint node/no-missing-import: "error" */
-import { ModalComponent } from './pages/modal/modal.component';
+
 
 @NgModule({
   declarations: [
