@@ -17,6 +17,7 @@ import {AddStockComponent } from './pages/stock/add-stock/add-stock.component';
 import { MaterialModule } from './material-module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NumberOnlyDirective } from './pages/directives/number-only.directive';
+/*eslint node/no-missing-import: "error" */
 import { ModalComponent } from './pages/modal/modal.component';
 
 @NgModule({
