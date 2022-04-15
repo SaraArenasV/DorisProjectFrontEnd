@@ -75,7 +75,10 @@ export class StockComponent implements OnInit {
 
 
   openModal(request: string) {
-    const dialogRef = this.dialog.open(ModalComponent, {data: {textrequest: request, textresponse: this.responseModal}});
+    const dialogRef = this.dialog.open(ModalComponent, {
+      width: '445px',
+     height: '235px',
+      data: {textrequest: request, textresponse: this.responseModal}});
     dialogRef.afterClosed().subscribe(result => {
       this.responseModal = result;
       switch (this.responseModal) {
