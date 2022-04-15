@@ -9,10 +9,9 @@ import { EliminarComponent } from './pages/eliminar/eliminar.component';
 import { CategoriasComponent } from './pages/categorias/categorias.component';
 import { StockComponent } from './pages/stock/stock.component';
 import { HeaderComponent } from './pages/header/header.component';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { HttpClientModule} from '@angular/common/http';
 import { AddCategoryComponent } from './pages/add-category/add-category.component';
 import { ValidatingloginService } from './validatinglogin.service';
-import {CategoriasService} from './service/categorias.service';
 import {AddStockComponent } from './pages/stock/add-stock/add-stock.component';
 
 import { MaterialModule } from './material-module';
@@ -30,7 +29,6 @@ import { ModalComponent } from './pages/modal/modal.component';
     HeaderComponent,
     AddCategoryComponent,
     AddStockComponent,
-
     NumberOnlyDirective,
     ModalComponent,
   ],
