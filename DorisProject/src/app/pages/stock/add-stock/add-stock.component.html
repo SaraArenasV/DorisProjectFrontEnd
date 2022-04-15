@@ -67,7 +67,7 @@
           description:
         </div>
         <div class="col-1 col-sm-4">
-          <textarea rows="6" cols="44" matInput placeholder="description" id="description" formControlName="description"
+          <textarea rows="6" cols="44" matInput placeholder="description" id="description" maxlength="255" formControlName="description"
                     required> </textarea>
 
           <small *ngIf="errorMesageDescription" class="text-danger">You must enter description.</small>
@@ -118,7 +118,7 @@
           <div>
             <button style="background-color: rgb(2, 139, 255);color:aliceblue;" class="mb-3"
                     [disabled]="!formGroupProduct.valid" type="submit"
-                    class="btn btn-outline-primary btn-block" (click)="openModal('AddProduct')">
+                    class="btn btn-outline-primary btn-block" (click)="openModal('add')">
               Add Product
             </button>
           </div>

@@ -1,12 +1,30 @@
-<div *ngIf="data.textrequest=='succesProduct'" mat-dialog-content>
-  <p>Product has been successfully created</p>
+<div *ngIf="data.textrequest=='succes'" mat-dialog-content>
+  <p>{{data.nameService}} has been successfully created</p>
   <button mat-button color="primary" type="submit" (click)="exit()">
     <span>Accept</span>
   </button>
 </div>
 
-<div *ngIf="data.textrequest=='error sku'" mat-dialog-content>
-  <p>product added error sku exit :C</p>
+<!--<div *ngIf="data.textrequest=='succesCategory'" mat-dialog-content>-->
+<!--  <p>Category has been successfully created</p>-->
+<!--  <button mat-button color="primary" type="submit" (click)="exit()">-->
+<!--    <span>Accept</span>-->
+<!--  </button>-->
+<!--</div>-->
+
+
+
+<div *ngIf="data.textrequest=='errorSku'" mat-dialog-content>
+  <p>Product sku is exist</p>
+  <button mat-button color="primary" (click)="tryAgain()" type="submit">
+    <span>try again</span>
+  </button>
+  <button (click)="exit()" mat-button color="primary" type="submit">
+    <span>exit</span>
+  </button>
+
+</div><div *ngIf="data.textrequest=='errorExitsCategoryy'" mat-dialog-content>
+  <p>Category name is exist</p>
   <button mat-button color="primary" (click)="tryAgain()" type="submit">
     <span>try again</span>
   </button>
@@ -15,20 +33,24 @@
   </button>
 </div>
 
-<div *ngIf="data.textrequest=='error'" mat-dialog-content>
-  <p>product added error service down :C</p>
+
+
+<div *ngIf="data.textrequest=='errorService'" mat-dialog-content>
+  <p>{{data.nameService}}, error service down :C</p>
   <button (click)="exit()" mat-button color="primary" type="submit">
     <span>Accept</span>
   </button>
 </div>
 
-<div>
+
+
+<div *ngIf="data.textrequest=='deletetProduct'" mat-dialog-content>
   <h3 mat-dialog-title>Delete Product Lucky</h3>
 
     <mat-divider></mat-divider>
     <p></p>
 
-<div *ngIf="data.textrequest=='deletetProduct'" mat-dialog-content>
+<div >
   <p>Delete Product Lucky, are you sure?</p>
   <p></p>
   <mat-divider class="down-divider"></mat-divider>
@@ -39,13 +61,10 @@
   </button>
   </div>
 </div>
-
-
-
 </div>
 
-<div *ngIf="data.textrequest=='AddProduct'" mat-dialog-content>
-  <p>Add Product, are you sure?</p>
+<div *ngIf="data.textrequest=='add'" mat-dialog-content>
+  <p>Add {{data.nameService}}, are you sure?</p>
   <button (click)="save()" mat-button color="primary" type="submit">
     Accept
   </button>
@@ -53,3 +72,11 @@
   <button mat-button color="primary" (click)="exit() "> Cancel</button>
 </div>
 
+<!--<div *ngIf="data.textrequest=='addCategory'" mat-dialog-content>-->
+<!--  <p>Add Product, are you sure?</p>-->
+<!--  <button (click)="save()" mat-button color="primary" type="submit">-->
+<!--    Accept-->
+<!--  </button>-->
+
+<!--  <button mat-button color="primary" (click)="exit() "> Cancel</button>-->
+<!--</div>-->

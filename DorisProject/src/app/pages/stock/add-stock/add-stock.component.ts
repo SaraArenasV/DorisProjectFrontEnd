@@ -65,9 +65,7 @@ export class AddStockComponent implements OnInit {
 
   openModal(request: string) {
     const dialogRef = this.dialog.open(ModalComponent, {
-      height: '400px',
-      width: '60%',
-      data: {textrequest: request, textresponse: this.responseModal}});
+      data: {textrequest: request, textresponse: this.responseModal, nameService:'Product'}});
     dialogRef.afterClosed().subscribe(result => {
       this.responseModal = result;
       switch (this.responseModal) {
@@ -117,14 +115,14 @@ export class AddStockComponent implements OnInit {
         console.log('request al servicio save', data);
         if (data != null) {
 
-          this.openModal('succesProduct');
+          this.openModal('succes');
         }
         console.log('response ', response);
       }, err => {
         console.log('error: ', err);
 
         if (err.valueOf().error.text === 'El sku ya existe') {
-          this.openModal('error sku');
+          this.openModal('errorSku');
         } else {
           this.openModal('error');
         }
