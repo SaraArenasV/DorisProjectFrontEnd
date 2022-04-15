@@ -1,6 +1,7 @@
 {
   "extends": "tslint:recommended",
   "rules": {
+    "node/no-missing-import": "error",
     "align": {
       "options": [
         "parameters",
