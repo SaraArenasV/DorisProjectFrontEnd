@@ -22,8 +22,8 @@ export class LoginComponent {
               private ValidatingloginService: ValidatingloginService) {
 
     this.loginForm = this.formBuilder.group({
-      rut: ['11.111.111-1', [Validators.required, Validators.minLength(9)]],
-      contrasena: ['1234', [Validators.required, Validators.minLength(4)]]
+      rut: ['', [Validators.required, Validators.minLength(9)]],
+      contrasena: ['', [Validators.required, Validators.minLength(4)]]
     });
 
   }
