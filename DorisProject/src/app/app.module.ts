@@ -12,8 +12,8 @@ import { HeaderComponent } from './pages/header/header.component';
 import { HttpClientModule} from '@angular/common/http';
 import { AddCategoryComponent } from './pages/add-category/add-category.component';
 import { ValidatingloginService } from './validatinglogin.service';
-import {CategoriasService} from './service/categorias.service';
-import {AddStockComponent, AddStockDialogComponent } from './pages/stock/add-stock/add-stock.component';
+import {AddStockComponent } from './pages/stock/add-stock/add-stock.component';
+import { ModalComponent } from './pages/modal/modal.component';
 
 import { MaterialModule } from './material-module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,6 +22,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FooterComponent } from './pages/footer/footer.component';
 import {LayoutModule} from '@angular/cdk/layout';
+
 
 
 
@@ -39,8 +40,8 @@ import {LayoutModule} from '@angular/cdk/layout';
     HeaderComponent,
     AddCategoryComponent,
     AddStockComponent,
-    AddStockDialogComponent,
     NumberOnlyDirective,
+    ModalComponent,
     FooterComponent
   ],
   imports: [

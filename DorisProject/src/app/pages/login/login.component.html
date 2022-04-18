@@ -1,57 +1,27 @@
 <body>
 
-    <header class="typehdlogin">
-        <div class="d-flex justify-content-end" style="margin-right: 78px;">
-            <div class="p-2">
-                <img src="/assets/img/logo.jpg" alt="logo empresa" height="120px" width="120px">
-            </div>
-        </div>
-    </header>
-    <div class="container">
-        <div class="row prueba" fxLayout="row" fxLayoutAlign="center start">
+<header>
+  <div style="background-color: #336DFF">
+    <div class="d-flex bd-highlight mb-2">
+      <div class="me-auto p-2 bd-highlight"></div>
 
-            <div class="col-md-6 offset-md-3" fxFlexOrder="2">
+      <div class="p-2 bd-highlight">
+        <a href="# ">
+          <img src="assets/img/logo.jpg" style="width: 120px;height: 120px;" class="d-inline-block align-top pr-4" alt="logo" loading="lazy">
+        </a>
+      </div>
+    </div>
+
+    </div>
+
+</header>
+
+    <div class="container-fluid" style="justify-content: center">
+        <div class="row d-flex" style="justify-content: center">
+
+            <div class="col-md-4" >
                 <div class="card my-3">
-
-                    <form autocomplete="off" [formGroup]="loginForm" id="loginForm" (ngSubmit)="login()" class="card-body p-lg-3 bordesolido cardbody-color">
-
-
-                        <div class="text-center mt-1">
-                            <h4 style="color: white;"><b>LOGIN</b></h4>
-                            <hr>
-                        </div>
-
-                        <mat-grid-list cols="2" rowHeight="6:2">
-                            <mat-grid-tile>
-                                <mat-label class="col-sm-6 col-form-label color">Enter your RUT</mat-label>
-                            </mat-grid-tile>
-                            <mat-grid-tile>
-                                <mat-form-field class="bgcolor" appearance="outline" [style.width.px]=220 [style.height.px]=67>
-                                    <input matInput type="text" placeholder="Example: 12.345.678-9" formControlName="rut" [class.is-invalid]="rutValid" id="rut">
-                                    <mat-hint *ngIf="rutValid" class="text-danger">You must enter a valid rut. </mat-hint>
-                                </mat-form-field>
-                            </mat-grid-tile>
-                            <mat-grid-tile>
-                                <label class="col-sm-6 col-form-label color">Enter the password</label>
-                            </mat-grid-tile>
-                            <mat-grid-tile>
-                                <mat-form-field class="bgcolor" appearance="outline" [style.width.px]=220 [style.height.px]=67>
-                                    <input matInput type="password" placeholder="Enter your 4 digit password" formControlName="contrasena" [class.is-invalid]="passwordValid" id="contrasena">
-                                    <mat-hint *ngIf="passwordValid" class="text-danger">You must enter a valid password.</mat-hint>
-                                </mat-form-field>
-                            </mat-grid-tile>
-                        </mat-grid-list>
-
-                        <div class="d-flex flex-row-reverse end mt-3">
-                            <div>
-                                <button style="cursor:hand" mat-flat-button class="hola" [disabled]="!loginForm.valid" type="submit">
-                                        Sing In
-                                   </button>
-                            </div>
-                        </div>
-                    </form>
-
-                    <!--                     <form autocomplete="off" [formGroup]="loginForm" id="loginForm" (ngSubmit)="login()" class="card-body p-lg-3 bordesolido">
+                  <form autocomplete="off" [formGroup]="loginForm" id="loginForm" (ngSubmit)="login()" class="card-body cardbody-color p-lg-3 bordesolido">
                         <div class="text-center mt-1">
                             <h4><b>LOGIN</b></h4>
                             <hr>
@@ -79,19 +49,15 @@
 
                                 <div>
 
-                                    <button style="cursor:hand" mat-flat-button color="primary" [disabled]="!loginForm.valid" type="submit">
+                                    <button style="cursor:hand" mat-flat-button class="btncolorchange" [disabled]="!loginForm.valid" type="submit">
                                         Sing In
                                    </button>
 
                                 </div>
                             </div>
                         </div>
-
-
-
-                    </form> -->
+                    </form>
                 </div>
-
             </div>
         </div>
     </div>

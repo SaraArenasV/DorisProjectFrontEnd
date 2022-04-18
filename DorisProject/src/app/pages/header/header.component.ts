@@ -9,15 +9,11 @@ import {Router} from '@angular/router';
 
 export class HeaderComponent implements OnInit {
 
-  name= window.localStorage.getItem("username");
+  name = window.localStorage.getItem('username');
   constructor(private  router: Router ) {
      }
 
-  ngOnInit(): void {
-
-  console.log(window.localStorage.getItem("username"))
-
-  }
+  ngOnInit(): void {}
 
   gotoProducts() {
     this.router.navigate(['stock']);
@@ -27,8 +23,7 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['categorias']);
   }
 
-  
-  
+
 }
 
 
