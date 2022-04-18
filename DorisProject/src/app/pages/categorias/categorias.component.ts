@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CategoriasService } from 'src/app/service/categorias.service';
 import {Router} from '@angular/router';
+import {ModalComponent} from '../modal/modal.component';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-categorias',
@@ -13,8 +15,9 @@ export class CategoriasComponent implements OnInit {
   forma: FormGroup;
   categorias: any[]= [];
   categoriasMaster : any []=[];
+  responseModal: any;
 
-  constructor(private fb: FormBuilder, private categoryService: CategoriasService, private  router: Router) {
+  constructor(private fb: FormBuilder, private categoryService: CategoriasService, private  router: Router, private dialog: MatDialog) {
 
  
   }
@@ -73,6 +76,30 @@ addCategory(){
       }
      
       
+  }
+
+  openModal(request: string, category: any) {
+    const dialogRef = this.dialog.open(ModalComponent, {
+      width: '445px', height: '235px',
+      data: {textrequest: request, textresponse: this.responseModal,category:category}
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      this.responseModal = result;
+      switch (this.responseModal) {
+        case 'delete':
+          const categoryNew = {
+            id: category.id,
+            name: category.name                      
+          };
+          this.categoryService.delete(categoryNew).subscribe((data) => {
+            console.log(data)
+          }, err => { console.log("error ", err) }
+          );
+          break;
+
+      }
+
+    });
   }
 
 

@@ -63,6 +63,25 @@
 </div>
 </div>
 
+<div *ngIf="data.textrequest=='deleteCategory'" mat-dialog-content>
+  <h3 mat-dialog-title>Delete Category {{data.category.name}}</h3>
+
+    <mat-divider></mat-divider>
+    <p></p>
+
+<div >
+  <p>Delete Category {{data.category.name}}, are you sure?</p>
+  <p></p>
+  <mat-divider class="down-divider"></mat-divider>
+  <div class="button-margin">
+   <button mat-raised-button class="button-delete-close"  (click)="exit() "> close</button>
+  <button (click)="delete()"  mat-button class="button-delete" type="submit">
+    Yes
+  </button>
+  </div>
+</div>
+</div>
+
 <div *ngIf="data.textrequest=='add'" mat-dialog-content>
   <p>Add {{data.nameService}}, are you sure?</p>
   <button (click)="save()" mat-button color="primary" type="submit">
