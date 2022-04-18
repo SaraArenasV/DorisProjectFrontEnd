@@ -78,6 +78,18 @@ addCategory(){
       
   }
 
+  delete(category: any){
+    const categoryNew = {
+      id: category.id,
+      name: category.name   
+
+    };
+    this.categoryService.delete(categoryNew).subscribe((data) => {
+      console.log(data)
+    }, err => { console.log("error ", err) }
+    );
+  }
+
   openModal(request: string, category: any) {
     const dialogRef = this.dialog.open(ModalComponent, {
       width: '445px', height: '235px',
@@ -87,18 +99,25 @@ addCategory(){
       this.responseModal = result;
       switch (this.responseModal) {
         case 'delete':
-          const categoryNew = {
-            id: category.id,
-            name: category.name                      
-          };
-          this.categoryService.delete(categoryNew).subscribe((data) => {
-            console.log(data)
-          }, err => { console.log("error ", err) }
-          );
+          this.delete(category);
           break;
 
       }
 
+    });
+  }
+
+  openModalMsge(request: string) {
+    const dialogRef = this.dialog.open(ModalComponent, {
+      data: {textrequest: request, textresponse: this.responseModal, nameService:'Product'}});
+    dialogRef.afterClosed().subscribe(result => {
+      this.responseModal = result;
+      switch (this.responseModal) {
+        case 'save':
+         
+          break;
+
+      }
     });
   }
 
