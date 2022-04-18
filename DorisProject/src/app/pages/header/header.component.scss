@@ -1,3 +1,5 @@
+@import "../../../styles.scss";
+
 nav {
     background-color: #FFFFFF;
     padding: 0.9em 3em;
@@ -48,4 +50,9 @@ nav {
     border: 2px solid gray;
     border-radius: 12px;
     padding: 5px;
+}
+
+.btnwidth{
+  width: 230px;
+  color: white;
 }
