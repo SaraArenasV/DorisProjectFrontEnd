@@ -1,9 +1,9 @@
-body {
-    min-height: 50vh;
+.cardbody-color {
+    background-color: #a5acb4;
 }
 
-.cardbody-color {
-    background-color: #ebf2fa;
+.prueba {
+    margin-top: 5%;
 }
 
 .bordesolido {
@@ -48,11 +48,6 @@ body {
     padding: 5px;
 }
 
-.margenutilizado {
-    margin-left: 35px;
-    margin-right: 35px;
-}
-
 .categorysearch {
     align-content: flex-start;
 }
@@ -69,7 +64,7 @@ body {
 }
 
 .end {
-    margin-right: 10px;
+    margin-right: 39px;
 }
 
 .mydiv {
@@ -82,4 +77,30 @@ body {
     .alinearimg {
         justify-content: center;
     }
+}
+
+.hola {
+    background-color: #3498DB;
+    &:hover {
+        background-color: #2dabff;
+    }
+}
+
+.color {
+    color: white;
+    text-size-adjust: 12;
+    font-family: "Calibri";
+    font-weight: bold;
+}
+
+.bgcolor {
+    background-color: white;
+}
+
+.typehdlogin {
+    position: relative;
+    left: -10%;
+    width: 120%;
+    height: 30%;
+    background-color: #0c2b55;
 }

@@ -9,7 +9,7 @@ import { EliminarComponent } from './pages/eliminar/eliminar.component';
 import { CategoriasComponent } from './pages/categorias/categorias.component';
 import { StockComponent } from './pages/stock/stock.component';
 import { HeaderComponent } from './pages/header/header.component';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { HttpClientModule} from '@angular/common/http';
 import { AddCategoryComponent } from './pages/add-category/add-category.component';
 import { ValidatingloginService } from './validatinglogin.service';
 import {CategoriasService} from './service/categorias.service';
@@ -19,6 +19,14 @@ import { MaterialModule } from './material-module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NumberOnlyDirective } from './pages/directives/number-only.directive';
 import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { FooterComponent } from './pages/footer/footer.component';
+import {LayoutModule} from '@angular/cdk/layout';
+
+
+
+
+
 
 
 @NgModule({
@@ -32,7 +40,8 @@ import {MatIconModule} from '@angular/material/icon';
     AddCategoryComponent,
     AddStockComponent,
     AddStockDialogComponent,
-    NumberOnlyDirective
+    NumberOnlyDirective,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +51,9 @@ import {MatIconModule} from '@angular/material/icon';
     HttpClientModule,
     MaterialModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    MatFormFieldModule,
+    LayoutModule
   ],
   providers: [
     ValidatingloginService
