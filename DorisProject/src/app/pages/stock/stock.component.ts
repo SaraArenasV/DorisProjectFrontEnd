@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ProductService} from 'src/app/service/product.service';
 import {Router} from '@angular/router';
+import {ModalComponent} from '../modal/modal.component';
+import {MatDialog} from '@angular/material/dialog';
 
 
 @Component({
@@ -12,8 +14,10 @@ export class StockComponent implements OnInit {
 
   products: any[] = [];
   productsMaster: any[] = [];
+  responseModal: any;
 
-  constructor(private productService: ProductService, private  router: Router) {
+  constructor(private productService: ProductService, private  router: Router,
+              private dialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -66,8 +70,34 @@ export class StockComponent implements OnInit {
   }
 
   addProduct() {
-    this.router.navigate(['add-stock']);
+    this.router.navigate(['add-stock'], {state: {data: null}});
   }
+
+  edit(data: any) {
+    this.router.navigate(['add-stock'], {state: {data: data}});
+  }
+
+
+  openModal(request: string) {
+    const dialogRef = this.dialog.open(ModalComponent, {
+      width: '445px', height: '235px',
+      data: {textrequest: request, textresponse: this.responseModal}
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      this.responseModal = result;
+      switch (this.responseModal) {
+        case 'delete':
+          console.log('eliminado');
+          break;
+
+      }
+
+    });
+  }
+
+
+
+
 
 
 }

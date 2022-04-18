@@ -14,6 +14,11 @@ export class AddStockService {
     const url = `${environment.apiDoris}${environment.saveProduct}`;
     return this.http.post(url, data);
   }
+  update(data: any): Observable<any> {
+    const url = `${environment.apiDoris}${environment.updateProduct}`;
+    return this.http.post(url, data);
+  }
+
 
   getProductBysku(sku: any): Observable<any> {
     const url = `${environment.apiDoris}${environment.getProductSku}` + sku;
