@@ -75,6 +75,7 @@ addCategory(){
           this.categorias=SearchList;
       }
      
+    
       
   }
 
@@ -120,6 +121,5 @@ addCategory(){
       }
     });
   }
-
 
 }
