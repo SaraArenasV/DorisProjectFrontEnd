@@ -72,8 +72,14 @@ addCategory(){
           this.categorias=SearchList;
       }
      
+    
       
   }
+
+  delete(category){
+
+  }
+ 
 
 
 }
