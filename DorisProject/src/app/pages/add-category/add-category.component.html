@@ -14,8 +14,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3 mt-5">
-           
-                    <form [formGroup]="addCategoryForm" (ngSubmit)="save()">
+
+                    <form [formGroup]="addCategoryForm" (ngSubmit)="openModal('add')">
 
                         <div class="row no-gutters">
                             <div class="col-5 col-sm-2">
@@ -33,7 +33,7 @@
                                 Description:
                             </div>
                             <div class="col-6 col-sm-6">
-                                <textarea name="textarea" rows="6" cols="52" id="description"
+                                <textarea name="textarea" maxlength="255" rows="6" cols="52" id="description"
                                     [class.is-invalid]="descriptionRequerid" formControlName="description"
                                     placeholder="Enter the description" (keyup)="onChange($event)"></textarea>
                                 <small *ngIf="descriptionRequerid" class="text-danger">You must enter
@@ -57,7 +57,7 @@
                         <small *ngIf="mostrarMensajeError" class="text-danger"
                             style="font-size: 21px;">{{mensaje}}</small>
                     </form>
-              
+
             </div>
         </div>
     </div>
