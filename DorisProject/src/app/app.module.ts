@@ -18,6 +18,16 @@ import { ModalComponent } from './pages/modal/modal.component';
 import { MaterialModule } from './material-module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NumberOnlyDirective } from './pages/directives/number-only.directive';
+import {MatIconModule} from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FooterComponent } from './pages/footer/footer.component';
+import {LayoutModule} from '@angular/cdk/layout';
+
+
+
+
+
+
 
 
 @NgModule({
@@ -32,6 +42,7 @@ import { NumberOnlyDirective } from './pages/directives/number-only.directive';
     AddStockComponent,
     NumberOnlyDirective,
     ModalComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +51,10 @@ import { NumberOnlyDirective } from './pages/directives/number-only.directive';
     ReactiveFormsModule,
     HttpClientModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatFormFieldModule,
+    LayoutModule
   ],
   providers: [
     ValidatingloginService

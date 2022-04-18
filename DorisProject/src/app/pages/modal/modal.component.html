@@ -5,6 +5,7 @@
   </button>
 </div>
 
+
 <!--<div *ngIf="data.textrequest=='succesCategory'" mat-dialog-content>-->
 <!--  <p>Category has been successfully created</p>-->
 <!--  <button mat-button color="primary" type="submit" (click)="exit()">-->
@@ -16,27 +17,31 @@
 
 <div *ngIf="data.textrequest=='errorSku'" mat-dialog-content>
   <p>Product sku is exist</p>
-  <button mat-button color="primary" (click)="tryAgain()" type="submit">
-    <span>try again</span>
-  </button>
   <button (click)="exit()" mat-button color="primary" type="submit">
     <span>exit</span>
+  </button>
+  <button mat-button color="primary" (click)="tryAgain()" type="submit">
+    <span>try again</span>
   </button>
 
-</div><div *ngIf="data.textrequest=='errorExitsCategoryy'" mat-dialog-content>
+
+</div>
+
+<div *ngIf="data.textrequest=='errorExitsCategoryy'" mat-dialog-content>
   <p>Category name is exist</p>
-  <button mat-button color="primary" (click)="tryAgain()" type="submit">
-    <span>try again</span>
-  </button>
   <button (click)="exit()" mat-button color="primary" type="submit">
     <span>exit</span>
   </button>
+  <button mat-button color="primary" (click)="tryAgain()" type="submit">
+    <span>try again</span>
+  </button>
+
 </div>
 
 
 
 <div *ngIf="data.textrequest=='errorService'" mat-dialog-content>
-  <p>{{data.nameService}}, error service down :C</p>
+  <p>An error occurred while creating the {{data.nameService}} </p>
   <button (click)="exit()" mat-button color="primary" type="submit">
     <span>Accept</span>
   </button>
@@ -55,10 +60,9 @@
   <p></p>
   <mat-divider class="down-divider"></mat-divider>
   <div class="button-margin">
+    <button (click)="delete()"  mat-button class="button-delete" type="submit">Yes  </button>
    <button mat-raised-button class="button-delete-close"  (click)="exit() "> close</button>
-  <button (click)="delete()"  mat-button class="button-delete" type="submit">
-    Yes
-  </button>
+
   </div>
 </div>
 </div>
@@ -84,11 +88,10 @@
 
 <div *ngIf="data.textrequest=='add'" mat-dialog-content>
   <p>Add {{data.nameService}}, are you sure?</p>
-  <button (click)="save()" mat-button color="primary" type="submit">
-    Accept
-  </button>
-
   <button mat-button color="primary" (click)="exit() "> Cancel</button>
+  <button (click)="save()" mat-button color="primary" type="submit">Accept</button>
+
+
 </div>
 
 <!--<div *ngIf="data.textrequest=='addCategory'" mat-dialog-content>-->
