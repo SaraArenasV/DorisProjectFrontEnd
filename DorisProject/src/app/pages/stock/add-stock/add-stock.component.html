@@ -22,7 +22,7 @@
   </div>
 
   <div>
-    <form [formGroup]="formGroupProduct" (ngSubmit)="save()">
+    <form [formGroup]="formGroupProduct">
 
 
       <div class="row no-gutters mt-3">
@@ -67,7 +67,7 @@
           description:
         </div>
         <div class="col-1 col-sm-4">
-          <textarea rows="6" cols="44" matInput placeholder="description" id="description" formControlName="description"
+          <textarea rows="6" cols="44" matInput placeholder="description" id="description" maxlength="255" formControlName="description"
                     required> </textarea>
 
           <small *ngIf="errorMesageDescription" class="text-danger">You must enter description.</small>
@@ -114,19 +114,35 @@
 
         <div></div>
 
+<!--        <div class="col-6 justify-content-end d-flex mt-3">-->
+<!--          <div>-->
+<!--            <button style="background-color: rgb(2, 139, 255);color:aliceblue;" class="mb-3"-->
+<!--                    [disabled]="!formGroupProduct.valid" type="submit"-->
+<!--                    class="btn btn-outline-primary btn-block" (click)="openModal('add')">-->
+<!--              Add Product-->
+<!--            </button>-->
+<!--          </div>-->
+<!--        </div>-->
+
+
         <div class="col-6 justify-content-end d-flex mt-3">
           <div>
-            <button style="background-color: rgb(2, 139, 255);color:aliceblue;" class="mb-3"
-                    [disabled]="!formGroupProduct.valid" type="submit"
-                    class="btn btn-outline-primary btn-block">
+
+            <button  mat-raised-button *ngIf="isUpdate==false" class="button-add-stock mb-3 btn btn-outline-primary btn-block"
+                     [disabled]="!formGroupProduct.valid" type="submit"
+                     (click)="openModal('add')">
               Add Product
+            </button>
+            <button *ngIf="isUpdate==true"  style="background-color: rgb(2, 139, 255);color:aliceblue;" class="mb-3"
+                    [disabled]="!formGroupProduct.valid" type="submit"
+                    class="btn btn-outline-primary btn-block"    (click)="update()">
+              Update
             </button>
           </div>
         </div>
-      </div>
-      <!--      <small *ngIf="mostrarMensaje" class="text 25px">{{mensaje}}</small>-->
 
-      <!--      <small *ngIf="mostrarMensajeError" class="text-danger">{{mensaje}}</small>-->
+      </div>
+
     </form>
   </div>
 
