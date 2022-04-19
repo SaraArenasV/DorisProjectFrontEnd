@@ -2,7 +2,7 @@
 
 <table style="width: 100%;" class="alinearfin">
     <tr>
-        <td style="width: 90%;text-align:right;"><input type="text" placeholder="Search by Name or Description" size="40" (keyup)="search($event)"></td>
+        <td style="width: 90%;text-align:right;"><input type="text" placeholder="Search by Id, Name or Description" size="40" (keyup)="search($event)"></td>
         <td style="width: 5%;text-align:left"><img src="../../../assets/img/search.png" style="width: 20px;height:20px"></td>
         <td style="width: 5%;text-align:right"><input type="button" class="acnlag bordesbheader" value="Add Category" style="width: 200px;background-color: rgb(2, 139, 255);color:aliceblue;" (click)="addCategory()"></td>
     </tr>
@@ -11,7 +11,9 @@
 <body class="bordesbody">
 
 
-    <form autocomplete="off" [formGroup]="forma">
+
+    <form>
+
 
         <div class="row">
             <div class="col">
@@ -35,7 +37,7 @@
                                 <input type="button" class="bordesbheader acnlag" value="Edit" style="background-color: rgb(2, 139, 255);color:aliceblue;">
                             </td>
                             <td style="text-align: center">
-                                <input type="button" class="bordesbheader acnlag" value="Delete" style="text-align: center;background-color: rgb(2, 139, 255);color:aliceblue;">
+                                <input type="button" class="bordesbheader acnlag" value="Delete" (click)="delete(category)" style="text-align: center;background-color: rgb(2, 139, 255);color:aliceblue;">
                             </td>
                         </tr>
                     </tbody>
@@ -48,3 +50,5 @@
     </form>
 
 </body>
+
+<app-footer></app-footer>
