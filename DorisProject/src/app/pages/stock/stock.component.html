@@ -6,14 +6,18 @@
     <tr>
         <td style="width: 90%;text-align:right;"><input type="text" placeholder="Search by Description, Sku, Category or ID" size="40" (keyup)="search($event)"></td>
         <td style="width: 5%;text-align:left"><img src="../../../assets/img/search.png" style="width: 20px;height:20px"></td>
-        <td style="width: 5%;text-align:right"><input type="button" class="acnlag bordesbheader" value="Add Product" style="width: 200px;background-color: rgb(2, 139, 255);color:aliceblue;" (click)="addProduct()"></td>
+        <td style="width: 5%;text-align:right">
+          <button class="bordesbheader btncolorchange" style="width: 200px" (click)="addProduct()">
+            Add Product
+          </button>
+        </td>
     </tr>
 </table>
-<div class="row mt-3" style=" overflow-x: scroll;">
+<div class="row mt-3" style=" overflow-x: scroll; padding-left: 10px; padding-right: 10px">
     <div class="col">
         <table datatable class="table table-bordered border-dark mt-3">
             <thead>
-                <tr>
+                <tr class="tittle">
                     <th width="20px" style="text-align: center;">
                         ID
                     </th>
@@ -48,7 +52,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr style="text-align: center;" *ngFor="let product of products; let i = index">
+                <tr class="normaltext" style="text-align: center;" *ngFor="let product of products; let i = index">
                     <td style="text-align: center;">{{ product.ID }}</td>
                     <td style="text-align: center;">{{ product.Sku }}</td>
                     <td style="text-align: center;">{{ product.Name }}</td>
@@ -59,10 +63,15 @@
                     <td style="text-align: center;">{{ product.UpdateDate }}</td>
 
                     <td style="text-align: center">
-                        <input type="button" class="bordesbheader acnlag" (click)="edit(product)" value="Edit" style="background-color: rgb(2, 139, 255);color:aliceblue;">
+                        <button
+                          class="bordesbheader acnlag btncolorchange" (click)="edit(product)">
+                          Edit
+                        </button>
                     </td>
                     <td style="text-align: center">
-                        <input type="button" class="bordesbheader acnlag" value="Delete" (click)="openModal('deletetProduct')" style="text-align: center;background-color: rgb(2, 139, 255);color:aliceblue;">
+                        <button class="bordesbheader acnlag btncolorchange" (click)="openModal('deletetProduct')" style="text-align: center">
+                          Delete
+                        </button>
                     </td>
 
                 </tr>
