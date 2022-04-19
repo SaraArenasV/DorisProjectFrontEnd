@@ -55,7 +55,7 @@ export class AddCategoryComponent implements OnInit {
         if (err.error.text === 'Category name is exist') {
           this.openModal('errorExitsCategoryy');
         }else {
-          this.openModal('errorService');
+          this.openModal('error');
         }
       }
     );
