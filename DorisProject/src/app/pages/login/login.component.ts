@@ -41,18 +41,15 @@ export class LoginComponent {
   login() {
     const user = {rut: this.loginForm.get('rut').value, password: this.loginForm.get('contrasena').value};
     this.ValidatingloginService.login(user).subscribe(data => {
-      console.log(data);
+
       if (data.valid === true) {
 
-        this.ValidatingloginService.isAuthenticate=true;
+        this.ValidatingloginService.isAuthenticate = true;
         this.router.navigate(['stock']);
-        console.log(data.username);
-              this.name=data.username;
-               window.localStorage.setItem("username", this.name);
-
-
-        console.log(this.name);
-        return this.ValidatingloginService.isAuthenticate, this.name;
+        this.name = data.username;
+        window.localStorage.setItem('username', this.name);
+        window.localStorage.setItem('logok', data.valid)
+        return this.name;
 
       } else {
         this.ValidatingloginService.isAuthenticate = false;

@@ -1,1 +1,63 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+
+/* class for tittle - Clase para los titulos*/
+.tittle {
+    text-size-adjust: 18;
+    font-family: "Calibri";
+    font-weight: bold;
+}
+
+/* class for sub-tittle text - Clase para los sub-titulos*/
+.subtittle {
+    text-size-adjust: 14;
+    font-family: "Calibri";
+}
+
+/* Class for normal text - Clase para los textos normal*/
+.normaltext {
+    text-size-adjust: 12;
+    font-family: "Calibri";
+}
+
+/* Class to change button color - Clase para cambio color del boton*/
+.btncolorchange {
+  cursor: hand;
+  font-weight: bold;
+  background-color: #1A3988;
+  &:hover {
+    background-color: #336DFF;
+  }
+}
+
+.bordescategorias {
+  margin-right: 55px;
+  text-align: center;
+  border: 2px solid gray;
+  border-radius: 12px;
+  padding: 5px;
+}
+
+.bordesheader {
+  border: 2px solid gray;
+  border-radius: 12px;
+  padding: 5px;
+  margin-top: 55px;
+}
+
+.logosize {
+  height: 80px;
+  width: 120px
+}
+
+.categorysearch {
+  align-content: flex-start;
+}
+
+.bordesboctones {
+  text-align: center;
+  border: 2px solid gray;
+  border-radius: 12px;
+  padding: 5px;
+}
