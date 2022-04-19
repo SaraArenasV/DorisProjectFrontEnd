@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiDoris: 'http://localhost:8080',
+  apiDoris: 'https://dorisprojectbackend-dev.herokuapp.com',
   getStock: '/api/getproductsCategory',
   login: '/api/v1/userValidation',
   saveProduct: '/api/saveProduct',
