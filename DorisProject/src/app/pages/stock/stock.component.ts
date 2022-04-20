@@ -20,9 +20,9 @@ import {BehaviorSubject} from 'rxjs';
 //   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
 //   dataproduct: any;
 // }
-export class StockComponent implements  AfterViewInit,OnInit {
+export class StockComponent implements AfterViewInit, OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
-    // @ViewChild(MatTable) table: MatTable<any>;
+  // @ViewChild(MatTable) table: MatTable<any>;
   totalLength = 0;
   dataSource = new MatTableDataSource();
   // dataSource: any;
@@ -58,12 +58,12 @@ export class StockComponent implements  AfterViewInit,OnInit {
     });
     // this.ngAfterViewInit();
   }
+
   ngAfterViewInit() {
 
-      this.dataSource.paginator = this.paginator;
+    this.dataSource.paginator = this.paginator;
 
   }
-
 
 
   search(event: any) {
