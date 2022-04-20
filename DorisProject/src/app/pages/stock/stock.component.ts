@@ -1,43 +1,70 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {ProductService} from 'src/app/service/product.service';
 import {Router} from '@angular/router';
 import {ModalComponent} from '../modal/modal.component';
 import {MatDialog} from '@angular/material/dialog';
 
+import {MatPaginator} from '@angular/material/paginator';
+import {tap} from 'rxjs/operators';
+import {MatTable, MatTableDataSource} from '@angular/material/table';
+import {BehaviorSubject} from 'rxjs';
 
 @Component({
   selector: 'app-stock',
   templateUrl: './stock.component.html',
   styleUrls: ['./stock.component.scss']
-})
-export class StockComponent implements OnInit {
 
+})
+
+// export class TableBasicExample {
+//   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+//   dataproduct: any;
+// }
+export class StockComponent implements  AfterViewInit,OnInit {
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+    // @ViewChild(MatTable) table: MatTable<any>;
+  totalLength = 0;
+  dataSource = new MatTableDataSource();
+  // dataSource: any;
   products: any[] = [];
   productsMaster: any[] = [];
   responseModal: any;
+
+  displayedColumns = ['id', 'sku', 'name', 'description', 'brand', 'category', 'stock', 'updateDate', 'edit', 'delete'];
 
   constructor(private productService: ProductService, private  router: Router,
               private dialog: MatDialog) {
   }
 
+
   ngOnInit(): void {
     this.productService.getSotck().subscribe(data => {
       data.forEach(product => {
         let dataproduct = {
-          ID: product.id,
-          Sku: product.sku,
-          Name: product.name,
-          Description: product.description,
-          Brand: product.brand,
-          Category: product.categoryName,
-          Stock: product.stock,
-          UpdateDate: product.ingressdate
+          id: product.id,
+          sku: product.sku,
+          name: product.name,
+          description: product.description,
+          brand: product.brand,
+          category: product.categoryName,
+          stock: product.stock,
+          updateDate: product.ingressdate
         };
+
         this.productsMaster.push(dataproduct);
       });
       this.products = this.productsMaster;
+      this.dataSource.data = this.products;
     });
+    // this.ngAfterViewInit();
   }
+  ngAfterViewInit() {
+
+      this.dataSource.paginator = this.paginator;
+
+  }
+
+
 
   search(event: any) {
     const SearchList = [];
@@ -45,25 +72,26 @@ export class StockComponent implements OnInit {
       this.products = this.productsMaster;
     } else {
       this.productsMaster.forEach(product => {
-        console.log(product);
-        if (product.ID.toString().toLowerCase().includes(event.target.value.toLowerCase())) {
+        // console.log(product);
+        if (product.id.toString().toLowerCase().includes(event.target.value.toLowerCase())) {
           SearchList.push(product);
           return;
         }
-        if (product.Description.toLowerCase().includes(event.target.value.toLowerCase())) {
+        if (product.description.toLowerCase().includes(event.target.value.toLowerCase())) {
           SearchList.push(product);
           return;
         }
-        if (product.Sku.toLowerCase().includes(event.target.value.toLowerCase())) {
+        if (product.sku.toLowerCase().includes(event.target.value.toLowerCase())) {
           SearchList.push(product);
           return;
         }
-        if (product.Category.toLowerCase().includes(event.target.value.toLowerCase())) {
+        if (product.category.toLowerCase().includes(event.target.value.toLowerCase())) {
           SearchList.push(product);
         }
 
       });
       this.products = SearchList;
+      this.dataSource.data = this.products;
     }
 
 
@@ -94,10 +122,6 @@ export class StockComponent implements OnInit {
 
     });
   }
-
-
-
-
 
 
 }

@@ -12,6 +12,8 @@
 
 .alinearfin {
     justify-content: end;
+  //display: flex;
+  //flex-wrap: wrap;
 }
 
 .bordesbheader {
@@ -24,4 +26,18 @@
 .acnlag {
     width: 59px;
     height: 40px;
+}
+table {
+  width: 100%;
+}
+
+//.mat-column-id {
+//  width: 32px;
+//  border-right: 1px solid currentColor;
+//  padding-right: 24px;
+//  text-align: center;
+//}
+.mat-table{
+  border-radius: 8px;
+  overflow:hidden !important;
 }
