@@ -4,9 +4,9 @@ export const environment = {
   getStock: '/api/getproductsCategory',
   login: '/api/v1/userValidation',
   saveProduct: '/api/saveProduct',
+  updateProduct: '/api/updateProduct',
   getProductSku: '/api/getProduct/',
   getCategoryList: '/api/getCategoryList/',
   saveCategory: '/api/category',
   deleteCategory: '/api/deleteCategoryByIdJpa'
-
 };
