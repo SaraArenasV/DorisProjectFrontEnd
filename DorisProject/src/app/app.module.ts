@@ -15,22 +15,16 @@ import { ValidatingloginService } from './validatinglogin.service';
 import {AddStockComponent } from './pages/stock/add-stock/add-stock.component';
 import { ModalComponent } from './pages/modal/modal.component';
 import { BannerComponent } from './pages/banner/banner.component';
+import { FooterComponent } from './pages/footer/footer.component';
+
 
 import { MaterialModule } from './material-module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NumberOnlyDirective } from './pages/directives/number-only.directive';
 import {MatIconModule} from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { FooterComponent } from './pages/footer/footer.component';
 import {LayoutModule} from '@angular/cdk/layout';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
-
-
-
-
-
-
-
 
 @NgModule({
   declarations: [
