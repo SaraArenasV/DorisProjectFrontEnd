@@ -1,23 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
-
-
-
 /* class for tittle - Clase para los titulos*/
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+body {
+  margin: 0 0 40px;
+}
+
 .tittle {
-    text-size-adjust: 18;
+    font-size: 24px;
     font-family: "Calibri";
     font-weight: bold;
 }
 
 /* class for sub-tittle text - Clase para los sub-titulos*/
 .subtittle {
-    text-size-adjust: 14;
+  font-size: 19px;
     font-family: "Calibri";
 }
 
 /* Class for normal text - Clase para los textos normal*/
 .normaltext {
-    text-size-adjust: 12;
+  font-size: 16px;
     font-family: "Calibri";
 }
 
@@ -25,9 +31,10 @@
 .btncolorchange {
   cursor: hand;
   font-weight: bold;
-  background-color: #1A3988;
+  color: white;
+  background-color: #1F439E;
   &:hover {
-    background-color: #336DFF;
+    background-color: #2D60E2;
   }
 }
 
