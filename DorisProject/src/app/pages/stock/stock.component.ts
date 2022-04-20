@@ -88,6 +88,12 @@ export class StockComponent implements  AfterViewInit,OnInit {
         if (product.category.toLowerCase().includes(event.target.value.toLowerCase())) {
           SearchList.push(product);
         }
+        if (product.Name.toLowerCase().includes(event.target.value.toLowerCase())) {
+          SearchList.push(product);
+        }
+        if (product.Brand.toLowerCase().includes(event.target.value.toLowerCase())) {
+          SearchList.push(product);
+        }
 
       });
       this.products = SearchList;
