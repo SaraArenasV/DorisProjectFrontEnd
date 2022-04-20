@@ -1,8 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
-
-
-
 /* class for tittle - Clase para los titulos*/
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+body {
+  margin: 0 0 40px;
+}
+
 .tittle {
     font-size: 24px;
     font-family: "Calibri";
