@@ -1,22 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CategoriasService } from 'src/app/service/categorias.service';
 import { Router } from '@angular/router';
 import { ModalComponent } from '../modal/modal.component';
 import { MatDialog } from '@angular/material/dialog';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
   selector: 'app-categorias',
   templateUrl: './categorias.component.html',
   styleUrls: ['./categorias.component.scss']
 })
-export class CategoriasComponent implements OnInit {
-
+export class CategoriasComponent implements  AfterViewInit,OnInit {
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  totalLength = 0;
+  dataSource = new MatTableDataSource();
   forma: FormGroup;
   categorias: any[] = [];
   categoriasMaster: any[] = [];
   responseModal: any;
-
+  displayedColumns = ['id', 'name', 'description', 'edit', 'delete'];
   constructor(private fb: FormBuilder, private categoryService: CategoriasService, private router: Router, private dialog: MatDialog) {
 
 
@@ -27,10 +31,18 @@ export class CategoriasComponent implements OnInit {
     this.getCategorias();
   }
 
+  ngAfterViewInit() {
+
+    this.dataSource.paginator = this.paginator;
+
+  }
+
+
   getCategorias() {
     this.categoryService.getCategory().subscribe((data) => {
       this.categorias = data;
       this.categoriasMaster = data;
+        this.dataSource.data = this.categorias;
     }, err => { console.log("error ", err) }
     );
   }
@@ -74,6 +86,7 @@ export class CategoriasComponent implements OnInit {
         }
       });
       this.categorias = SearchList;
+      this.dataSource.data = this.categorias;
     }
 
 
@@ -88,7 +101,7 @@ export class CategoriasComponent implements OnInit {
     };
     this.categoryService.delete(categoryNew).subscribe((data) => {
       console.log(data)
-      if (data.success == true) {       
+      if (data.success == true) {
         this.openModal('succesDelete', '');
       } else {
         if (data.message == ' : Category has Product assigned, it is not possible to delete '){
