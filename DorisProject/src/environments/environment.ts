@@ -7,6 +7,7 @@ export const environment = {
   updateProduct: '/api/updateProduct',
   getProductSku: '/api/getProduct/',
   getCategoryList: '/api/getCategoryList/',
-  saveCategory: '/api/category'
+  saveCategory: '/api/category',
+  deleteCategory: '/api/deleteCategoryByIdJpa'
 };
 

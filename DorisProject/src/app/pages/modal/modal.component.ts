@@ -23,6 +23,11 @@ export class ModalComponent implements OnInit {
     this.dialogRef.close(1);
   }
 
+  exitCategories() {
+    this.router.navigate(['categorias']);
+    this.dialogRef.close(1);
+  }
+
   tryAgain() {
     this.dialogRef.close(1);
   }
