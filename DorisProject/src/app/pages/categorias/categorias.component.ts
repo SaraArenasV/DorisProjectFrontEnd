@@ -69,7 +69,7 @@ export class CategoriasComponent implements AfterViewInit, OnInit {
 
   search(event: any) {
     const SearchList = [];
-    if (event.target.value == '') {
+    if (event.target.value === '') {
       this.categorias = this.categoriasMaster;
     } else {
       this.categoriasMaster.forEach(category => {
