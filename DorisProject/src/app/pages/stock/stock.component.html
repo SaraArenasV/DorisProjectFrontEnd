@@ -63,7 +63,7 @@
       <ng-container matColumnDef="edit">
         <th mat-header-cell *matHeaderCellDef> Edit Product</th>
         <td mat-cell *matCellDef="let element">
-          <button (click)="edit(element)" style="background-color: rgb(2, 139, 255);color:aliceblue;" mat-button>Edit
+          <button (click)="edit(element)" class="acnlag bordesbheader btncolorchange">Edit
           </button>
         </td>
       </ng-container>
@@ -71,7 +71,7 @@
       <ng-container matColumnDef="delete">
         <th mat-header-cell *matHeaderCellDef> Delete Product</th>
         <td mat-cell *matCellDef="let element">
-          <button (click)="openModal('deletetProduct')" style="background-color: rgb(2, 139, 255);color:aliceblue;" mat-button>Delete
+          <button (click)="openModal('deletetProduct')" class="acnlag bordesbheader btncolorchange" type="submit">Delete
           </button>
         </td>
       </ng-container>
