@@ -15,8 +15,7 @@
     <form>
 
 
-        <div class="row">
-            <div class="col">
+      <div class="mat-elevation-z8">
 
               <table mat-table [dataSource]="dataSource" class=" mat-elevation-z8" >
 
@@ -60,35 +59,7 @@
                              [pageSizeOptions]="[5, 10,50]">
               </mat-paginator>
 
-
-              <!--                <table class="table table-bordered border-dark mt-3">-->
-<!--                    <thead >-->
-<!--                        <tr class="tittle">                           -->
-<!--                            <th  width="20px" style="text-align: center;" > ID </th>-->
-<!--                            <th  width="130px;" style="text-align: center;"> Name </th>-->
-<!--                            <th  width="450px;" style="text-align: center;"> Description </th>-->
-<!--                            <th  width="80px;" style="text-align: center;">Edit</th>-->
-<!--                            <th  width="80px;" style="text-align: center;">Delete</th>-->
-<!--                        </tr>-->
-<!--                    </thead>-->
-<!--                    <tbody >-->
-<!--                        <tr class="normaltext" *ngFor=" let category of categorias">-->
-<!--                            <td  style="text-align: center;">{{category.id}}</td>-->
-<!--                            <td  style="text-align: center;">{{category.name}}</td>-->
-<!--                            <td style="text-align: center;">{{category.description}}</td>-->
-<!--                            <td  style="text-align: center">-->
-<!--                                <input type="button" class="bordesbheader acnlag btncolorchange" value="Edit">-->
-<!--                            </td>-->
-<!--                            <td style="text-align: center">-->
-<!--                                <input type="button" class="bordesbheader acnlag btncolorchange" value="Delete" (click)="delete(category)">-->
-<!--                            </td>-->
-<!--                        </tr>-->
-<!--                    </tbody>-->
-
-<!--                </table>-->
-
             </div>
-        </div>
 
     </form>
 
