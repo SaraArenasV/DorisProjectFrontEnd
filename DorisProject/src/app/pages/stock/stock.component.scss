@@ -1,5 +1,3 @@
-@import "../../../styles.scss";
-
 .bordesheader {
     margin-right: 55px;
     text-align: center;
@@ -14,6 +12,8 @@
 
 .alinearfin {
     justify-content: end;
+  //display: flex;
+  //flex-wrap: wrap;
 }
 
 .bordesbheader {
@@ -27,3 +27,59 @@
     width: 59px;
     height: 40px;
 }
+
+//.mat-column-id {
+//  width: 32px;
+//  border-right: 1px solid currentColor;
+//  padding-right: 24px;
+//  text-align: center;
+//}
+
+table {
+  width: 100%;
+}
+
+.mat-table{
+  border-radius: 8px;
+  overflow:hidden !important;
+}
+//
+//.mat-column-id{
+//  width: 5%;
+//
+//}
+//.mat-column-sku {
+//  width: 15%;
+//
+//}
+//.mat-column-name {
+//  width: 15%;
+//}
+//
+//.mat-column-description {
+//  width: 20%;
+//}
+//.mat-column-brand {
+//  width: 10%;
+//}
+//.mat-column-brand {
+//  width: 10%;
+//}
+//.mat-column-brand {
+//  width: 10%;
+//}
+//.mat-column-category {
+//  width: 10%;
+//}
+//.mat-column-stock {
+//  width: 5%;
+//}
+//.mat-column-updateDate {
+//  width: 10%;
+//}
+//.mat-column-edit {
+//  width: 10%;
+//}
+//.mat-column-delete {
+//  width: 10%;
+//}
