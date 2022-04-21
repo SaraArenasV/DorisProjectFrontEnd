@@ -1,6 +1,6 @@
 <div *ngIf="data.textrequest=='succes'" mat-dialog-content>
   <p>This {{data.nameService}} has been succesfully created </p>
-  <button mat-button color="primary" type="submit" class="succes button-color" (click)="exit()">
+  <button mat-button color="primary" type="submit" class="succes-1 button-color" (click)="exit()">
     <span>Accept</span>
   </button>
 </div>
@@ -94,7 +94,7 @@
 
 <div *ngIf="data.textrequest=='add'" mat-dialog-content>
   <p>Add {{data.nameService}}, are you sure?</p>
-  <button mat-button color="primary" class="button-color accept-sure  button-margin-13" (click)="exit() "> Cancel</button>
+  <button mat-button color="primary" class="button-color accept-sure  button-margin-13" (click)="tryAgain() "> Cancel</button>
   <button mat-button color="primary" class="button-color "  (click)="save()" type="submit">Accept</button>
 
 
