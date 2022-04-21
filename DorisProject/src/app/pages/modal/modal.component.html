@@ -1,13 +1,13 @@
 <div *ngIf="data.textrequest=='succes'" mat-dialog-content>
   <p>This {{data.nameService}} has been succesfully created </p>
-  <button mat-button color="primary" type="submit" class="succes" (click)="exit()">
+  <button mat-button color="primary" type="submit" class="succes-1 button-color" (click)="exit()">
     <span>Accept</span>
   </button>
 </div>
 
 <div *ngIf="data.textrequest=='succesDelete'" mat-dialog-content>
   <p>This {{data.nameService}} has been succesfully deleted</p>
-  <button mat-button color="primary" type="submit" (click)="exit()">
+  <button mat-button color="primary" type="submit" class="button-color" (click)="exit()">
     <span>Accept</span>
   </button>
 </div>
@@ -24,11 +24,8 @@
 
 <div *ngIf="data.textrequest=='errorSku'" mat-dialog-content>
   <p>This sku have been used already, please check and try again</p>
-  <button (click)="exit()" mat-button color="primary" type="submit">
-    <span>exit</span>
-  </button>
-  <button mat-button color="primary" (click)="tryAgain()" type="submit">
-    <span>try again</span>
+  <button mat-button class=" succes button-color" color="primary" (click)="tryAgain()" type="submit">
+    <span>Accept </span>
   </button>
 
 
@@ -36,11 +33,8 @@
 
 <div *ngIf="data.textrequest=='errorExitsCategoryy'" mat-dialog-content>
   <p>This name have been used already, please check and try again</p>
-  <button (click)="exit()" mat-button color="primary" type="submit">
-    <span>exit</span>
-  </button>
-  <button mat-button color="primary" (click)="tryAgain()" type="submit">
-    <span>try again</span>
+  <button mat-button color="primary" class=" succes button-color" (click)="tryAgain()" type="submit">
+    <span>Accept</span>
   </button>
 
 </div>
@@ -48,14 +42,14 @@
 
 <div *ngIf="data.textrequest=='errorDeleteCategory'" mat-dialog-content>
   <p>{{data.message}}</p>
-  <button (click)="exitCategories()" mat-button color="primary" type="submit">
+  <button (click)="exitCategories()" class="button-color" mat-button color="primary" type="submit">
     <span>Accept</span>
   </button>
 </div>
 
 <div *ngIf="data.textrequest=='error'" mat-dialog-content>
   <p>It's have ocurred an error, please try later </p>
-  <button (click)="exit()" mat-button color="primary" type="submit">
+  <button (click)="exit()" mat-button color="primary" class=" errorService button-color" type="submit">
     <span>Accept</span>
   </button>
 </div>
@@ -72,8 +66,8 @@
   <p></p>
   <mat-divider class="down-divider"></mat-divider>
   <div class="button-margin">
-    <button (click)="delete()"  mat-button class="button-delete" type="submit">Yes  </button>
-   <button mat-raised-button class="button-delete-close"  (click)="exit() "> close</button>
+    <button (click)="delete()"   mat-button class="button-delete button-color" type="submit">Yes  </button>
+   <button mat-raised-button class="button-delete-close"  (click)="exit() "> Close</button>
 
   </div>
 </div>
@@ -89,8 +83,8 @@
   <p>Delete Category {{data.category.name}}, are you sure?</p>
   <p></p>
   <mat-divider class="down-divider"></mat-divider>
-  <div class="button-margin">
-   <button mat-raised-button class="button-delete-close"  (click)="exit() "> close</button>
+  <div class="button-margin button-color">
+   <button mat-raised-button class="button-delete-close button-color"  (click)="exit() "> Close</button>
   <button (click)="delete()"  mat-button class="button-delete" type="submit">
     Yes
   </button>
@@ -100,8 +94,8 @@
 
 <div *ngIf="data.textrequest=='add'" mat-dialog-content>
   <p>Add {{data.nameService}}, are you sure?</p>
-  <button mat-button color="primary" (click)="exit() "> Cancel</button>
-  <button mat-button color="primary" (click)="save()" type="submit">Accept</button>
+  <button mat-button color="primary" class="button-color accept-sure  button-margin-13" (click)="tryAgain() "> Cancel</button>
+  <button mat-button color="primary" class="button-color "  (click)="save()" type="submit">Accept</button>
 
 
 </div>

@@ -1,3 +1,12 @@
+.button-color{
+  cursor: hand;
+  font-weight: bold;
+  color: white;
+  background-color: #1F439E;
+  &:hover {
+    background-color: #2D60E2;
+  }
+}
 .button-delete {
   width: 90px;
   height: 40px;
@@ -28,9 +37,29 @@ color: aliceblue;
   margin-left: 216px;
 }
 
+.button-margin-13{
+
+  margin-right: 13px;
+}
+.accept-sure{
+  margin-left: 28px;
+}
 .succes{
   width: 90px;
   height: 40px;
-  margin-left: 200px;
-  margin-left: 200px;
+  margin-left: 346px;
+  //margin-left: 200px;
+}
+.succes-1{
+  width: 90px;
+  height: 40px;
+  margin-left: 213px;
+  //margin-left: 200px;
+}
+
+.errorService{
+  width: 90px;
+  height: 40px;
+  margin-left: 201px;
+  //margin-left: 200px;
 }
