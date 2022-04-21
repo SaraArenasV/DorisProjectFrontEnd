@@ -129,7 +129,7 @@ export class AddStockComponent implements OnInit {
           this.formGroupProduct.setValue({
             id: this.product.id,
             name: this.product.name,
-            idCategory: this.product.idcategory,
+            idCategory: this.product.idCategory,
             brand: this.product.brand,
             description: this.product.description,
             stock: this.product.stock,
