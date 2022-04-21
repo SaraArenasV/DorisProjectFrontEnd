@@ -1,3 +1,12 @@
+.button-color{
+  cursor: hand;
+  font-weight: bold;
+  color: white;
+  background-color: #1F439E;
+  &:hover {
+    background-color: #2D60E2;
+  }
+}
 .button-delete {
   width: 90px;
   height: 40px;
@@ -26,6 +35,11 @@ color: aliceblue;
 .button-margin{
   margin-top: 15px;
   margin-left: 216px;
+}
+
+.button-margin-13{
+
+  margin-right: 13px;
 }
 
 .succes{
