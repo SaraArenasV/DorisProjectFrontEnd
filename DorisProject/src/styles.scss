@@ -38,6 +38,17 @@ body {
   }
 }
 
+.btncolorchange1 {
+  cursor: hand;
+  font-weight: bold;
+  color: white;
+  background-color: lightgray;
+
+  &:hover {
+    background-color: lightgray;
+  }
+}
+
 .bordescategorias {
   margin-right: 55px;
   text-align: center;
