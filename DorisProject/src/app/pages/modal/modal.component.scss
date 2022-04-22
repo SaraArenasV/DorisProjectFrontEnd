@@ -1,11 +1,8 @@
 .button-color{
   cursor: hand;
   font-weight: bold;
-  color: white;
-  background-color: #1F439E;
-  &:hover {
-    background-color: #2D60E2;
-  }
+  background-color: rgb(2, 139, 255);
+  color: aliceblue;
 }
 .button-delete {
   width: 90px;
@@ -18,7 +15,7 @@
 
 .button-delete-close{
   background-color: #6c757d;
-color: aliceblue;
+  color: aliceblue;
   height: 40px;
 }
 
