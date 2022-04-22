@@ -5,10 +5,19 @@ nav {
     padding: 0.9em 3em;
 }
 
+@media (max-width:130px) {
+  .alinearimg {
+    justify-content: center;
+  }
+}
+
 .logoutcar{
   color: white;
-  text-decoration: none;
-}
+
+  &:hover {
+    text-decoration: none;
+  }
+  }
 
 .navbar-title {
     font-size: 1.25rem;

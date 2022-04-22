@@ -39,10 +39,11 @@ html {
   cursor: hand;
   font-weight: bold;
   color: white;
-  background-color: lightgray;
+  border: 2px solid lightgray;
+  background-color: #2D60E2;
 
   &:hover {
-    background-color: lightgray;
+    background-color: #2D60E2 ;
   }
 }
 
