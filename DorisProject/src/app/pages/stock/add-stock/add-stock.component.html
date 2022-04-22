@@ -3,7 +3,7 @@
 
 <body>
 
-<div class="container">
+<div class="container mb-5">
 
   <div class="d-flex justify-content-start">
 
@@ -111,17 +111,6 @@
 
         <div></div>
 
-<!--        <div class="col-6 justify-content-end d-flex mt-3">-->
-<!--          <div>-->
-<!--            <button style="background-color: rgb(2, 139, 255);color:aliceblue;" class="mb-3"-->
-<!--                    [disabled]="!formGroupProduct.valid" type="submit"-->
-<!--                    class="btn btn-outline-primary btn-block" (click)="openModal('add')">-->
-<!--              Add Product-->
-<!--            </button>-->
-<!--          </div>-->
-<!--        </div>-->
-
-
         <div class="col-6 justify-content-end d-flex mt-3">
           <div>
 
@@ -130,11 +119,12 @@
                      (click)="openModal('add')">
               Add Product
             </button>
-            <button *ngIf="isUpdate==true" class="mb-3 btncolorchange"
+            <button *ngIf="isUpdate==true" class="mb-3 acnlag bordesbheader btncolorchange"
                     [disabled]="!formGroupProduct.valid" type="submit" style="width: 200px"
                     (click)="update()">
               Update
             </button>
+
           </div>
         </div>
 
@@ -147,73 +137,5 @@
 </body>
 <app-footer></app-footer>
 
-<!--<div class="container">-->
-<!--  <h3 mat-dialog-title>-->
-<!--    <span>Add Product</span>-->
-<!--  </h3>-->
-<!--  <form [formGroup]="formGroupProduct">-->
-<!--    <p>-->
-
-<!--      <mat-form-field appearance="standard">-->
-<!--       <mat-label>description</mat-label>-->
-<!--        <textarea class="styletextarea" matInput placeholder="description" id="description" formControlName="description" required> </textarea>-->
-
-<!--        <mat-error *ngIf="formGroupProduct.invalid">{{getErrorMessage()}}</mat-error>-->
-<!--      </mat-form-field>-->
-<!--    </p>-->
-<!--    <p>-->
-
-<!--      <mat-form-field appearance="standard">-->
-<!--        <mat-label>brand</mat-label>-->
-<!--        <input matInput placeholder="brand" id="brand" formControlName="brand" required>-->
-<!--        <mat-error *ngIf="formGroupProduct.invalid">{{getErrorMessage()}}</mat-error>-->
-<!--      </mat-form-field>-->
-<!--    </p>-->
-<!--    <p>-->
-
-<!--      <mat-form-field appearance="stock">-->
-<!--        <mat-label>stock</mat-label>-->
-<!--        <input matInput type="number"  min="1" step="1" placeholder="stock" id="stock" formControlName="stock" required>-->
-<!--        <mat-error *ngIf="formGroupProduct.invalid">{{getErrorMessage()}}</mat-error>-->
-<!--      </mat-form-field>-->
-<!--    </p>-->
-<!--    <p>-->
-
-<!--      <mat-form-field>-->
-<!--        <mat-label>active</mat-label>-->
-<!--        <mat-select formControlName="active">-->
-<!--          <mat-option value="Y">Yes</mat-option>-->
-<!--          <mat-option value="N">No</mat-option>-->
-<!--        </mat-select>-->
-<!--        <mat-error *ngIf="formGroupProduct.invalid">{{getErrorMessage()}}</mat-error>-->
-<!--      </mat-form-field>-->
-<!--    </p>-->
-<!--    <p>-->
-
-<!--      <mat-form-field appearance="sku">-->
-<!--        <mat-label>sku</mat-label>-->
-<!--        <input matInput placeholder="sku" id="sku" formControlName="sku" required>-->
-<!--        <mat-error *ngIf="formGroupProduct.invalid">{{getErrorMessage()}}</mat-error>-->
-<!--      </mat-form-field>-->
-<!--    </p>-->
-<!--    <p>-->
-
-<!--      <mat-form-field>-->
-<!--        <mat-label>category</mat-label>-->
-<!--        <mat-select formControlName="idcategory">-->
-<!--          <mat-option *ngFor="let category of category" [value]="category.id">-->
-<!--            {{category.name}}-->
-<!--          </mat-option>-->
-<!--        </mat-select>-->
-<!--        <mat-error *ngIf="formGroupProduct.invalid">{{getErrorMessage()}}</mat-error>-->
-<!--      </mat-form-field>-->
-<!--    </p>-->
-<!--    <div mat-dialog-actions>-->
-<!--      <button mat-button color="primary" type="submit" (click)="save()" [disabled]="formGroupProduct.invalid">-->
-<!--        <span>Add Product</span>-->
-<!--      </button>-->
-<!--    </div>-->
-<!--  </form>-->
-<!--</div>-->
 
 

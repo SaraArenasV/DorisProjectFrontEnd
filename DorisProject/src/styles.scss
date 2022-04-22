@@ -5,26 +5,23 @@ html {
   min-height: 100%;
   position: relative;
 }
-body {
-  margin: 0 0 40px;
-}
 
 .tittle {
-    font-size: 24px;
-    font-family: "Calibri";
-    font-weight: bold;
+  font-size: 24px;
+  font-family: "Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif";
+  font-weight: bold;
 }
 
 /* class for sub-tittle text - Clase para los sub-titulos*/
 .subtittle {
   font-size: 19px;
-    font-family: "Calibri";
+  font-family: "Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif";
 }
 
 /* Class for normal text - Clase para los textos normal*/
 .normaltext {
   font-size: 16px;
-    font-family: "Calibri";
+  font-family: "Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif";
 }
 
 /* Class to change button color - Clase para cambio color del boton*/
@@ -33,6 +30,19 @@ body {
   font-weight: bold;
   color: white;
   background-color: #1F439E;
+
+  &:hover {
+    background-color: #2D60E2;
+  }
+}
+
+.btncolorchange1 {
+  cursor: hand;
+  font-weight: bold;
+  color: white;
+  border: 2px solid lightgray;
+  background-color: #2D60E2;
+
   &:hover {
     background-color: #2D60E2;
   }
