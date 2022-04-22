@@ -12,16 +12,6 @@
   </button>
 </div>
 
-
-<!--<div *ngIf="data.textrequest=='succesCategory'" mat-dialog-content>-->
-<!--  <p>Category has been successfully created</p>-->
-<!--  <button mat-button color="primary" type="submit" (click)="exit()">-->
-<!--    <span>Accept</span>-->
-<!--  </button>-->
-<!--</div>-->
-
-
-
 <div *ngIf="data.textrequest=='errorSku'" mat-dialog-content>
   <p>This sku have been used already, please check and try again</p>
   <button mat-button class=" succes button-color" color="primary" (click)="tryAgain()" type="submit">
@@ -66,7 +56,7 @@
   <p></p>
   <mat-divider class="down-divider"></mat-divider>
   <div class="button-margin">
-    <button mat-raised-button class="button-delete-close"  tabindex="-1"  (click)="exit()"> Close</button>
+    <button mat-raised-button  tabindex="-1"  (click)="exit()"> Close</button>
     <button (click)="delete()"   mat-button class="button-delete button-color" type="submit">Yes  </button>
 
 
@@ -85,7 +75,7 @@
   <p></p>
   <mat-divider class="down-divider"></mat-divider>
   <div class="button-margin button-color">
-   <button mat-raised-button class="button-delete-close button-color"  tabindex="-1"  (click)="exit() "> Close</button>
+   <button mat-raised-button tabindex="-1"  (click)="exit() "> Close</button>
    <button (click)="delete()"  mat-button class="button-delete" type="submit">
     Yes
   </button>
@@ -95,17 +85,8 @@
 
 <div *ngIf="data.textrequest=='add'" mat-dialog-content>
   <p>Add {{data.nameService}}, are you sure?</p>
-  <button mat-button color="primary" class="button-color accept-sure  button-margin-13"   tabindex="-1" (click)="tryAgain() "> Cancel</button>
+  <button mat-button color="primary" class="accept-sure button-margin-13" tabindex="-1" (click)="tryAgain() "> Cancel</button>
   <button mat-button color="primary" class="button-color" (click)="save()" type="submit">Accept</button>
 
 
 </div>
-
-<!--<div *ngIf="data.textrequest=='addCategory'" mat-dialog-content>-->
-<!--  <p>Add Product, are you sure?</p>-->
-<!--  <button (click)="save()" mat-button color="primary" type="submit">-->
-<!--    Accept-->
-<!--  </button>-->
-
-<!--  <button mat-button color="primary" (click)="exit() "> Cancel</button>-->
-<!--</div>-->
