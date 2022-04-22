@@ -43,7 +43,24 @@ table {
   border-radius: 8px;
   overflow:hidden !important;
 }
-//
+
+.table-stock {
+
+  margin-left: 10px;
+  width: 99%;
+  margin-right: 10px;
+  //margin-top: 38px;
+  position: fixed;
+  //overflow-x: scroll;
+  //overflow-y: scroll;
+}
+.searh-style{
+  flex-direction: row-reverse;
+  margin-top: 1px;
+  position: fixed;
+}
+
+
 //.mat-column-id{
 //  width: 5%;
 //

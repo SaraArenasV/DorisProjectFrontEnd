@@ -1,6 +1,7 @@
 <app-header></app-header>
 
-<div class="container d-flex" style="flex-direction: row-reverse">
+<div class="container  d-flex " style="flex-direction: row-reverse; margin-top: 1px; ">
+
   <input type="button" class="acnlag bordesbheader btncolorchange" value="Add Product"
          style="width: 200px; margin-left: 15px"
          (click)="addProduct()">
@@ -8,11 +9,10 @@
   <input type="text" placeholder="Search by Description, Sku, Category, Name, Brand or ID"
          size="50" (keyup)="search($event)">
 
-
 </div>
 
 
-<div style="margin-left: 10px; margin-right: 10px">
+<div class="table-stock ">
   <div class="row mt-3">
     <div class="col">
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -82,7 +82,7 @@
 
 
       </table>
-      <mat-paginator style="margin-bottom: 30px" [length]="totalLength"
+      <mat-paginator style="margin-bottom: 30px; position: initial; width: 100%" [length]="totalLength"
                      [pageSizeOptions]="[5, 10,50]">
       </mat-paginator>
 

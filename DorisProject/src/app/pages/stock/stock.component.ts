@@ -103,6 +103,7 @@ export class StockComponent implements AfterViewInit, OnInit {
 
   }
 
+
   addProduct() {
     this.router.navigate(['add-stock'], {state: {data: null}});
   }
