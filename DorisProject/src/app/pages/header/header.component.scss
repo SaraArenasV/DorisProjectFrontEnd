@@ -1,12 +1,12 @@
 @import "../../../styles.scss";
 
 nav {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   padding: 0.9em 3em;
 }
 
 .respondiv {
-  background-color: #132D6D;
+  background-color: #132d6d;
   min-width: fit-content;
   max-width: 100%;
 }
@@ -37,11 +37,11 @@ nav {
 
 .dropdown-item.active,
 .dropdown-item:active {
-  background-color: #0072CE;
+  background-color: #0072ce;
 }
 
 .avatar-circle {
-  background-color: #FCEAD6;
+  background-color: #fcead6;
   border-radius: 50%;
   flex-direction: column;
   height: 38px;
@@ -52,7 +52,7 @@ nav {
 }
 
 .initials {
-  color: #835A2C;
+  color: #835a2c;
   font-weight: bold;
   position: relative;
   top: 9px;
