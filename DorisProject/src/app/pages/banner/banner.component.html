@@ -1,12 +1,11 @@
-<mat-carousel timings="250ms ease-in" [autoplay]="true" interval="4000" color="#FFFFFF" slides="3" [loop]="true"
-    maintainAspectRatio="false" slideHeight="300px" [hideArrows]="true" [hideIndicators]="false" [useKeyboard]="false"
+<mat-carousel class="slide" timings="250ms ease-in" [autoplay]="true" interval="4000" color="#FFFFFF" slides="3" [loop]="true"
+maxWidth="auto"  [hideArrows]="true" [hideIndicators]="false" [useKeyboard]="false"
     [useMouseWheel]="false" orientation="ltr">
     <mat-carousel-slide *ngFor="let slide of slides; let i = index">
         <ng-container class='cardImg'>
-            <div
-                style="width: 500px; height: 100px;">
-                <mat-card  class="img">
-                    <img [src]="slide.image">
+            <div>
+                <mat-card  class="slide">
+                    <img  class="slide" [src]="slide.image">
                 </mat-card>
             </div>
         </ng-container>
