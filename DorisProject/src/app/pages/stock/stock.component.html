@@ -1,83 +1,92 @@
 <app-header></app-header>
 
 
-
 <table style="width: 100%;" class="alinearfin">
-    <tr>
-        <td style="width: 90%;text-align:right;"><input style="width: 410px" type="text" placeholder="Search by Description, Sku, Category, Name, Brand or ID" size="40" (keyup)="search($event)"></td>
-        <td style="width: 5%;text-align:left"><img src="../../../assets/img/search.png" style="width: 20px;height:20px"></td>
-        <td style="width: 5%;text-align:right">
-          <button class="bordesbheader btncolorchange" style="width: 200px" (click)="addProduct()">
-            Add Product
+  <tr>
+    <td style="width: 90%;text-align:right;"><input type="text" placeholder="Search by Description, Sku, Category, Name, Brand or ID"
+                                                    size="50" (keyup)="search($event)"></td>
+    <td style="width: 5%;text-align:left"><img src="../../../assets/img/search.png" style="width: 20px;height:20px">
+    </td>
+    <td style="width: 5%;text-align:right"><input type="button" class="acnlag bordesbheader btncolorchange" value="Add Product"
+                                                  style="width: 200px;"
+                                                  (click)="addProduct()"></td>
+  </tr>
+</table>
+<div class="row mt-3" style=" overflow-x: scroll;">
+  <div class="col">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" >
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID</th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="sku">
+        <th mat-header-cell *matHeaderCellDef> Sku</th>
+        <td mat-cell *matCellDef="let element"> {{element.sku}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name</th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef> Description</th>
+        <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="brand">
+        <th mat-header-cell *matHeaderCellDef> Brand</th>
+        <td mat-cell *matCellDef="let element"> {{element.brand}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="category">
+        <th mat-header-cell *matHeaderCellDef> Category</th>
+        <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+      </ng-container>
+
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="stock">
+        <th mat-header-cell *matHeaderCellDef> Stock</th>
+        <td mat-cell *matCellDef="let element"> {{element.stock}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="updateDate">
+        <th mat-header-cell *matHeaderCellDef> Update Date</th>
+        <td mat-cell *matCellDef="let element"> {{element.updateDate}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef> Edit Product</th>
+        <td mat-cell *matCellDef="let element">
+          <button (click)="edit(element)" style="background-color: rgb(2, 139, 255);color:aliceblue;" mat-button>Edit
           </button>
         </td>
-    </tr>
-</table>
-<div class="row mt-3" style=" overflow-x: scroll; padding-left: 10px; padding-right: 10px">
-    <div class="col">
-        <table datatable class="table table-bordered border-dark mt-3">
-            <thead>
-                <tr class="tittle">
-                    <th width="20px" style="text-align: center;">
-                        ID
-                    </th>
-                    <th width="100px;" style="text-align: center;">
-                        Sku
-                    </th>
-                    <th width="100px;" style="text-align: center;">
-                        Name
-                    </th>
+      </ng-container>
 
-                    <th width="180px;" style="text-align: center;">
-                        Description
-                    </th>
-                    <th width="180px;" style="text-align: center;">
-                        Brand
-                    </th>
-                    <th width="150px;" style="text-align: center;">
-                        Category
-                    </th>
-                    <th width="100px;" style="text-align: center;">
-                        Stock
-                    </th>
-                    <th width="280px;" style="text-align: center;">
-                        Update Date
-                    </th>
-                    <th width="280px;" style="text-align: center;">
-                        Edit Product
-                    </th>
-                    <th width="280px;" style="text-align: center;">
-                        Delete Product
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="normaltext" style="text-align: center;" *ngFor="let product of products; let i = index">
-                    <td style="text-align: center;">{{ product.ID }}</td>
-                    <td style="text-align: center;">{{ product.Sku }}</td>
-                    <td style="text-align: center;">{{ product.Name }}</td>
-                    <td style="text-align: center;">{{ product.Description }}</td>
-                    <td style="text-align: center;">{{ product.Brand }}</td>
-                    <td style="text-align: center;">{{ product.Category }}</td>
-                    <td style="text-align: center;">{{ product.Stock }}</td>
-                    <td style="text-align: center;">{{ product.UpdateDate }}</td>
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef> Delete Product</th>
+        <td mat-cell *matCellDef="let element">
+          <button (click)="openModal('deletetProduct')" style="background-color: rgb(2, 139, 255);color:aliceblue;" mat-button>Delete
+          </button>
+        </td>
+      </ng-container>
 
-                    <td style="text-align: center">
-                        <button
-                          class="bordesbheader acnlag btncolorchange" (click)="edit(product)">
-                          Edit
-                        </button>
-                    </td>
-                    <td style="text-align: center">
-                        <button class="bordesbheader acnlag btncolorchange" (click)="openModal('deletetProduct')" style="text-align: center">
-                          Delete
-                        </button>
-                    </td>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
-                </tr>
-            </tbody>
-        </table>
-    </div>
+
+    </table>
+    <mat-paginator [length]="totalLength"
+
+                   [pageSizeOptions]="[5, 10,50]">
+    </mat-paginator>
+
+  </div>
 </div>
 
 <app-footer></app-footer>

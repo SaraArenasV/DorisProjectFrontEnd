@@ -8,8 +8,8 @@ import {Router} from '@angular/router';
 })
 
 export class HeaderComponent implements OnInit {
-
   name = window.localStorage.getItem('username');
+
   constructor(private  router: Router ) {
      }
 
@@ -17,8 +17,8 @@ export class HeaderComponent implements OnInit {
 
   gotoProducts() {
     this.router.navigate(['stock']);
-  }
 
+  }
   gotoCategorys() {
     this.router.navigate(['categorias']);
   }
