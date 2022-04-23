@@ -50,7 +50,7 @@ table {
   width: 99%;
   margin-right: 10px;
   //margin-top: 38px;
-  position: fixed;
+  //position: fixed;
   //overflow-x: scroll;
   //overflow-y: scroll;
 }
@@ -60,7 +60,9 @@ table {
   position: fixed;
 }
 
-
+.all-stock{
+  margin-top: 381px;
+}
 //.mat-column-id{
 //  width: 5%;
 //
@@ -100,3 +102,8 @@ table {
 //.mat-column-delete {
 //  width: 10%;
 //}
+
+
+.paginator2{
+  position: fixed;
+}
