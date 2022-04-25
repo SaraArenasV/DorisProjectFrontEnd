@@ -79,13 +79,13 @@ html {
   border-radius: 12px;
   padding: 5px;
 }
+
 .carousel-indicators {
-  //background-color: red;
-  left:35% !important;
+  left: 35% !important;
 }
 
-.mat-icon-button i, .mat-icon-button .mat-icon {
+.mat-icon-button i,
+.mat-icon-button .mat-icon {
   line-height: 30px;
   color: white;
 }
-

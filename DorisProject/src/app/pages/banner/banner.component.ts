@@ -6,20 +6,12 @@ import { MatCarousel, MatCarouselComponent } from '@ngmodule/material-carousel';
   templateUrl: './banner.component.html',
   styleUrls: ['./banner.component.scss'],
 })
-export class BannerComponent implements OnInit {
+export class BannerComponent {
 
-  slides:any;
+  slides: String[] = [];
 
   constructor() {
-   this.slides = [
-      {'image': 'assets/img/logo.png'},
-      {'image': 'assets/img/postinventarios.png'},
-      {'image': 'assets/img/controldeinventarios.png'},
-    ];
-  }
-
-  ngOnInit(): void {
-
+  this.slides= ['assets/img/1.png','assets/img/2.png','assets/img/3.png'];
   }
 
 }

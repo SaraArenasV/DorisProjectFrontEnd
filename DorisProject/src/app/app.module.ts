@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BannerComponent } from './pages/banner/banner.component';
 import { LoginComponent } from './pages/login/login.component';
 import { EliminarComponent } from './pages/eliminar/eliminar.component';
 import { CategoriasComponent } from './pages/categorias/categorias.component';
@@ -14,9 +15,7 @@ import { AddCategoryComponent } from './pages/add-category/add-category.componen
 import { ValidatingloginService } from './validatinglogin.service';
 import {AddStockComponent } from './pages/stock/add-stock/add-stock.component';
 import { ModalComponent } from './pages/modal/modal.component';
-import { BannerComponent } from './pages/banner/banner.component';
 import { FooterComponent } from './pages/footer/footer.component';
-
 
 import { MaterialModule } from './material-module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
