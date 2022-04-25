@@ -1,5 +1,17 @@
 @import "../../../styles.scss";
 
+
+.table-stock {
+
+  margin-left: 10px;
+  width: 99%;
+  margin-right: 10px;
+  //margin-top: 38px;
+  //position: fixed;
+  //overflow-x: scroll;
+  //overflow-y: scroll;
+}
+
 .bordesheader {
   margin-right: 55px;
   text-align: center;
@@ -36,3 +48,13 @@ table {
   border-radius: 8px;
   overflow: hidden !important;
 }
+.all-stock{
+  margin-top: 381px;
+}
+
+//@media (min-width:990px) {
+//
+//  .container-header {
+//    margin-top: 430px;
+//
+//  } }
