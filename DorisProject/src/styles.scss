@@ -10,6 +10,7 @@ html {
   font-size: 24px;
   font-family: "Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif";
   font-weight: bold;
+  color: black;
 }
 
 /* class for sub-tittle text - Clase para los sub-titulos*/
@@ -77,4 +78,14 @@ html {
   border: 2px solid gray;
   border-radius: 12px;
   padding: 5px;
+}
+
+.carousel-indicators {
+  left: 35% !important;
+}
+
+.mat-icon-button i,
+.mat-icon-button .mat-icon {
+  line-height: 30px;
+  color: white;
 }

@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BannerComponent } from './pages/banner/banner.component';
 import { LoginComponent } from './pages/login/login.component';
 import { EliminarComponent } from './pages/eliminar/eliminar.component';
 import { CategoriasComponent } from './pages/categorias/categorias.component';
@@ -22,6 +23,7 @@ import { NumberOnlyDirective } from './pages/directives/number-only.directive';
 import {MatIconModule} from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {LayoutModule} from '@angular/cdk/layout';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import {LayoutModule} from '@angular/cdk/layout';
     AddStockComponent,
     NumberOnlyDirective,
     ModalComponent,
-    FooterComponent
+    FooterComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ import {LayoutModule} from '@angular/cdk/layout';
     BrowserAnimationsModule,
     MatIconModule,
     MatFormFieldModule,
-    LayoutModule
+    LayoutModule,
+    MatCarouselModule.forRoot()
   ],
   providers: [
     ValidatingloginService
