@@ -13,8 +13,8 @@ export class BannerComponent implements OnInit {
   constructor() {
    this.slides = [
       {'image': 'assets/img/logo.png'},
-      {'image': 'assets/img/loupe.png'},
-      {'image': 'assets/img/search.png'},
+      {'image': 'assets/img/postinventarios.png'},
+      {'image': 'assets/img/controldeinventarios.png'},
     ];
   }
 
