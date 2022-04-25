@@ -84,17 +84,8 @@ html {
   left:35% !important;
 }
 
-@media (min-width: 991px){
-.carousel-slide-content {
-  width: 974px !important;
-  height: 300px !important;
-}
+.mat-icon-button i, .mat-icon-button .mat-icon {
+  line-height: 30px;
+  color: white;
 }
 
-@media (max-width: 768px){
-  .carousel-slide-content {
-      width: 300px !important;
-      height: 100px !important;
-      
-  }
-}

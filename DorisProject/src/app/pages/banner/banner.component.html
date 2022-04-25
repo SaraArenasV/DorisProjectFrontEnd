@@ -44,16 +44,19 @@
 <!--  ></mat-carousel-slide>-->
 <!--</mat-carousel>-->
 
+<div class="slide">
 <mat-carousel
   timings="250ms ease-in"
   [autoplay]="true"
   interval="4000"
   color="#FFFFFF"
   slides="3"
+  maxWidth="auto"
+  proportion="31"
   [maintainAspectRatio]="false"
-  slideHeight="300px"
+ 
   [loop]="true"
-  [hideArrows]="true"
+  [hideArrows]="false"
   [hideIndicators]="false"
   [useKeyboard]="true"
   [useMouseWheel]="false"
@@ -68,5 +71,5 @@
       [hideOverlay]="false"
   ></mat-carousel-slide>
 </mat-carousel>
-
+</div>
 
