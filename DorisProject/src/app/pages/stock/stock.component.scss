@@ -61,9 +61,9 @@ table {
 
   }
 }
-@media (max-device-height: 1366px) {
-  .all-stock {
-    margin-top: 420px;
-
+@media (max-device-height: 768px ) {
+  @media (max-device-width: 1024px) {
+    .all-stock {
+      margin-top: 420px;
+    }}
   }
-}
