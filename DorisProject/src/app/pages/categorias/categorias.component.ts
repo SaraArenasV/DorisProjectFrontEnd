@@ -44,6 +44,7 @@ export class CategoriasComponent implements AfterViewInit, OnInit {
         this.categorias = data;
         this.categoriasMaster = data;
         this.dataSource.data = this.categorias;
+      console.log('error ', this.dataSource.data);
       }, err => {
         console.log('error ', err);
       }
