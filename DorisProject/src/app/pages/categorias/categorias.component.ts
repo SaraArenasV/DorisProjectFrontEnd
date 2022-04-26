@@ -1,11 +1,11 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {CategoriasService} from 'src/app/service/categorias.service';
-import {Router} from '@angular/router';
-import {ModalComponent} from '../modal/modal.component';
-import {MatDialog} from '@angular/material/dialog';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatTableDataSource} from '@angular/material/table';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CategoriasService } from 'src/app/service/categorias.service';
+import { Router } from '@angular/router';
+import { ModalComponent } from '../modal/modal.component';
+import { MatDialog } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-categorias',
@@ -41,12 +41,12 @@ export class CategoriasComponent implements AfterViewInit, OnInit {
 
   getCategorias() {
     this.categoryService.getCategory().subscribe((data) => {
-        this.categorias = data;
-        this.categoriasMaster = data;
-        this.dataSource.data = this.categorias;
-      }, err => {
-        console.log('error ', err);
-      }
+      this.categorias = data;
+      this.categoriasMaster = data;
+      this.dataSource.data = this.categorias;
+    }, err => {
+      console.log('error ', err);
+    }
     );
   }
 
@@ -88,10 +88,11 @@ export class CategoriasComponent implements AfterViewInit, OnInit {
         }
       });
       this.categorias = SearchList;
-      this.dataSource.data = this.categorias;
+
     }
 
-
+    this.dataSource.data = this.categorias;
+    
   }
 
   delete(category: any) {
@@ -101,25 +102,25 @@ export class CategoriasComponent implements AfterViewInit, OnInit {
 
     };
     this.categoryService.delete(categoryNew).subscribe((data) => {
-        console.log(data);
-        if (data.success == true) {
-          this.openModal('succesDelete', '');
+      console.log(data);
+      if (data.success == true) {
+        this.openModal('succesDelete', '');
+      } else {
+        if (data.message == ' : Category has Product assigned, it is not possible to delete ') {
+          this.openModal('errorDeleteCategory', 'This category has products, it cannot be deleted');
         } else {
-          if (data.message == ' : Category has Product assigned, it is not possible to delete ') {
-            this.openModal('errorDeleteCategory', 'This category has products, it cannot be deleted');
-          } else {
-            this.openModal('errorDeleteCategory', 'It\'s have ocurred an error, please try later ');
-          }
+          this.openModal('errorDeleteCategory', 'It\'s have ocurred an error, please try later ');
         }
-      }, err => {
-        this.openModal('errorDeleteCategory', 'It\'s have ocurred an error, please try later ');
       }
+    }, err => {
+      this.openModal('errorDeleteCategory', 'It\'s have ocurred an error, please try later ');
+    }
     );
   }
 
   openModal(request: string, message: string) {
     const dialogRef = this.dialog.open(ModalComponent, {
-      data: {textrequest: request, textresponse: this.responseModal, nameService: 'Category', message: message}
+      data: { textrequest: request, textresponse: this.responseModal, nameService: 'Category', message: message }
     });
     dialogRef.afterClosed().subscribe(result => {
       this.responseModal = result;
