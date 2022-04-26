@@ -48,16 +48,22 @@ table {
   margin-top: 381px;
 }
 
-@media (min-width:990px) {
+@media (min-device-width:990px) {
   .all-stock {
     margin-top: 430px;
   }
 }
 
 
-@media (max-height: 768px) {
+@media (max-device-height: 768px) {
   .all-stock {
-    margin-top: 360px;
+    margin-top: 420px;
+
+  }
+}
+@media (max-device-height: 1366px) {
+  .all-stock {
+    margin-top: 420px;
 
   }
 }
