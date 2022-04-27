@@ -2,7 +2,6 @@
 
 
 .table-stock {
-
   margin-left: 10px;
   width: 99%;
   margin-right: 10px;
@@ -61,9 +60,16 @@ table {
 
   }
 }
+
 @media (max-device-height: 768px ) {
   @media (max-device-width: 1024px) {
     .all-stock {
       margin-top: 420px;
     }}
   }
+@media (max-device-width: 820px) {
+  @media (max-device-height: 1180px ) {
+    .all-stock {
+      margin-top: 355px;
+    }}
+}
