@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Router, NavigationStart} from '@angular/router';
+import {Router} from '@angular/router';
 import {Observable} from 'rxjs';
 
 @Component({
@@ -9,16 +9,12 @@ import {Observable} from 'rxjs';
 })
 
 export class HeaderComponent implements OnInit {
-  stockRouter = '/stock';
-  activeproduct: boolean = false;
-  activecategorias: boolean = false;
+  activeproduct = false;
+  activecategorias = false;
 
   name = window.localStorage.getItem('username');
-  navStart: Observable<NavigationStart>;
 
   constructor(private  router: Router) {
-
-    console.log(this.router.url)
     if (this.router.url === '/stock' || this.router.url === '/add-stock') {
       this.activeproduct = true;
     }
