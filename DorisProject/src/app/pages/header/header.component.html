@@ -1,35 +1,35 @@
-<div class="container-sm alinearimg respondiv">
-  <table style="width: 100%; margin-bottom: 30px">
-    <tr>
-      <td style="width: 80%">
-        colocar aca el carrusel
-      </td>
-      <td style="width: 20%">
-        <div class="d-flex bd-highlight mb-2">
-          <div class="me-auto p-2 bd-highlight"></div>
-          <div class="p-2 bd-highlight">
-            <a href="# ">
-              <img src="assets/img/logo.jpg" style="width: 120px;height: 120px;" class="d-inline-block align-top pr-4"
-                   alt="logo" loading="lazy">
-            </a>
-          </div>
+
+<div class="container-header  alinearimg respondiv">
+<table style="width: 100%; margin-bottom: 30px">
+  <tr>
+    <td style="width: 80%">
+     <app-banner></app-banner>
+    </td>
+    <td style="width: 20%">
+      <div class="d-flex bd-highlight mb-2">
+      <div class="me-auto p-2 bd-highlight"></div>
+        <div class="p-2 bd-highlight">
+          <a href="# ">
+            <img src="assets/img/logo.jpg" style="width: 120px;height: 120px;" class="d-inline-block align-top pr-4" alt="logo" loading="lazy">
+          </a>
         </div>
-        <div class="d-flex bd-highlight mb-3">
-          <table style="width: 100%">
-            <tr>
-              <td style="width: 65%;text-align: center">
-                <div class="p-2 bd-highlight normaltext" style="color: white; margin-left: 72px">Hi, {{ name }}</div>
-              </td>
-              <td style="width: 35%; text-align: end">
-                <div class="p-2 bd-highlight"><a class="logoutcar normaltext" href="# ">Logout</a></div>
-              </td>
-            </tr>
-          </table>
-          <div class="me-auto p-2 bd-highlight"></div>
-        </div>
-      </td>
-    </tr>
-  </table>
+      </div>
+      <div  class="d-flex bd-highlight mb-3" >
+        <table style="width: 100%">
+          <tr>
+            <td style="width: 65%;text-align: center" >
+              <div class="p-2 bd-highlight normaltext" style="color: white; margin-left: 72px">Hi, {{ name }}</div>
+            </td>
+            <td style="width: 35%; text-align: end">
+              <div class="p-2 bd-highlight"><a class="logoutcar normaltext" href="# ">Logout</a></div>
+            </td>
+          </tr>
+        </table>
+        <div class="me-auto p-2 bd-highlight"></div>
+      </div>
+    </td>
+  </tr>
+</table>
 
   <table>
     <tr style="padding-top: 15px">
@@ -38,40 +38,18 @@
       </td>
       <td style="width: 15%;text-align: center;padding-top:10px; padding-bottom:10px; ">
 
-        <button
-          routerLink='/stock'
-          routerLinkActive="btncolorchange1" style="width: 10%;text-align: center;"
-          type="submit" style="cursor:hand" mat-flat-button class="btncolorchange btnwidth bgcolorbtn"
-          (click)="gotoProducts() ">
-          Products
-        </button>
-
-        <button
-          routerLink='/add-stock'
-          routerLinkActive="btncolorchange1" style="width: 10%;text-align: center;"
-          type="submit" style="cursor:hand" mat-flat-button class="btncolorchange btnwidth bgcolorbtn"
-          (click)="gotoProducts() ">
+        <button routerLink="/stock" routerLinkActive="btncolorchange1"  style="width: 10%;text-align: center;" type="submit" style="cursor:hand" mat-flat-button class="btncolorchange btnwidth bgcolorbtn" (click)="gotoProducts() ">
           Products
         </button>
 
       </td>
       <td style="width: 23%; text-align: center; ">
-        <button
-          routerLink='/categorias'
-          routerLinkActive="btncolorchange1" style="text-align: center; " type="submit"
-          style="cursor:hand" mat-flat-button class="btncolorchange btnwidth" (click)="gotoCategorys() ">
+        <button routerLink="/categorias" routerLinkActive="btncolorchange1" style="text-align: center; " type="submit" style="cursor:hand" mat-flat-button class="btncolorchange btnwidth" (click)="gotoCategorys() ">
           Categories
         </button>
-        <button
-          routerLink='/addcategory'
-          routerLinkActive="btncolorchange1" style="text-align: center; " type="submit"
-          style="cursor:hand" mat-flat-button class="btncolorchange btnwidth" (click)="gotoCategorys() ">
-          Categories
-        </button>
-      </td>
+             </td>
       <td style="width: 80%;text-align: right; "></td>
     </tr>
   </table>
   <hr style="height:2px;border-width:0;color:white;background-color:white ">
 </div>
-
