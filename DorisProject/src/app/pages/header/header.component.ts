@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router, NavigationStart} from '@angular/router';
 import {Observable} from 'rxjs';
-import {filter} from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
@@ -11,59 +10,36 @@ import {filter} from 'rxjs/operators';
 
 export class HeaderComponent implements OnInit {
   stockRouter = '/stock';
-  test = '/stock';
+  activeproduct: boolean = false;
+  activecategorias: boolean = false;
+
   name = window.localStorage.getItem('username');
   navStart: Observable<NavigationStart>;
 
   constructor(private  router: Router) {
 
-    this.navStart = router.events.pipe(
-      filter(evt => evt instanceof NavigationStart)
-    ) as Observable<NavigationStart>;
+    console.log(this.router.url)
+    if (this.router.url === '/stock' || this.router.url === '/add-stock') {
+      this.activeproduct = true;
+    }
 
-    this.navStart.subscribe(result => {
-        // console.log('Navigation Started!' + result.url)
-        switch (result.url) {
-          case '/stock':
-            this.stockRouter = result.url;
-            break;
-
-          case '/add-stock' :
-            this.stockRouter = result.url;
-            break;
-
-          case '/categorias' :
-            this.stockRouter = result.url;
-            break;
-
-          case '/addcategory' :
-            this.stockRouter = result.url;
-            break;
-            console.log('Navigation stock: ' + result.url)
-            this.stockRouter = result.url;
-            break;
-
-          // console.log('Navigation categorias: ' + result.url)
-          // this.stockRouter = result.url;
-          // break;
-          default:
-            console.log('Navigation default: ' + result.url)
-            this.stockRouter = '/test';
-            break;
-
-        }
-      }
-    );
+    if (this.router.url === '/categorias' || this.router.url === '/addcategory') {
+      this.activecategorias = true;
+    }
   }
 
   ngOnInit(): void {
   }
 
   gotoProducts() {
+    this.activeproduct = true;
+    this.activecategorias = false;
     this.router.navigate(['stock']);
   }
 
   gotoCategorys() {
+    this.activeproduct = false;
+    this.activecategorias = true;
     this.router.navigate(['categorias']);
   }
 
