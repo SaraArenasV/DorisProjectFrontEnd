@@ -24,7 +24,7 @@
             <input class="form-control normaltext" type="text" id="name" formControlName="name"
                    [class.is-invalid]="nameRequerid" placeholder="Enter the name"
                    (keyup)="onChange($event)">
-            <small *ngIf="nameRequerid" class="text-danger">You must enter name.</small>
+            <small *ngIf="nameRequerid" class="text-danger normaltext">You must enter name.</small>
           </div>
         </div>
         <div class="row no-gutters mt-3">
@@ -36,7 +36,7 @@
                                           id="description"
                                           [class.is-invalid]="descriptionRequerid" formControlName="description"
                                           placeholder="Enter the description" (keyup)="onChange($event)"></textarea>
-            <small *ngIf="descriptionRequerid" class="text-danger">You must enter
+            <small *ngIf="descriptionRequerid" class="text-danger normaltext">You must enter
               description.</small>
           </div>
 
@@ -52,9 +52,9 @@
             </div>
           </div>
         </div>
-        <small *ngIf="mostrarMensaje" style="font-size: 21px;">{{mensaje}}</small>
+        <small *ngIf="mostrarMensaje" class="normaltext" style="font-size: 21px;">{{mensaje}}</small>
 
-        <small *ngIf="mostrarMensajeError" class="text-danger"
+        <small *ngIf="mostrarMensajeError" class="text-danger normaltext"
                style="font-size: 21px;">{{mensaje}}</small>
       </form>
 
