@@ -7,7 +7,7 @@
 
 <div *ngIf="data.textrequest=='succesDelete'" mat-dialog-content>
   <p>This {{data.nameService}} has been succesfully deleted</p>
-  <button mat-button color="primary" type="submit" class="button-color" (click)="exit()">
+  <button mat-button color="primary" type="submit" class="button-color succes-1 " (click)="exit()">
     <span>Accept</span>
   </button>
 </div>
@@ -32,7 +32,7 @@
 
 <div *ngIf="data.textrequest=='errorDeleteCategory'" mat-dialog-content>
   <p>{{data.message}}</p>
-  <button (click)="exitCategories()" class="button-color" mat-button color="primary" type="submit">
+  <button (click)="exitCategories()" class="button-color succes-2" mat-button color="primary" type="submit">
     <span>Accept</span>
   </button>
 </div>
