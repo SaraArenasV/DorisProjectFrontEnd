@@ -21,9 +21,39 @@ table {
 }
 
 .all-category{
-  margin-top: 458px;
+  margin-top: 430px;
 
 }
+
+@media (min-device-width:990px) {
+  .all-category {
+    margin-top: 430px;
+  }
+}
+
+
+@media (max-device-height: 768px) {
+  .all-category {
+    margin-top: 420px;
+
+  }
+}
+
+@media (max-device-height: 768px ) {
+  @media (max-device-width: 1024px) {
+    .all-category {
+      margin-top: 420px;
+    }}
+}
+@media (max-device-width: 820px) {
+@media (max-device-height: 1180px ) {
+    .all-category {
+      margin-top: 355px;
+    }}
+}
+
+
+
 
 .mat-column-id{
   width: 10%;
