@@ -81,7 +81,7 @@ nav {
 
 
 
-@media (max-height:1181px) {
+@media (max-device-height:1181px) {
 
   .container-header {
    height: 410px;
@@ -90,7 +90,7 @@ nav {
   } }
 
 
-@media (max-width:990px) {
+@media (max-device-width:990px) {
 
   .container-header {
     height: 337px;
@@ -101,19 +101,33 @@ nav {
 
 
 
-@media (max-height: 768px) {
+@media (max-device-height: 768px) {
   .container-header {
-    height: 337px;
+    height: 394px;
     padding-top: 0;
     position: absolute;
   }
 }
 
+@media (device-height: 1366px ) {
+  @media (device-width: 1024px) {
+    .container-header {
+      height: 411px;
+      padding-top: 0;
+      position: absolute;
+    }
+  }
 
-
-
-.respondiv {
-  background-color: #132D6D;
-  min-width: fit-content;
-  max-width: 100%;
 }
+@media (max-device-height: 768px ) {
+  @media (max-device-width: 1024px) {
+    .container-header {
+      height: 411px;
+      padding-top: 0;
+      position: absolute;
+    }
+  }
+
+}
+
+

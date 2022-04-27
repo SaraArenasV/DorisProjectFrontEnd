@@ -1,13 +1,13 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import {ProductService} from 'src/app/service/product.service';
-import {Router} from '@angular/router';
-import {ModalComponent} from '../modal/modal.component';
-import {MatDialog} from '@angular/material/dialog';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { ProductService } from 'src/app/service/product.service';
+import { Router } from '@angular/router';
+import { ModalComponent } from '../modal/modal.component';
+import { MatDialog } from '@angular/material/dialog';
 
-import {MatPaginator} from '@angular/material/paginator';
-import {tap} from 'rxjs/operators';
-import {MatTable, MatTableDataSource} from '@angular/material/table';
-import {BehaviorSubject} from 'rxjs';
+import { MatPaginator } from '@angular/material/paginator';
+import { tap } from 'rxjs/operators';
+import { MatTable, MatTableDataSource } from '@angular/material/table';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-stock',
@@ -32,8 +32,8 @@ export class StockComponent implements AfterViewInit, OnInit {
 
   displayedColumns = ['id', 'sku', 'name', 'description', 'brand', 'category', 'stock', 'updateDate', 'edit', 'delete'];
 
-  constructor(private productService: ProductService, private  router: Router,
-              private dialog: MatDialog) {
+  constructor(private productService: ProductService, private router: Router,
+    private dialog: MatDialog) {
   }
 
 
@@ -97,26 +97,24 @@ export class StockComponent implements AfterViewInit, OnInit {
 
       });
       this.products = SearchList;
-      this.dataSource.data = this.products;
     }
 
-
+    this.dataSource.data = this.products;
   }
 
-
   addProduct() {
-    this.router.navigate(['add-stock'], {state: {data: null}});
+    this.router.navigate(['add-stock'], { state: { data: null } });
   }
 
   edit(data: any) {
-    this.router.navigate(['add-stock'], {state: {data: data}});
+    this.router.navigate(['add-stock'], { state: { data: data } });
   }
 
 
   openModal(request: string) {
     const dialogRef = this.dialog.open(ModalComponent, {
       width: '445px', height: '235px',
-      data: {textrequest: request, textresponse: this.responseModal}
+      data: { textrequest: request, textresponse: this.responseModal }
     });
     dialogRef.afterClosed().subscribe(result => {
       this.responseModal = result;

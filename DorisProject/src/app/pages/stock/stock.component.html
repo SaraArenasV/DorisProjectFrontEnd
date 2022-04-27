@@ -10,6 +10,7 @@
   <input class="normaltext" type="text" placeholder="Search by Description, Sku, Category, Name, Brand or ID"
          size="50" (keyup)="search($event)">
 
+
 </div>
 
 
@@ -83,7 +84,7 @@
 
 
       </table>
-      <mat-paginator class="paginator2" style="margin-bottom: 30px; width: 100%" [length]="totalLength"
+      <mat-paginator style="margin-bottom: 30px" [length]="totalLength"
                      [pageSizeOptions]="[5, 10,50]">
       </mat-paginator>
 
@@ -93,5 +94,5 @@
 
 </div>
 
-</div>
+
 <app-footer></app-footer>
