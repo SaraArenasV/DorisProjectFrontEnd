@@ -15,3 +15,43 @@
   padding-top: 5px;
   max-width: 100%;
 }
+
+
+
+@media (max-device-width: 1024px) {
+  @media (max-device-height: 768px ) {
+
+    .typefooter {
+      position: fixed;
+    }}
+}
+
+@media (max-device-width: 768px) {
+  @media (max-device-height: 1024px ) {
+
+    .typefooter {
+      position: fixed;
+    }}
+}
+@media (max-device-width: 820px) {
+  @media (max-device-height: 1180px ) {
+
+    .typefooter {
+      position: fixed;
+    }}
+}
+
+@media (max-device-width: 1180px) {
+  @media (max-device-height: 820px ) {
+
+    .typefooter {
+      position: fixed;
+    }}
+}
+@media (max-device-width: 1024px) {
+  @media (max-device-height: 1366px ) {
+
+    .typefooter {
+      position: fixed;
+    }}
+}
