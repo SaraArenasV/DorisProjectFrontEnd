@@ -1,39 +1,70 @@
-import {Component, OnInit} from '@angular/core';
-import {ProductService} from 'src/app/service/product.service';
-import {Router} from '@angular/router';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { ProductService } from 'src/app/service/product.service';
+import { Router } from '@angular/router';
+import { ModalComponent } from '../modal/modal.component';
+import { MatDialog } from '@angular/material/dialog';
 
+import { MatPaginator } from '@angular/material/paginator';
+import { tap } from 'rxjs/operators';
+import { MatTable, MatTableDataSource } from '@angular/material/table';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-stock',
   templateUrl: './stock.component.html',
   styleUrls: ['./stock.component.scss']
-})
-export class StockComponent implements OnInit {
 
+})
+
+// export class TableBasicExample {
+//   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+//   dataproduct: any;
+// }
+export class StockComponent implements AfterViewInit, OnInit {
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  // @ViewChild(MatTable) table: MatTable<any>;
+  totalLength = 0;
+  dataSource = new MatTableDataSource();
+  // dataSource: any;
   products: any[] = [];
   productsMaster: any[] = [];
+  responseModal: any;
 
-  constructor(private productService: ProductService, private  router: Router) {
+  displayedColumns = ['id', 'sku', 'name', 'description', 'brand', 'category', 'stock', 'updateDate', 'edit', 'delete'];
+
+  constructor(private productService: ProductService, private router: Router,
+    private dialog: MatDialog) {
   }
+
 
   ngOnInit(): void {
     this.productService.getSotck().subscribe(data => {
       data.forEach(product => {
         let dataproduct = {
-          ID: product.id,
-          Sku: product.sku,
-          Name: product.name,
-          Description: product.description,
-          Brand: product.brand,
-          Category: product.categoryName,
-          Stock: product.stock,
-          UpdateDate: product.ingressdate
+          id: product.id,
+          sku: product.sku,
+          name: product.name,
+          description: product.description,
+          brand: product.brand,
+          category: product.categoryName,
+          stock: product.stock,
+          updateDate: product.ingressdate
         };
+
         this.productsMaster.push(dataproduct);
       });
       this.products = this.productsMaster;
+      this.dataSource.data = this.products;
     });
+    // this.ngAfterViewInit();
   }
+
+  ngAfterViewInit() {
+
+    this.dataSource.paginator = this.paginator;
+
+  }
+
 
   search(event: any) {
     const SearchList = [];
@@ -41,20 +72,26 @@ export class StockComponent implements OnInit {
       this.products = this.productsMaster;
     } else {
       this.productsMaster.forEach(product => {
-        console.log(product);
-        if (product.ID.toString().toLowerCase().includes(event.target.value.toLowerCase())) {
+        // console.log(product);
+        if (product.id.toString().toLowerCase().includes(event.target.value.toLowerCase())) {
           SearchList.push(product);
           return;
         }
-        if (product.Description.toLowerCase().includes(event.target.value.toLowerCase())) {
+        if (product.description.toLowerCase().includes(event.target.value.toLowerCase())) {
           SearchList.push(product);
           return;
         }
-        if (product.Sku.toLowerCase().includes(event.target.value.toLowerCase())) {
+        if (product.sku.toLowerCase().includes(event.target.value.toLowerCase())) {
           SearchList.push(product);
           return;
         }
-        if (product.Category.toLowerCase().includes(event.target.value.toLowerCase())) {
+        if (product.category.toLowerCase().includes(event.target.value.toLowerCase())) {
+          SearchList.push(product);
+        }
+        if (product.name.toLowerCase().includes(event.target.value.toLowerCase())) {
+          SearchList.push(product);
+        }
+        if (product.brand.toLowerCase().includes(event.target.value.toLowerCase())) {
           SearchList.push(product);
         }
 
@@ -62,11 +99,33 @@ export class StockComponent implements OnInit {
       this.products = SearchList;
     }
 
-
+    this.dataSource.data = this.products;
   }
 
   addProduct() {
-    this.router.navigate(['add-stock']);
+    this.router.navigate(['add-stock'], { state: { data: null } });
+  }
+
+  edit(data: any) {
+    this.router.navigate(['add-stock'], { state: { data: data } });
+  }
+
+
+  openModal(request: string) {
+    const dialogRef = this.dialog.open(ModalComponent, {
+      width: '445px', height: '235px',
+      data: { textrequest: request, textresponse: this.responseModal }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      this.responseModal = result;
+      switch (this.responseModal) {
+        case 'delete':
+          console.log('eliminado');
+          break;
+
+      }
+
+    });
   }
 
 

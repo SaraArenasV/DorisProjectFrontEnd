@@ -3,18 +3,14 @@
 
 <body>
 
-<div class="container">
+<div class="add-product-device mb-5">
 
   <div class="d-flex justify-content-start">
 
-    <div class=" bd-highlight">
+    <div >
 
-      <button type="button" class="btn btn-outline-primary btn-block"
-
-              style="background-color: rgb(2, 139, 255);color:aliceblue;" (click)="backToList()">
-
+      <button type="submit" class="mb-3 bordesboctones btncolorchange" style="width: 150px"  (click)="backToList()">
         Back to list
-
       </button>
 
     </div>
@@ -22,185 +18,124 @@
   </div>
 
   <div>
-    <form [formGroup]="formGroupProduct" (ngSubmit)="save()">
+    <form [formGroup]="formGroupProduct">
 
 
       <div class="row no-gutters mt-3">
-        <div class="col-5 col-sm-2">
-          brand:
+        <div class="col-5 col-sm-2 normaltext">
+          name:
         </div>
         <div class="col-1 col-sm-4">
-          <input class="form-control" type="text" id="name"
+          <input class="form-control normaltext" type="text" id="name"
                  formControlName="name"
                  placeholder="Enter the name">
-          <small *ngIf="errorMesageName" class="text-danger">You must enter name.</small>
+          <small *ngIf="errorMesageName" class="text-danger normaltext">You must enter name.</small>
         </div>
       </div>
 
-      <div class="row no-gutters mt-3">
-        <div class="col-5 col-sm-2">
+      <div class="row no-gutters mt-3 ">
+        <div class="col-5 col-sm-2 normaltext">
           brand:
         </div>
         <div class="col-1 col-sm-4">
-          <input class="form-control" type="text" id="brand"
+          <input class="form-control normaltext" type="text" id="brand"
                  formControlName="brand"
                  placeholder="Enter the brand">
-          <small *ngIf="errorMesageBrand" class="text-danger">You must enter brand.</small>
+          <small *ngIf="errorMesageBrand" class="text-danger normaltext">You must enter brand.</small>
         </div>
       </div>
 
       <div class="row no-gutters mt-3">
-        <div class="col-5 col-sm-2">
+        <div class="col-5 col-sm-2 normaltext">
           stock:
         </div>
         <div class="col-1 col-sm-4">
-          <input class="form-control" type="number" min="1" step="1" oninput="this.value =
+          <input class="form-control normaltext" type="number" min="1" step="1" oninput="this.value =
  !!this.value && Math.abs(this.value) >= 1 ? Math.abs(this.value) : null" placeholder="stock" id="stock"
                  formControlName="stock"
                  placeholder="Enter the stock">
-          <small *ngIf="errorMesageStock" class="text-danger">You must enter stock.</small>
+          <small *ngIf="errorMesageStock" class="text-danger normaltext">You must enter stock.</small>
         </div>
       </div>
 
       <div class="row no-gutters mt-3">
-        <div class="col-5 col-sm-2">
+        <div class="col-5 col-sm-2 normaltext">
           description:
         </div>
         <div class="col-1 col-sm-4">
-          <textarea rows="6" cols="44" matInput placeholder="description" id="description" formControlName="description"
-                    required> </textarea>
+          <textarea class="normaltext" rows="6" cols="55" matInput placeholder="description" id="description" maxlength="255" formControlName="description"
+                    required>
+          </textarea>
 
-          <small *ngIf="errorMesageDescription" class="text-danger">You must enter description.</small>
+          <small *ngIf="errorMesageDescription" class="text-danger normaltext">You must enter description.</small>
         </div>
       </div>
 
       <div class="row no-gutters mt-3">
-        <div class="col-5 col-sm-2">
+        <div class="col-5 col-sm-2 normaltext">
           active:
         </div>
         <div class="col-1 col-sm-4">
-          <select formControlName="active" class="form-select">
-            <option value="Y">Yes</option>
-            <option value="N">No</option>
+          <select formControlName="active" class="form-select normaltext">
+            <option class="normaltext" value="Y">Yes</option>
+            <option class="normaltext" value="N">No</option>
           </select>
-          <small *ngIf="errorMesageActive" class="text-danger">You must enter active.</small>
+          <small *ngIf="errorMesageActive" class="text-danger normaltext">You must enter active.</small>
         </div>
       </div>
       <div class="row no-gutters mt-3">
-        <div class="col-5 col-sm-2">
+        <div class="col-5 col-sm-2 normaltext">
           category:
         </div>
         <div class="col-1 col-sm-4">
-          <select formControlName="idCategory" class="form-select">
-            <option *ngFor="let category of category" [value]="category.id">
+          <select formControlName="idCategory" class="form-select normaltext">
+            <option class="normaltext" *ngFor="let category of category" [value]="category.id">
               {{category.name}}
             </option>
           </select>
-          <small *ngIf="errorMesageIdCategory" class="text-danger">You must enter category.</small>
+          <small *ngIf="errorMesageIdCategory" class="text-danger normaltext">You must enter category.</small>
         </div>
       </div>
 
 
       <div class="row no-gutters mt-3">
-        <div class="col-5 col-sm-2">
+        <div class="col-5 col-sm-2 normaltext">
           sku:
         </div>
         <div class="col-6 col-sm-4">
-          <input class="form-control" type="text" id="sku"
+          <input class="form-control normaltext" type="text" id="sku"
                  formControlName="sku"
                  placeholder="Enter the sku">
-          <small *ngIf="errorMesageSku" class="text-danger">You must enter sku.</small>
+          <small *ngIf="errorMesageSku" class="text-danger normaltext">You must enter sku.</small>
         </div>
 
         <div></div>
 
         <div class="col-6 justify-content-end d-flex mt-3">
           <div>
-            <button style="background-color: rgb(2, 139, 255);color:aliceblue;" class="mb-3"
-                    [disabled]="!formGroupProduct.valid" type="submit"
-                    class="btn btn-outline-primary btn-block">
-              Add Category
+
+            <button  *ngIf="isUpdate==false" class="mb-3 btn btn-outline-primary btn-block btncolorchange"
+                     [disabled]="!formGroupProduct.valid" type="submit" style="width: 200px"
+                     (click)="openModal('add')">
+              Add Product
             </button>
+            <button *ngIf="isUpdate==true" class="mb-3 btn btn-outline-primary btn-block btncolorchange"
+                    [disabled]="!formGroupProduct.valid" type="submit" style="width: 200px"
+                    (click)="update()">
+              Update
+            </button>
+
           </div>
         </div>
-      </div>
-      <!--      <small *ngIf="mostrarMensaje" class="text 25px">{{mensaje}}</small>-->
 
-      <!--      <small *ngIf="mostrarMensajeError" class="text-danger">{{mensaje}}</small>-->
+      </div>
+
     </form>
   </div>
 
 </div>
 </body>
+<app-footer></app-footer>
 
-
-<!--<div class="container">-->
-<!--  <h3 mat-dialog-title>-->
-<!--    <span>Add Product</span>-->
-<!--  </h3>-->
-<!--  <form [formGroup]="formGroupProduct">-->
-<!--    <p>-->
-
-<!--      <mat-form-field appearance="standard">-->
-<!--       <mat-label>description</mat-label>-->
-<!--        <textarea class="styletextarea" matInput placeholder="description" id="description" formControlName="description" required> </textarea>-->
-
-<!--        <mat-error *ngIf="formGroupProduct.invalid">{{getErrorMessage()}}</mat-error>-->
-<!--      </mat-form-field>-->
-<!--    </p>-->
-<!--    <p>-->
-
-<!--      <mat-form-field appearance="standard">-->
-<!--        <mat-label>brand</mat-label>-->
-<!--        <input matInput placeholder="brand" id="brand" formControlName="brand" required>-->
-<!--        <mat-error *ngIf="formGroupProduct.invalid">{{getErrorMessage()}}</mat-error>-->
-<!--      </mat-form-field>-->
-<!--    </p>-->
-<!--    <p>-->
-
-<!--      <mat-form-field appearance="stock">-->
-<!--        <mat-label>stock</mat-label>-->
-<!--        <input matInput type="number"  min="1" step="1" placeholder="stock" id="stock" formControlName="stock" required>-->
-<!--        <mat-error *ngIf="formGroupProduct.invalid">{{getErrorMessage()}}</mat-error>-->
-<!--      </mat-form-field>-->
-<!--    </p>-->
-<!--    <p>-->
-
-<!--      <mat-form-field>-->
-<!--        <mat-label>active</mat-label>-->
-<!--        <mat-select formControlName="active">-->
-<!--          <mat-option value="Y">Yes</mat-option>-->
-<!--          <mat-option value="N">No</mat-option>-->
-<!--        </mat-select>-->
-<!--        <mat-error *ngIf="formGroupProduct.invalid">{{getErrorMessage()}}</mat-error>-->
-<!--      </mat-form-field>-->
-<!--    </p>-->
-<!--    <p>-->
-
-<!--      <mat-form-field appearance="sku">-->
-<!--        <mat-label>sku</mat-label>-->
-<!--        <input matInput placeholder="sku" id="sku" formControlName="sku" required>-->
-<!--        <mat-error *ngIf="formGroupProduct.invalid">{{getErrorMessage()}}</mat-error>-->
-<!--      </mat-form-field>-->
-<!--    </p>-->
-<!--    <p>-->
-
-<!--      <mat-form-field>-->
-<!--        <mat-label>category</mat-label>-->
-<!--        <mat-select formControlName="idcategory">-->
-<!--          <mat-option *ngFor="let category of category" [value]="category.id">-->
-<!--            {{category.name}}-->
-<!--          </mat-option>-->
-<!--        </mat-select>-->
-<!--        <mat-error *ngIf="formGroupProduct.invalid">{{getErrorMessage()}}</mat-error>-->
-<!--      </mat-form-field>-->
-<!--    </p>-->
-<!--    <div mat-dialog-actions>-->
-<!--      <button mat-button color="primary" type="submit" (click)="save()" [disabled]="formGroupProduct.invalid">-->
-<!--        <span>Add Product</span>-->
-<!--      </button>-->
-<!--    </div>-->
-<!--  </form>-->
-<!--</div>-->
 
 

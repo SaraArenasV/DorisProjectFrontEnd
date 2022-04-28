@@ -21,9 +21,36 @@
 //  width: 100%;
 //}
 //
-//.button-add-stock{
-//  style="background-color: rgb(2, 139, 255);color:aliceblue;"
-//}
+@import "../../../../styles.scss";
+
+
 .styletextarea{
   width: 103px;
+}
+
+.add-product-device {
+  margin-top: 430px;
+  margin-left: 25px;
+}
+
+@media (min-device-width:990px) {
+  .add-product-device {
+    margin-top: 430px;
+    margin-left: 25px;
+  }
+}
+
+
+@media (max-device-height: 768px) {
+  .add-product-device {
+    margin-top: 420px;
+    margin-left: 25px;
+
+  }
+}
+@media (max-device-height: 1366px) {
+  .add-product-device {
+    margin-top: 420px;
+    margin-left: 25px;
+  }
 }

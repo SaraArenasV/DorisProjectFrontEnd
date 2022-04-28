@@ -4,20 +4,26 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BannerComponent } from './pages/banner/banner.component';
 import { LoginComponent } from './pages/login/login.component';
 import { EliminarComponent } from './pages/eliminar/eliminar.component';
 import { CategoriasComponent } from './pages/categorias/categorias.component';
 import { StockComponent } from './pages/stock/stock.component';
 import { HeaderComponent } from './pages/header/header.component';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { HttpClientModule} from '@angular/common/http';
 import { AddCategoryComponent } from './pages/add-category/add-category.component';
 import { ValidatingloginService } from './validatinglogin.service';
-import {CategoriasService} from './service/categorias.service';
-import {AddStockComponent, AddStockDialogComponent } from './pages/stock/add-stock/add-stock.component';
+import {AddStockComponent } from './pages/stock/add-stock/add-stock.component';
+import { ModalComponent } from './pages/modal/modal.component';
+import { FooterComponent } from './pages/footer/footer.component';
 
 import { MaterialModule } from './material-module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NumberOnlyDirective } from './pages/directives/number-only.directive';
+import {MatIconModule} from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {LayoutModule} from '@angular/cdk/layout';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
 
 @NgModule({
   declarations: [
@@ -29,8 +35,10 @@ import { NumberOnlyDirective } from './pages/directives/number-only.directive';
     HeaderComponent,
     AddCategoryComponent,
     AddStockComponent,
-    AddStockDialogComponent,
     NumberOnlyDirective,
+    ModalComponent,
+    FooterComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +47,11 @@ import { NumberOnlyDirective } from './pages/directives/number-only.directive';
     ReactiveFormsModule,
     HttpClientModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatFormFieldModule,
+    LayoutModule,
+    MatCarouselModule.forRoot()
   ],
   providers: [
     ValidatingloginService

@@ -1,0 +1,58 @@
+@import "../../../styles.scss";
+
+
+.add-category-device {
+  margin-top: 430px;
+  margin-left: 25px;
+}
+
+@media (min-device-width:990px) {
+  .add-category-device {
+    margin-top: 430px;
+    margin-left: 25px;
+  }
+}
+
+@media (max-device-height: 768px) {
+  .add-category-device {
+    margin-top: 420px;
+    margin-left: 25px;
+
+  }
+}
+
+@media (max-device-height: 1366px) {
+  .add-category-device {
+    margin-top: 420px;
+    margin-left: 25px;
+  }
+}
+
+.description2{
+  margin-left: 5px;
+}
+@media (min-device-width:768px) {
+  @media (max-device-height: 1024px) {
+    .description2 {
+      margin-left: 19px;
+    }
+  }
+
+}
+
+@media (min-device-width:820px) {
+  @media (max-device-height: 1180px) {
+    .description2 {
+      margin-left: 19px;
+    }
+  }
+
+}
+@media (min-device-width:1366px) {
+  @media (max-device-height: 1024px) {
+    .description2 {
+      margin-left: -13px;
+    }
+  }
+
+}

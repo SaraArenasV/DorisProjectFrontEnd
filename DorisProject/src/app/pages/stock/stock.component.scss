@@ -1,27 +1,75 @@
+@import "../../../styles.scss";
+
+
+.table-stock {
+  margin-left: 10px;
+  width: 99%;
+  margin-right: 10px;
+}
+
 .bordesheader {
-    margin-right: 55px;
-    text-align: center;
-    border: 2px solid gray;
-    border-radius: 12px;
-    padding: 5px;
+  margin-right: 55px;
+  text-align: center;
+  border: 2px solid gray;
+  border-radius: 12px;
+  padding: 5px;
 }
 
 .alinearcentro {
-    justify-content: center;
+  justify-content: center;
 }
 
 .alinearfin {
-    justify-content: end;
+  justify-content: end;
 }
 
 .bordesbheader {
-    text-align: center;
-    border: 2px solid gray;
-    border-radius: 12px;
-    padding: 5px;
+  text-align: center;
+  border: 2px solid gray;
+  border-radius: 12px;
+  padding: 5px;
 }
 
 .acnlag {
-    width: 59px;
-    height: 40px;
+  width: 59px;
+  height: 40px;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-table {
+  border-radius: 8px;
+  overflow: hidden !important;
+}
+.all-stock{
+  margin-top: 381px;
+}
+
+@media (min-device-width:990px) {
+  .all-stock {
+    margin-top: 430px;
+  }
+}
+
+
+@media (max-device-height: 768px) {
+  .all-stock {
+    margin-top: 420px;
+
+  }
+}
+
+@media (max-device-height: 768px ) {
+  @media (max-device-width: 1024px) {
+    .all-stock {
+      margin-top: 420px;
+    }}
+  }
+@media (max-device-width: 820px) {
+  @media (max-device-height: 1180px ) {
+    .all-stock {
+      margin-top: 355px;
+    }}
 }

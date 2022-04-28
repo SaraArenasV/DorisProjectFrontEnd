@@ -1,0 +1,69 @@
+.button-color{
+  cursor: hand;
+  font-weight: bold;
+  background-color: rgb(2, 139, 255);
+  color: aliceblue;
+}
+.button-delete {
+  width: 90px;
+  height: 40px;
+  margin-left: 23px;
+  background-color: rgb(2, 139, 255);
+  color:aliceblue;
+
+}
+
+.button-delete-close{
+  background-color: #6c757d;
+  color: aliceblue;
+  height: 40px;
+}
+
+//::ng-deep .mat-dialog-container {
+//    width: 445px;
+//    height: 235px
+//}
+
+
+.down-divider{
+  margin-top: 35px;
+}
+
+.button-margin{
+  margin-top: 15px;
+  margin-left: 216px;
+}
+
+.button-margin-13{
+
+  margin-right: 13px;
+}
+.accept-sure{
+  margin-left: 28px;
+}
+.succes{
+  width: 90px;
+  height: 40px;
+  margin-left: 346px;
+  //margin-left: 200px;
+}
+
+.succes-2{
+  width: 90px;
+  height: 40px;
+  margin-left: 250px;
+  //margin-left: 200px;
+}
+.succes-1{
+  width: 90px;
+  height: 40px;
+  margin-left: 213px;
+  //margin-left: 200px;
+}
+
+.errorService{
+  width: 90px;
+  height: 40px;
+  margin-left: 201px;
+  //margin-left: 200px;
+}

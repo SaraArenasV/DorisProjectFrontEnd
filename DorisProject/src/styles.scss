@@ -1,1 +1,91 @@
 /* You can add global styles to this file, and also import other style files */
+/* class for tittle - Clase para los titulos*/
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+.tittle {
+  font-size: 16px;
+  font-family: "Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif";
+  font-weight: bold;
+  color: black;
+}
+
+/* class for sub-tittle text - Clase para los sub-titulos*/
+.subtittle {
+  font-size: 19px;
+  font-family: "Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif";
+}
+
+/* Class for normal text - Clase para los textos normal*/
+.normaltext {
+  font-size: 16px;
+  font-family: "Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif";
+}
+
+/* Class to change button color - Clase para cambio color del boton*/
+.btncolorchange {
+  cursor: hand;
+  font-weight: bold;
+  color: white;
+  background-color: #1F439E;
+
+  &:hover {
+    background-color: #2D60E2;
+  }
+}
+
+.btncolorchange1 {
+  cursor: hand;
+  font-weight: bold;
+  color: white;
+  border: 2px solid lightgray;
+  background-color: #2D60E2;
+
+  &:hover {
+    background-color: #2D60E2;
+  }
+}
+
+.bordescategorias {
+  margin-right: 55px;
+  text-align: center;
+  border: 2px solid gray;
+  border-radius: 12px;
+  padding: 5px;
+}
+
+.bordesheader {
+  border: 2px solid gray;
+  border-radius: 12px;
+  padding: 5px;
+  margin-top: 55px;
+}
+
+.logosize {
+  height: 80px;
+  width: 120px
+}
+
+.categorysearch {
+  align-content: flex-start;
+}
+
+.bordesboctones {
+  text-align: center;
+  border: 2px solid gray;
+  border-radius: 12px;
+  padding: 5px;
+}
+
+.carousel-indicators {
+  left: 35% !important;
+}
+
+.mat-icon-button i,
+.mat-icon-button .mat-icon {
+  line-height: 30px;
+  color: white;
+}

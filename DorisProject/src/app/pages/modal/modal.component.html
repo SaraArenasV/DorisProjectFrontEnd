@@ -1,0 +1,92 @@
+<div *ngIf="data.textrequest=='succes'" mat-dialog-content>
+  <p>This {{data.nameService}} has been succesfully created </p>
+  <button mat-button color="primary" type="submit" class="succes-1 button-color" (click)="exit()">
+    <span>Accept</span>
+  </button>
+</div>
+
+<div *ngIf="data.textrequest=='succesDelete'" mat-dialog-content>
+  <p>This {{data.nameService}} has been succesfully deleted</p>
+  <button mat-button color="primary" type="submit" class="button-color succes-1 " (click)="exit()">
+    <span>Accept</span>
+  </button>
+</div>
+
+<div *ngIf="data.textrequest=='errorSku'" mat-dialog-content>
+  <p>This sku have been used already, please check and try again</p>
+  <button mat-button class=" succes button-color" color="primary" (click)="tryAgain()" type="submit">
+    <span>Accept </span>
+  </button>
+
+
+</div>
+
+<div *ngIf="data.textrequest=='errorExitsCategoryy'" mat-dialog-content>
+  <p>This name have been used already, please check and try again</p>
+  <button mat-button color="primary" class=" succes button-color" (click)="tryAgain()" type="submit">
+    <span>Accept</span>
+  </button>
+
+</div>
+
+
+<div *ngIf="data.textrequest=='errorDeleteCategory'" mat-dialog-content>
+  <p>{{data.message}}</p>
+  <button (click)="exitCategories()" class="button-color succes-2" mat-button color="primary" type="submit">
+    <span>Accept</span>
+  </button>
+</div>
+
+<div *ngIf="data.textrequest=='error'" mat-dialog-content>
+  <p>It's have ocurred an error, please try later </p>
+  <button (click)="exit()" mat-button color="primary" class=" errorService button-color" type="submit">
+    <span>Accept</span>
+  </button>
+</div>
+
+
+<div *ngIf="data.textrequest=='deletetProduct'" mat-dialog-content>
+  <h3 mat-dialog-title>Delete Product Lucky</h3>
+
+    <mat-divider></mat-divider>
+    <p></p>
+
+<div >
+  <p>Delete Product Lucky, are you sure?</p>
+  <p></p>
+  <mat-divider class="down-divider"></mat-divider>
+  <div class="button-margin">
+    <button mat-raised-button  tabindex="-1"  (click)="exit()"> Close</button>
+    <button (click)="delete()"   mat-button class="button-delete button-color" type="submit">Yes  </button>
+
+
+  </div>
+</div>
+</div>
+
+<div *ngIf="data.textrequest=='deleteCategory'" mat-dialog-content>
+  <h3 mat-dialog-title>Delete Category {{data.category.name}}</h3>
+
+    <mat-divider></mat-divider>
+    <p></p>
+
+<div >
+  <p>Delete Category {{data.category.name}}, are you sure?</p>
+  <p></p>
+  <mat-divider class="down-divider"></mat-divider>
+  <div class="button-margin button-color">
+   <button mat-raised-button tabindex="-1"  (click)="exit() "> Close</button>
+   <button (click)="delete()"  mat-button class="button-delete" type="submit">
+    Yes
+  </button>
+  </div>
+</div>
+</div>
+
+<div *ngIf="data.textrequest=='add'" mat-dialog-content>
+  <p>Add {{data.nameService}}, are you sure?</p>
+  <button mat-button color="primary" class="accept-sure button-margin-13" tabindex="-1" (click)="tryAgain() "> Cancel</button>
+  <button mat-button color="primary" class="button-color" (click)="save()" type="submit">Accept</button>
+
+
+</div>
