@@ -114,12 +114,12 @@
         <div class="col-6 justify-content-end d-flex mt-3">
           <div>
 
-            <button  mat-raised-button *ngIf="isUpdate==false" class="mb-3 btncolorchange"
+            <button  *ngIf="isUpdate==false" class="mb-3 btn btn-outline-primary btn-block btncolorchange"
                      [disabled]="!formGroupProduct.valid" type="submit" style="width: 200px"
                      (click)="openModal('add')">
               Add Product
             </button>
-            <button *ngIf="isUpdate==true" class="mb-3 acnlag bordesbheader btncolorchange"
+            <button *ngIf="isUpdate==true" class="mb-3 btn btn-outline-primary btn-block btncolorchange"
                     [disabled]="!formGroupProduct.valid" type="submit" style="width: 200px"
                     (click)="update()">
               Update
